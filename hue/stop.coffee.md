@@ -15,7 +15,7 @@
       ctx.execute
         cmd: 'rm /var/log/hue/*'
         code_skipped: 1
-      , next
+      .then next
 
 ## Dependencies
 
