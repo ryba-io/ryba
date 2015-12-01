@@ -238,7 +238,7 @@ restrict it but not the thrift server.
 
 ## Hbase-Thrift Service
 
-    module.exports.push name: 'HBase Thrift # Service', handler: ->
+    module.exports.push header: 'HBase Thrift # Service', handler: ->
       {hbase} = @config.ryba
       @service
         name: 'hbase-thrift'
