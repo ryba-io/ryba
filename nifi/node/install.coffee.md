@@ -29,6 +29,7 @@
           { chain: 'INPUT', jump: 'ACCEPT', dport: nifi.node.config.properties["nifi.web.#{protocol}.port"], protocol: 'tcp', state: 'NEW', comment: "NiFi Web ui port" }
         ]
     
+
       @call header: 'Preinstall Layout', handler: ->
           @mkdir
             destination: nifi.node.install_dir
@@ -136,16 +137,13 @@ By default it is a local file, but in cluster mode, it uses zookeeper.
         backup: true
         mode: 0o0755
 
-      @krb5_addprinc
+      @krb5_addprinc krb5,
         header: 'Kerberos'
         principal: nifi.node.krb5_principal
         randkey: true
         keytab: nifi.node.krb5_keytab
         uid: nifi.user.name
         gid: nifi.group.name
-        kadmin_principal: kadmin_principal
-        kadmin_password: kadmin_password
-        kadmin_server: admin_server
 
 ## Zookeeper JAAS  
 
