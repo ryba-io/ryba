@@ -10,7 +10,7 @@
       tmp_archive_location = "/var/tmp/ryba/nifi.tar.gz"
       protocol = if nifi.node.config.properties['nifi.cluster.protocol.is.secure'] is 'true' then 'https' else 'http'
 
-      @register 'write_jaas', 'ryba/lib/write_jaas'
+      @register ['file', 'jaas'], 'ryba/lib/write_jaas'
 
 # Users
 
@@ -152,7 +152,7 @@ By default it is a local file, but in cluster mode, it uses zookeeper.
 
 ## Zookeeper JAAS  
 
-      @write_jaas
+      @file.jaas
         header: 'Zookeeper JAAS'
         target: "#{nifi.node.conf_dir}/nifi-zookeeper.jaas"
         content: Client:
