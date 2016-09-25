@@ -56,7 +56,7 @@
         handler: ->
           @mkdir
             target: "#{nifi.manager.install_dir}/#{nifi.version}"
-          @download
+          @file.download
             source: nifi.source
             target: tmp_archive_location
           @extract
@@ -295,7 +295,7 @@ by sending request to ldaps server
 
 # Notifications
 
-      @download
+      @file.download
         header: 'Services Notifications'
         target: "#{nifi.manager.conf_dir}/bootstrap-notification-services.xml"
         source: "#{__dirname}/../resources/bootstrap-notification-services.xml"
