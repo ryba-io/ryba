@@ -38,21 +38,21 @@ Install the spark and python packages.
         @service
           name: 'spark2-python'
 
-# ## HDFS Layout
-# 
-#       status = user_owner = group_owner = null
-#       spark_yarn_jar = options.conf['spark.yarn.jar']
-#       @system.execute
-#         header: 'HDFS Layout'
-#         cmd: mkcmd.hdfs options.hdfs_krb5_user, """
-#         hdfs dfs -mkdir -p /apps/#{options.user.name}
-#         hdfs dfs -chmod 755 /apps/#{options.user.name}
-#         hdfs dfs -put -f /usr/hdp/current/spark-client/lib/spark-assembly-*.jar #{spark_yarn_jar}
-#         hdfs dfs -chown #{options.user.name}:#{options.group.name} #{spark_yarn_jar}
-#         hdfs dfs -chmod 644 #{spark_yarn_jar}
-#         hdfs dfs -put /usr/hdp/current/spark-client/lib/spark-examples-*.jar /apps/#{options.user.name}/spark-examples.jar
-#         hdfs dfs -chown -R #{options.user.name}:#{options.group.name} /apps/#{options.user.name}
-#         """
+## HDFS Layout
+
+      # status = user_owner = group_owner = null
+      # spark_yarn_jar = options.conf['spark.yarn.jar']
+      # @system.execute
+      #   header: 'HDFS Layout'
+      #   cmd: mkcmd.hdfs options.hdfs_krb5_user, """
+      #   hdfs dfs -mkdir -p /apps/#{options.user.name}
+      #   hdfs dfs -chmod 755 /apps/#{options.user.name}
+      #   hdfs dfs -put -f /usr/hdp/current/spark-client/lib/spark-assembly-*.jar #{spark_yarn_jar}
+      #   hdfs dfs -chown #{options.user.name}:#{options.group.name} #{spark_yarn_jar}
+      #   hdfs dfs -chmod 644 #{spark_yarn_jar}
+      #   hdfs dfs -put /usr/hdp/current/spark-client/lib/spark-examples-*.jar /apps/#{options.user.name}/spark-examples.jar
+      #   hdfs dfs -chown -R #{options.user.name}:#{options.group.name} /apps/#{options.user.name}
+      #   """
 
 ## Spark Worker events log dir
 
