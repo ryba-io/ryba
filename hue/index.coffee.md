@@ -95,6 +95,21 @@ Example:
       hue.ssl ?= {}
       hue.ssl.client_ca ?= null
       throw Error "Property 'hue.ssl.client_ca' required in HA with HTTPS" if hdfs_nn_hosts.length > 1 and hdfs.site['dfs.http.policy'] is 'HTTPS_ONLY' and not hue.ssl.client_ca
+      # User
+      hue.user ?= {}
+      hue.user = name: hue.user if typeof hue.user is 'string'
+      hue.user.name ?= 'hue'
+      hue.user.system ?= true
+      hue.user.gid = 'hue'
+      hue.user.comment ?= 'Hue User'
+      hue.user.home = '/var/lib/hue'
+      # Group
+      hue.group = name: hue.group if typeof hue.group is 'string'
+      hue.group ?= {}
+      hue.group.name ?= 'hue'
+      hue.group.system ?= true
+      # Log
+      hue.log_dir ?= '/var/log/hue'
       # HDFS & YARN url
       # NOTE: default to unencrypted HTTP
       # error is "SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed"
@@ -180,7 +195,7 @@ Example:
       hue.ini['desktop']['database']['password'] ?= 'hue123'
       hue.ini['desktop']['database']['name'] ?= 'hue'
 
-    # module.exports.push commands: 'backup', modules: 'ryba/hue/backup'
+    module.exports.push commands: 'backup', modules: 'ryba/hue/backup'
 
     # module.exports.push commands: 'check', modules: 'ryba/hue/check'
 
