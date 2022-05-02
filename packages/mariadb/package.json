@@ -28,13 +28,12 @@
     "test": "test"
   },
   "peerDependencies": {
-    "masson": "0.x"
+    "masson": "^0.2.0"
   },
   "dependencies": {
-    "glob": "~7.1.6",
-    "masson": "^0.2.0",
-    "mixme": "^0.5.0",
-    "nikita": "1.0.0-alpha.1",
+    "glob": "~8.0.1",
+    "mixme": "^0.5.4",
+    "nikita": "1.0.0-alpha.3",
     "regexp-quote": "~0.0.0"
   },
   "publishConfig": {
@@ -52,8 +51,8 @@
     "url": "https://github.com/ryba-io/ryba/issues"
   },
   "devDependencies": {
-    "coffeescript": "^2.5.1",
-    "mocha": "8.3.1",
+    "coffeescript": "^2.7.0",
+    "mocha": "10.0.0",
     "should": "~13.2.3",
     "ssh2-they": "^2.2.1"
   },

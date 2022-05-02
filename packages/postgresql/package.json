@@ -18,7 +18,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "coffeescript": "^2.5.1",
-    "shell": "^0.8.4"
+    "coffeescript": "^2.7.0",
+    "shell": "^0.9.4"
   }
 }

@@ -104,7 +104,7 @@ Taken from masson/lib/index.coffee
 
 
     module.exports = ->
-      orgparams = parameters(params, main: name: 'main').parse()
+      orgparams = shell(params, main: name: 'main').parse()
       load orgparams.config, (err, config) ->
         # Normalize coniguration
         config = normalize config
@@ -117,7 +117,7 @@ Taken from masson/lib/index.coffee
 
 ## Dependencies
 
-    parameters = require 'parameters'
+    shell = require 'shell'
     load = require 'masson/lib/config/load'
     normalize = require 'masson/lib/config/normalize'
     capacity = require './'

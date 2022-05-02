@@ -5,7 +5,7 @@
 
     module.exports = ->
       # Parameters and Help
-      params = parameters(exports.params)
+      params = shell exports.params
       if params.parse().help
         return util.print(params.help())
       # Run
@@ -21,7 +21,7 @@
             else
               console.log err.stack
 
-## Parameters
+## Shell configuration
 
 *   `config` (array|string)   
     One or multiple configuration files and directories.   
@@ -51,6 +51,6 @@ node node_modules/@rybajs/metal/bin/upgrade
 
 ## Dependencies
 
-    parameters = require 'parameters'
+    shell = require 'shell'
     config = require 'masson/lib/config'
     util = require 'util'
