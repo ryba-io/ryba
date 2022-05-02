@@ -226,6 +226,7 @@ restrict it but not the thrift server.
 
     module.exports.push header: 'HBase Thrift # Configure', handler: ->
       {hbase} = @config.ryba
+      console.log
       @hconfigure
         destination: "#{hbase.conf_dir}/hbase-site.xml"
         default: "#{__dirname}/../resources/hbase-site.xml"
@@ -235,6 +236,24 @@ restrict it but not the thrift server.
         uid: hbase.user.name
         gid: hbase.group.name
         backup: true
+
+## Hbase-Thrift Service
+
+    module.exports.push name: 'HBase Thrift # Service', handler: ->
+      {hbase} = @config.ryba
+      @service
+        name: 'hbase-thrift'
+      @hdp_select
+        name: 'hbase-client'
+      @write
+        source: "#{__dirname}/../resources/hbase-thrift"
+        local_source: true
+        destination: '/etc/init.d/hbase-thrift'
+        mode: 0o0755
+        unlink: true
+      @execute
+        cmd: "service hbase-thrift restart"
+        if: -> @status -3
 
 ## Dependecies
 
