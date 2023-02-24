@@ -7,21 +7,21 @@ Follow [instructions](https://www.digitalocean.com/community/tutorials/how-to-se
 Note: Ryba does not do any action if replication has already be enabled once for
 consistency reasons.
 
-    module.exports = header: 'MariaDB Server Replication', handler: ({options}) ->
-      return unless options.ha_enabled
+    module.exports = header: 'MariaDB Server Replication', handler: ({config}) ->
+      return unless config.ha_enabled
       remote_master =
         database: null
-        admin_username: options.repl_master.admin_username
-        admin_password: options.repl_master.admin_password
+        admin_username: config.repl_master.admin_username
+        admin_password: config.repl_master.admin_password
         engine: 'mysql'
-        host: options.repl_master.fqdn
+        host: config.repl_master.fqdn
         silent: false
       props =
         database: null
-        admin_username: options.admin_username
-        admin_password: options.admin_password
+        admin_username: config.admin_username
+        admin_password: config.admin_password
         engine: 'mysql'
-        host: options.fqdn
+        host: config.fqdn
         silent: false
 
 ## Wait
@@ -42,10 +42,10 @@ Grant privileges on the remote master server to the user used for replication.
         @system.execute
           header: 'Slave Privileges'
           cmd: db.cmd remote_master, """
-            GRANT REPLICATION SLAVE ON *.* TO '#{options.repl_master.username}'@'%' IDENTIFIED BY '#{options.repl_master.password}';
+            GRANT REPLICATION SLAVE ON *.* TO '#{config.repl_master.username}'@'%' IDENTIFIED BY '#{config.repl_master.password}';
             FLUSH PRIVILEGES;
           """
-          unless_exec: "#{db.cmd remote_master, 'select User from mysql.user ;'} | grep '#{options.repl_master.username}'"
+          unless_exec: "#{db.cmd remote_master, 'select User from mysql.user ;'} | grep '#{config.repl_master.username}'"
 
 ## Setup Replication
 
@@ -53,7 +53,7 @@ Gather the target master informations, then start the slave replication.
 
         @call
           header: 'Slave Setup'
-          unless_exec: "#{db.cmd props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{options.repl_master.fqdn}'"
+          unless_exec: "#{db.cmd props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{config.repl_master.fqdn}'"
           handler: ->
             @system.execute
               header: 'Master Infos'
@@ -71,9 +71,9 @@ Gather the target master informations, then start the slave replication.
                   STOP SLAVE ;
                   RESET SLAVE ;
                   CHANGE MASTER TO \
-                  MASTER_HOST = '#{options.repl_master.fqdn}', \
-                  MASTER_USER = '#{options.repl_master.username}', \
-                  MASTER_PASSWORD = '#{options.repl_master.password}',
+                  MASTER_HOST = '#{config.repl_master.fqdn}', \
+                  MASTER_USER = '#{config.repl_master.username}', \
+                  MASTER_PASSWORD = '#{config.repl_master.password}',
                   MASTER_LOG_FILE='#{master_file}', \
                   MASTER_LOG_POS=#{master_pos} ;
                   START SLAVE ;

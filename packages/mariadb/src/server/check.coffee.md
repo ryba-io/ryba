@@ -1,7 +1,7 @@
 
 # MariaDB Server Check
 
-    module.exports = header: 'MariaDB Server Check', handler: ({options}) ->
+    module.exports = header: 'MariaDB Server Check', handler: ({config}) ->
 
 ## Runing Sevrice
 
@@ -9,8 +9,8 @@ Ensure the "ntpd" service is up and running.
 
       @service.assert
         header: 'Service'
-        name: options.name
-        srv_name: options.srv_name
+        name: config.name
+        srv_name: config.srv_name
         installed: true
         started: true
 
@@ -23,19 +23,19 @@ Ensure the port is listening.
         interval: 10000
       @connection.assert
         header: 'TCP'
-        host: options.wait_tcp.fqdn
-        port: options.wait_tcp.port
+        host: config.wait_tcp.fqdn
+        port: config.wait_tcp.port
 
 ## Check Replication
 
       @call
         header: 'Replication'
-        if: options.ha_enabled
+        if: config.ha_enabled
       , ->
         props =
           database: null
-          admin_username: options.admin_username
-          admin_password: options.admin_password
+          admin_username: config.admin_username
+          admin_password: config.admin_password
           engine: 'mysql'
           host: 'localhost'
           silent: false

@@ -1,7 +1,7 @@
 
 # MariaDB Server Install
 
-    module.exports = header: 'MariaDB Server Install', handler: ({options}) ->
+    module.exports = header: 'MariaDB Server Install', handler: ({config}) ->
 
 ## IPTables
 
@@ -16,9 +16,9 @@ IPTables rules are only inserted if the parameter "iptables.action" is set to
       @tools.iptables
         header: 'IPTables'
         rules: [
-          { chain: 'INPUT', jump: 'ACCEPT', dport: options.my_cnf['mysqld']['port'], protocol: 'tcp', state: 'NEW', comment: "MariaDB" }
+          { chain: 'INPUT', jump: 'ACCEPT', dport: config.my_cnf['mysqld']['port'], protocol: 'tcp', state: 'NEW', comment: "MariaDB" }
         ]
-        if: options.iptables
+        if: config.iptables
 
 ## User & groups
 
@@ -33,8 +33,8 @@ Note: Be careful if using different name thans 'mysql:mysql'
 User/group are hard coded in some of mariadb/mysql package scripts.
 
       @call header: 'Users & Groups', handler: ->
-        @system.group options.group
-        @system.user options.user
+        @system.group config.group
+        @system.user config.user
 
 ## Package
 
@@ -43,25 +43,25 @@ Package on Centos/Redhat 7 OS.
 
       @call header: 'Package', ->
         @tools.repo
-          if: options.repo?.source?
+          if: config.repo?.source?
           header: 'Repository'
-          source: options.repo.source
-          target: options.repo.target
-          replace: options.repo.replace
+          source: config.repo.source
+          target: config.repo.target
+          replace: config.repo.replace
           update: true
         @call
           if_os: name: ['redhat','centos'], version: '7'
         , ->
           @service
-            name: options.name
-            chk_name: options.chk_name
+            name: config.name
+            chk_name: config.chk_name
             startup: true
           @system.tmpfs
-            mount: "#{path.dirname options.my_cnf['mysqld']['pid-file']}"
+            mount: "#{path.dirname config.my_cnf['mysqld']['pid-file']}"
             name: 'mariadb'
             perm: '0750'
-            uid: options.user.name
-            gid: options.group.name
+            uid: config.user.name
+            gid: config.group.name
         @service
           if_os: name: ['redhat','centos'], version: '6'
           name: 'mysql-server'
@@ -74,57 +74,57 @@ Create the directories, needed by the database.
 
       @system.mkdir
         target: '/tmp/mysql'
-        uid: options.user.name
-        gid: options.group.name
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0774
       @system.mkdir
         header: 'Journal log dir'
-        target: options.journal_log_dir
-        uid: options.user.name
-        gid: options.group.name
+        target: config.journal_log_dir
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0750
       @system.mkdir
         header: 'Bin log dir'
-        target: options.my_cnf['mysqld']['log-bin']
-        uid: options.user.name
-        gid: options.group.name
+        target: config.my_cnf['mysqld']['log-bin']
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0750
       @system.mkdir
         header: 'Data dir'
-        target: options.my_cnf['mysqld']['datadir']
-        uid: options.user.name
-        gid: options.group.name
+        target: config.my_cnf['mysqld']['datadir']
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0750
       @system.mkdir
         header: 'Priv file'
-        target: options.my_cnf['mysqld']['secure-file-priv']
-        uid: options.user.name
-        gid: options.group.name
+        target: config.my_cnf['mysqld']['secure-file-priv']
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0750
       @system.mkdir
         header: 'Log dir'
-        target: "#{path.dirname options.my_cnf['mysqld']['log-error']}"
-        uid: options.user.name
-        gid: options.group.name
+        target: "#{path.dirname config.my_cnf['mysqld']['log-error']}"
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0750
       @system.mkdir
         header: 'Run dir'
-        target: "#{path.dirname options.my_cnf['mysqld']['pid-file']}"
-        uid: options.user.name
-        gid: options.group.name
+        target: "#{path.dirname config.my_cnf['mysqld']['pid-file']}"
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0750
       @system.mkdir
         header: 'Socket Dir'
-        target: "#{path.dirname options.my_cnf['mysqld']['socket']}"
-        uid: options.user.name
-        gid: options.group.name
+        target: "#{path.dirname config.my_cnf['mysqld']['socket']}"
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0750
       @system.mkdir
-        if: options.ha_enabled
+        if: config.ha_enabled
         header: 'Replication dir'
-        target: options.replication_dir
-        uid: options.user.name
-        gid: options.group.name
+        target: config.replication_dir
+        uid: config.user.name
+        gid: config.group.name
         mode: 0o0750
 
 ## Configuration
@@ -134,28 +134,28 @@ is running.
 
       @call header: 'Configuration', handler: ->
         @file.types.my_cnf
-          content: options.my_cnf
+          content: config.my_cnf
           merge: false
           backup: true
         @service.status
-          name: options.srv_name
+          name: config.srv_name
           unless: -> @status -1
         @service.restart
           header: 'Restart'
-          name: options.srv_name
+          name: config.srv_name
           if: -> @status(-2) and @status(-1)
       # TODO: wait for error in nikita
       # @call 
       #   if: -> @error -1
       #   handler: ->
       #     @system.remove
-      #       target: "/var/lib/mysql/options.sock"
+      #       target: "/var/lib/mysql/config.sock"
       #     , (err, removed) ->
       #       throw err if err
       #       throw Error 'Failed to install mysqld' unless removed
       #     @service.start
       #       name: 'mysqld'
-      for sql, i in options.sql_on_install
+      for sql, i in config.sql_on_install
         @system.execute
           header: "Populate #{i}"
           cmd: "mysql -uroot -e \"#{escape sql}\""
@@ -163,27 +163,27 @@ is running.
 
 ## TLS
 
-      @call header: 'TLS', if: options.ssl.enabled, handler: ->
-        (if options.ssl.cacert.local then @file.download else @system.copy)
-          source: options.ssl.cacert.source
-          target: "#{options.my_cnf['mysqld']['ssl-ca']}"
-          uid: options.user.name
-          gid: options.group.name
-        (if options.ssl.cert.local then @file.download else @system.copy)
-          source: options.ssl.cert.source
-          target: "#{options.my_cnf['mysqld']['ssl-cert']}"
-          uid: options.user.name
-          gid: options.group.name
-        (if options.ssl.key.local then @file.download else @system.copy)
-          source: options.ssl.key.source
-          target: "#{options.my_cnf['mysqld']['ssl-key']}"
-          uid: options.user.name
-          gid: options.group.name
+      @call header: 'TLS', if: config.ssl.enabled, handler: ->
+        (if config.ssl.cacert.local then @file.download else @system.copy)
+          source: config.ssl.cacert.source
+          target: "#{config.my_cnf['mysqld']['ssl-ca']}"
+          uid: config.user.name
+          gid: config.group.name
+        (if config.ssl.cert.local then @file.download else @system.copy)
+          source: config.ssl.cert.source
+          target: "#{config.my_cnf['mysqld']['ssl-cert']}"
+          uid: config.user.name
+          gid: config.group.name
+        (if config.ssl.key.local then @file.download else @system.copy)
+          source: config.ssl.key.source
+          target: "#{config.my_cnf['mysqld']['ssl-key']}"
+          uid: config.user.name
+          gid: config.group.name
 
       @call header: 'Init data directory', handler: ->
         @system.execute
-          cmd: "mysql_install_db --user=#{options.my_cnf['mysqld']['user']}  --datadir=#{options.my_cnf['mysqld']['datadir']}"
-          unless_exists: "#{options.my_cnf['mysqld']['datadir']}/mysql/db.frm"
+          cmd: "mysql_install_db --user=#{config.my_cnf['mysqld']['user']}  --datadir=#{config.my_cnf['mysqld']['datadir']}"
+          unless_exists: "#{config.my_cnf['mysqld']['datadir']}/mysql/db.frm"
 
 ## Secure Installation
 
@@ -210,8 +210,8 @@ The bug is fixed after version 5.7 of MariaDB.
         safe_start = true
         database =
           database: null
-          admin_username: options.admin_username
-          admin_password: options.admin_password
+          admin_username: config.admin_username
+          admin_password: config.admin_password
           engine: 'mysql'
           host: 'localhost'
         # @system.execute
@@ -223,7 +223,7 @@ The bug is fixed after version 5.7 of MariaDB.
         #   # Not documented and not working
         #   # match = /([0-9].){3}/.exec stdout
         #   # version = match[0].split('.')[1] if match
-        #   # safe_start = not (version >= 7) or ((version <= 7) and options.my_cnf['mysqld']['socket'] is '/var/lib/mysql/mysql.sock')
+        #   # safe_start = not (version >= 7) or ((version <= 7) and config.my_cnf['mysqld']['socket'] is '/var/lib/mysql/mysql.sock')
         #   # A proposal could be
         #   # match = /([0-9\.]+)-MariaDB/.exec stdout
         #   # [major, minor] = match[1].split('.') if match
@@ -237,19 +237,19 @@ The bug is fixed after version 5.7 of MariaDB.
             if: -> safe_start
           , ->
             @service.stop
-              name: options.srv_name
+              name: config.srv_name
             @system.execute
               cmd: "mysqld_safe --socket=/var/lib/mysql/mysql.sock > /dev/null 2>&1 &"
             @wait.exist
-              target: options.my_cnf['mysqld_safe']['pid-file']
+              target: config.my_cnf['mysqld_safe']['pid-file']
             @wait.exist
               target: '/var/lib/mysql/mysql.sock'
           @call
             header: 'Change Password'
           , (_, callback) ->
-            ssh = @ssh options.ssh
+            ssh = @ssh config.ssh
             ssh.shell (err, stream) =>
-              stream.write "if #{options.sudo and 'sudo'} /usr/bin/mysql_secure_installation ;then exit 0; else exit 1;fi\n"
+              stream.write "if #{config.sudo and 'sudo'} /usr/bin/mysql_secure_installation ;then exit 0; else exit 1;fi\n"
               data = ''
               error = exit = null
               stream.on 'data', (data, extended) =>
@@ -261,7 +261,7 @@ The bug is fixed after version 5.7 of MariaDB.
                 switch
                   when /Enter current password for root/.test data
                     @log data
-                    stream.write "#{if test_password then options.admin_password else options.current_password}\n"
+                    stream.write "#{if test_password then config.admin_password else config.current_password}\n"
                     data = ''
                   when /ERROR 1045/.test(data) and test_password
                     @log data
@@ -278,23 +278,23 @@ The bug is fixed after version 5.7 of MariaDB.
                     data = ''
                   when /New password/.test(data) or /Re-enter new password/.test(data)
                     @log data
-                    stream.write "#{options.admin_password}\n"
+                    stream.write "#{config.admin_password}\n"
                     data = ''
                   when /Remove anonymous users/.test data
                     @log data
-                    stream.write "#{if options.remove_anonymous then 'y' else 'n'}\n"
+                    stream.write "#{if config.remove_anonymous then 'y' else 'n'}\n"
                     data = ''
                   when /Disallow root login remotely/.test data
                     @log data
-                    stream.write "#{if options.disallow_remote_root_login then 'y' else 'n'}\n"
+                    stream.write "#{if config.disallow_remote_root_login then 'y' else 'n'}\n"
                     data = ''
                   when /Remove test database and access to it/.test data
                     @log data
-                    stream.write "#{if options.remove_test_db then 'y' else 'n'}\n"
+                    stream.write "#{if config.remove_test_db then 'y' else 'n'}\n"
                     data = ''
                   when /Reload privilege tables now/.test data
                     @log data
-                    stream.write "#{if options.reload_privileges then 'y' else 'n'}\n"
+                    stream.write "#{if config.reload_privileges then 'y' else 'n'}\n"
                     data = ''
                   when /All done/.test data
                     @log data
@@ -315,29 +315,29 @@ The bug is fixed after version 5.7 of MariaDB.
           , ->
             @system.execute
               cmd: """
-              pid=$(cat #{options.my_cnf['mysqld']['pid-file']})
+              pid=$(cat #{config.my_cnf['mysqld']['pid-file']})
               kill $pid
               """
             @wait.execute
-              cmd: "if [ -f \"#{options.my_cnf['mysqld']['pid-file']}\" ]; then exit 1; else exit 0 ; fi"
+              cmd: "if [ -f \"#{config.my_cnf['mysqld']['pid-file']}\" ]; then exit 1; else exit 0 ; fi"
             @service.start
-              name: options.srv_name
+              name: config.srv_name
         @call
           header: 'Allow Root Remote Login'
-          unless: options.disallow_remote_root_login
+          unless: config.disallow_remote_root_login
         , ->
           # Note, "WITH GRANT OPTION" is required for root
-          query = (query) -> "mysql -uroot -p#{options.admin_password} -s -e \"#{query}\""
+          query = (query) -> "mysql -uroot -p#{config.admin_password} -s -e \"#{query}\""
           @service.start
-            name: options.srv_name
+            name: config.srv_name
           @system.execute
             cmd: query """
             USE mysql;
-            GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '#{options.admin_password}' WITH GRANT OPTION;
+            GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '#{config.admin_password}' WITH GRANT OPTION;
             FLUSH PRIVILEGES;
             """
             unless_exec: """
-            password=`#{query "SELECT PASSWORD('#{options.admin_password}');"}`
+            password=`#{query "SELECT PASSWORD('#{config.admin_password}');"}`
             #{query "SHOW GRANTS FOR root;"} | grep $password
             """
       

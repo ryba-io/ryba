@@ -1,13 +1,13 @@
 
 # MySQL Server Wait
 
-    module.exports = header: 'MySQL Server Wait', handler: (options) ->
-      throw Error "Required Options: fqdn" unless options.fqdn
-      throw Error "Required Options: port" unless options.port
+    module.exports = header: 'MySQL Server Wait', handler: (config) ->
+      throw Error "Required option: fqdn" unless config.fqdn
+      throw Error "Required option: port" unless config.port
 
 ## Wait TCP
 
       @connection.wait
         header: 'TCP'
-        host: options.fqdn
-        port: options.port
+        host: config.fqdn
+        port: config.port
