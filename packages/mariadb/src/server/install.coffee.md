@@ -18,7 +18,7 @@ IPTables rules are only inserted if the parameter "iptables.action" is set to
         rules: [
           { chain: 'INPUT', jump: 'ACCEPT', dport: config.my_cnf['mysqld']['port'], protocol: 'tcp', state: 'NEW', comment: "MariaDB" }
         ]
-        if: config.iptables
+        $if: config.iptables
 
 ## User & groups
 
@@ -43,7 +43,7 @@ Package on Centos/Redhat 7 OS.
 
       @call $header: 'Package', ->
         @tools.repo
-          if: config.repo?.source?
+          $if: config.repo?.source?
           $header: 'Repository'
           source: config.repo.source
           target: config.repo.target
@@ -120,7 +120,7 @@ Create the directories, needed by the database.
         gid: config.group.name
         mode: 0o0750
       @system.mkdir
-        if: config.ha_enabled
+        $if: config.ha_enabled
         $header: 'Replication dir'
         target: config.replication_dir
         uid: config.user.name
@@ -143,10 +143,10 @@ is running.
         @service.restart
           $header: 'Restart'
           name: config.srv_name
-          if: -> @status(-2) and @status(-1)
+          $if: -> @status(-2) and @status(-1)
       # TODO: wait for error in nikita
       # @call 
-      #   if: -> @error -1
+      #   $if: -> @error -1
       #   handler: ->
       #     @system.remove
       #       target: "/var/lib/mysql/config.sock"
@@ -163,7 +163,7 @@ is running.
 
 ## TLS
 
-      @call $header: 'TLS', if: config.ssl.enabled, handler: ->
+      @call $header: 'TLS', $if: config.ssl.enabled, handler: ->
         (if config.ssl.cacert.local then @file.download else @system.copy)
           source: config.ssl.cacert.source
           target: "#{config.my_cnf['mysqld']['ssl-ca']}"
@@ -234,7 +234,7 @@ The bug is fixed after version 5.7 of MariaDB.
         , ->
           @call
             $header: 'Configure Socket'
-            if: -> safe_start
+            $if: -> safe_start
           , ->
             @service.stop
               name: config.srv_name
@@ -311,7 +311,7 @@ The bug is fixed after version 5.7 of MariaDB.
               stream.on 'close', ->
                 callback error
           @call
-            if: -> safe_start
+            $if: -> safe_start
           , ->
             @system.execute
               cmd: """

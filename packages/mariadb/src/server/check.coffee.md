@@ -30,7 +30,7 @@ Ensure the port is listening.
 
       @call
         $header: 'Replication'
-        if: config.ha_enabled
+        $if: config.ha_enabled
       , ->
         props =
           database: null
