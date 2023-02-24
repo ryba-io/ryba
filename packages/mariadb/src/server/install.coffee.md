@@ -1,7 +1,7 @@
 
 # MariaDB Server Install
 
-    module.exports = header: 'MariaDB Server Install', handler: ({config}) ->
+    module.exports = $header: 'MariaDB Server Install', handler: ({config}) ->
 
 ## IPTables
 
@@ -14,7 +14,7 @@ IPTables rules are only inserted if the parameter "iptables.action" is set to
 "start" (default value).
 
       @tools.iptables
-        header: 'IPTables'
+        $header: 'IPTables'
         rules: [
           { chain: 'INPUT', jump: 'ACCEPT', dport: config.my_cnf['mysqld']['port'], protocol: 'tcp', state: 'NEW', comment: "MariaDB" }
         ]
@@ -32,7 +32,7 @@ Actions present to be able to change uid/gid:
 Note: Be careful if using different name thans 'mysql:mysql'
 User/group are hard coded in some of mariadb/mysql package scripts.
 
-      @call header: 'Users & Groups', handler: ->
+      @call $header: 'Users & Groups', handler: ->
         @system.group config.group
         @system.user config.user
 
@@ -41,10 +41,10 @@ User/group are hard coded in some of mariadb/mysql package scripts.
 Install the MariaDB database server. Secure the temporary directory. Install MariaDB
 Package on Centos/Redhat 7 OS.
 
-      @call header: 'Package', ->
+      @call $header: 'Package', ->
         @tools.repo
           if: config.repo?.source?
-          header: 'Repository'
+          $header: 'Repository'
           source: config.repo.source
           target: config.repo.target
           replace: config.repo.replace
@@ -78,50 +78,50 @@ Create the directories, needed by the database.
         gid: config.group.name
         mode: 0o0774
       @system.mkdir
-        header: 'Journal log dir'
+        $header: 'Journal log dir'
         target: config.journal_log_dir
         uid: config.user.name
         gid: config.group.name
         mode: 0o0750
       @system.mkdir
-        header: 'Bin log dir'
+        $header: 'Bin log dir'
         target: config.my_cnf['mysqld']['log-bin']
         uid: config.user.name
         gid: config.group.name
         mode: 0o0750
       @system.mkdir
-        header: 'Data dir'
+        $header: 'Data dir'
         target: config.my_cnf['mysqld']['datadir']
         uid: config.user.name
         gid: config.group.name
         mode: 0o0750
       @system.mkdir
-        header: 'Priv file'
+        $header: 'Priv file'
         target: config.my_cnf['mysqld']['secure-file-priv']
         uid: config.user.name
         gid: config.group.name
         mode: 0o0750
       @system.mkdir
-        header: 'Log dir'
+        $header: 'Log dir'
         target: "#{path.dirname config.my_cnf['mysqld']['log-error']}"
         uid: config.user.name
         gid: config.group.name
         mode: 0o0750
       @system.mkdir
-        header: 'Run dir'
+        $header: 'Run dir'
         target: "#{path.dirname config.my_cnf['mysqld']['pid-file']}"
         uid: config.user.name
         gid: config.group.name
         mode: 0o0750
       @system.mkdir
-        header: 'Socket Dir'
+        $header: 'Socket Dir'
         target: "#{path.dirname config.my_cnf['mysqld']['socket']}"
         uid: config.user.name
         gid: config.group.name
         mode: 0o0750
       @system.mkdir
         if: config.ha_enabled
-        header: 'Replication dir'
+        $header: 'Replication dir'
         target: config.replication_dir
         uid: config.user.name
         gid: config.group.name
@@ -132,7 +132,7 @@ Create the directories, needed by the database.
 Generates the `my.cnf` file, read be MariaDB, and restart the service if it 
 is running.
 
-      @call header: 'Configuration', handler: ->
+      @call $header: 'Configuration', handler: ->
         @file.types.my_cnf
           content: config.my_cnf
           merge: false
@@ -141,7 +141,7 @@ is running.
           name: config.srv_name
           unless: -> @status -1
         @service.restart
-          header: 'Restart'
+          $header: 'Restart'
           name: config.srv_name
           if: -> @status(-2) and @status(-1)
       # TODO: wait for error in nikita
@@ -157,13 +157,13 @@ is running.
       #       name: 'mysqld'
       for sql, i in config.sql_on_install
         @system.execute
-          header: "Populate #{i}"
+          $header: "Populate #{i}"
           cmd: "mysql -uroot -e \"#{escape sql}\""
           code_skipped: 1
 
 ## TLS
 
-      @call header: 'TLS', if: config.ssl.enabled, handler: ->
+      @call $header: 'TLS', if: config.ssl.enabled, handler: ->
         (if config.ssl.cacert.local then @file.download else @system.copy)
           source: config.ssl.cacert.source
           target: "#{config.my_cnf['mysqld']['ssl-ca']}"
@@ -180,7 +180,7 @@ is running.
           uid: config.user.name
           gid: config.group.name
 
-      @call header: 'Init data directory', handler: ->
+      @call $header: 'Init data directory', handler: ->
         @system.execute
           cmd: "mysql_install_db --user=#{config.my_cnf['mysqld']['user']}  --datadir=#{config.my_cnf['mysqld']['datadir']}"
           unless_exists: "#{config.my_cnf['mysqld']['datadir']}/mysql/db.frm"
@@ -204,7 +204,7 @@ with the chosen params. Other action could be used to change the root password, 
 envrionment.
 The bug is fixed after version 5.7 of MariaDB.
 
-      @call header: 'Secure Install', ->
+      @call $header: 'Secure Install', ->
         test_password = true
         modified = false
         safe_start = true
@@ -233,7 +233,7 @@ The bug is fixed after version 5.7 of MariaDB.
           unless_exec: "#{db.cmd database, 'show databases'}"
         , ->
           @call
-            header: 'Configure Socket'
+            $header: 'Configure Socket'
             if: -> safe_start
           , ->
             @service.stop
@@ -245,7 +245,7 @@ The bug is fixed after version 5.7 of MariaDB.
             @wait.exist
               target: '/var/lib/mysql/mysql.sock'
           @call
-            header: 'Change Password'
+            $header: 'Change Password'
           , (_, callback) ->
             ssh = @ssh config.ssh
             ssh.shell (err, stream) =>
@@ -323,7 +323,7 @@ The bug is fixed after version 5.7 of MariaDB.
             @service.start
               name: config.srv_name
         @call
-          header: 'Allow Root Remote Login'
+          $header: 'Allow Root Remote Login'
           unless: config.disallow_remote_root_login
         , ->
           # Note, "WITH GRANT OPTION" is required for root

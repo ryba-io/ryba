@@ -7,7 +7,7 @@ Follow [instructions](https://www.digitalocean.com/community/tutorials/how-to-se
 Note: Ryba does not do any action if replication has already be enabled once for
 consistency reasons.
 
-    module.exports = header: 'MariaDB Server Replication', handler: ({config}) ->
+    module.exports = $header: 'MariaDB Server Replication', handler: ({config}) ->
       return unless config.ha_enabled
       remote_master =
         database: null
@@ -29,18 +29,18 @@ consistency reasons.
 Wait for master remote login.
       
       @wait.execute
-        header: 'Wait Root remote login'
+        $header: 'Wait Root remote login'
         cmd: db.cmd remote_master, "show databases"
 
 ## Grant Privileges
 
 Grant privileges on the remote master server to the user used for replication.
 
-      @call header: 'Replication Activation', handler: ->
+      @call $header: 'Replication Activation', handler: ->
         master_pos = null
         master_file = null
         @system.execute
-          header: 'Slave Privileges'
+          $header: 'Slave Privileges'
           cmd: db.cmd remote_master, """
             GRANT REPLICATION SLAVE ON *.* TO '#{config.repl_master.username}'@'%' IDENTIFIED BY '#{config.repl_master.password}';
             FLUSH PRIVILEGES;
@@ -52,11 +52,11 @@ Grant privileges on the remote master server to the user used for replication.
 Gather the target master informations, then start the slave replication.
 
         @call
-          header: 'Slave Setup'
+          $header: 'Slave Setup'
           unless_exec: "#{db.cmd props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{config.repl_master.fqdn}'"
           handler: ->
             @system.execute
-              header: 'Master Infos'
+              $header: 'Master Infos'
               cmd: db.cmd remote_master, "show master status \\G"
             , (err, data) ->
               throw err if err

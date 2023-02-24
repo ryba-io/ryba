@@ -1,14 +1,14 @@
 
 # MariaDB Server Check
 
-    module.exports = header: 'MariaDB Server Check', handler: ({config}) ->
+    module.exports = $header: 'MariaDB Server Check', handler: ({config}) ->
 
 ## Runing Sevrice
 
 Ensure the "ntpd" service is up and running.
 
       @service.assert
-        header: 'Service'
+        $header: 'Service'
         name: config.name
         srv_name: config.srv_name
         installed: true
@@ -22,14 +22,14 @@ Ensure the port is listening.
         retry: 3
         interval: 10000
       @connection.assert
-        header: 'TCP'
+        $header: 'TCP'
         host: config.wait_tcp.fqdn
         port: config.wait_tcp.port
 
 ## Check Replication
 
       @call
-        header: 'Replication'
+        $header: 'Replication'
         if: config.ha_enabled
       , ->
         props =
