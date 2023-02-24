@@ -156,9 +156,9 @@ is running.
       #     @service.start
       #       name: 'mysqld'
       for sql, i in config.sql_on_install
-        @system.execute
+        @execute
           $header: "Populate #{i}"
-          cmd: "mysql -uroot -e \"#{escape sql}\""
+          command: "mysql -uroot -e \"#{escape sql}\""
           code_skipped: 1
 
 ## TLS
@@ -181,8 +181,8 @@ is running.
           gid: config.group.name
 
       @call $header: 'Init data directory', handler: ->
-        @system.execute
-          cmd: "mysql_install_db --user=#{config.my_cnf['mysqld']['user']}  --datadir=#{config.my_cnf['mysqld']['datadir']}"
+        @execute
+          command: "mysql_install_db --user=#{config.my_cnf['mysqld']['user']}  --datadir=#{config.my_cnf['mysqld']['datadir']}"
           unless_exists: "#{config.my_cnf['mysqld']['datadir']}/mysql/db.frm"
 
 ## Secure Installation
@@ -214,8 +214,8 @@ The bug is fixed after version 5.7 of MariaDB.
           admin_password: config.admin_password
           engine: 'mysql'
           host: 'localhost'
-        # @system.execute
-        #   cmd: 'mysql -V'
+        # @execute
+        #   command: 'mysql -V'
         #   shy: true
         #   trim: true
         # , (err, status, stdout, stderr) ->
@@ -238,8 +238,8 @@ The bug is fixed after version 5.7 of MariaDB.
           , ->
             @service.stop
               name: config.srv_name
-            @system.execute
-              cmd: "mysqld_safe --socket=/var/lib/mysql/mysql.sock > /dev/null 2>&1 &"
+            @execute
+              command: "mysqld_safe --socket=/var/lib/mysql/mysql.sock > /dev/null 2>&1 &"
             @wait.exist
               target: config.my_cnf['mysqld_safe']['pid-file']
             @wait.exist
@@ -313,8 +313,8 @@ The bug is fixed after version 5.7 of MariaDB.
           @call
             $if: -> safe_start
           , ->
-            @system.execute
-              cmd: """
+            @execute
+              command: """
               pid=$(cat #{config.my_cnf['mysqld']['pid-file']})
               kill $pid
               """
@@ -330,8 +330,8 @@ The bug is fixed after version 5.7 of MariaDB.
           query = (query) -> "mysql -uroot -p#{config.admin_password} -s -e \"#{query}\""
           @service.start
             name: config.srv_name
-          @system.execute
-            cmd: query """
+          @execute
+            command: query """
             USE mysql;
             GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '#{config.admin_password}' WITH GRANT OPTION;
             FLUSH PRIVILEGES;

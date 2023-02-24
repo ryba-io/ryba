@@ -39,9 +39,9 @@ Ensure the port is listening.
           engine: 'mysql'
           host: 'localhost'
           silent: false
-        @system.execute
+        @execute
           retry: 3
-          cmd: "#{db.cmd props,'show slave status \\G ;'} | grep Slave_IO_State"
+          command: "#{db.cmd props,'show slave status \\G ;'} | grep Slave_IO_State"
         , (err, data) ->
           throw err if err
           ok = /^Slave_IO_State:\sWaiting for master to send event/.test(data.stdout.trim() )or /^Slave_IO_State:\sConnecting to master/.test(data.stdout.trim())

@@ -39,9 +39,9 @@ Grant privileges on the remote master server to the user used for replication.
       @call $header: 'Replication Activation', handler: ->
         master_pos = null
         master_file = null
-        @system.execute
+        @execute
           $header: 'Slave Privileges'
-          cmd: db.cmd remote_master, """
+          command: db.cmd remote_master, """
             GRANT REPLICATION SLAVE ON *.* TO '#{config.repl_master.username}'@'%' IDENTIFIED BY '#{config.repl_master.password}';
             FLUSH PRIVILEGES;
           """
@@ -55,9 +55,9 @@ Gather the target master informations, then start the slave replication.
           $header: 'Slave Setup'
           unless_exec: "#{db.cmd props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{config.repl_master.fqdn}'"
           handler: ->
-            @system.execute
+            @execute
               $header: 'Master Infos'
-              cmd: db.cmd remote_master, "show master status \\G"
+              command: db.cmd remote_master, "show master status \\G"
             , (err, data) ->
               throw err if err
               lines = string.lines data.stdout
@@ -66,8 +66,8 @@ Gather the target master informations, then start the slave replication.
                 master_file = parts[1].trim() if parts[0] is 'File'
                 master_pos = parts[1].trim() if parts[0] is 'Position'
             @call ->
-              @system.execute
-                cmd: db.cmd props, """
+              @execute
+                command: db.cmd props, """
                   STOP SLAVE ;
                   RESET SLAVE ;
                   CHANGE MASTER TO \
