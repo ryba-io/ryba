@@ -50,7 +50,7 @@ Package on Centos/Redhat 7 OS.
           replace: config.repo.replace
           update: true
         @call
-          if_os: name: ['redhat','centos'], version: '7'
+          $if_os: distribution: ['redhat','centos'], version: '7'
         , ->
           @service
             name: config.name
@@ -63,7 +63,7 @@ Package on Centos/Redhat 7 OS.
             uid: config.user.name
             gid: config.group.name
         @service
-          if_os: name: ['redhat','centos'], version: '6'
+          $if_os: distribution: ['redhat','centos'], version: '6'
           name: 'mysql-server'
           chk_name: 'mariadb'
           startup: true
