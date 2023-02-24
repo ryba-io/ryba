@@ -318,8 +318,8 @@ The bug is fixed after version 5.7 of MariaDB.
               pid=$(cat #{config.my_cnf['mysqld']['pid-file']})
               kill $pid
               """
-            @wait.execute
-              cmd: "if [ -f \"#{config.my_cnf['mysqld']['pid-file']}\" ]; then exit 1; else exit 0 ; fi"
+            @execute.wait
+              command: "if [ -f \"#{config.my_cnf['mysqld']['pid-file']}\" ]; then exit 1; else exit 0 ; fi"
             @service.start
               name: config.srv_name
         @call

@@ -28,9 +28,9 @@ consistency reasons.
 
 Wait for master remote login.
       
-      @wait.execute
+      @execute.wait
         $header: 'Wait Root remote login'
-        cmd: db.cmd remote_master, "show databases"
+        command: db.cmd remote_master, "show databases"
 
 ## Grant Privileges
 
