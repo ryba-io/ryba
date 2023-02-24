@@ -19,7 +19,7 @@ Ensure the "ntpd" service is up and running.
 Ensure the port is listening.
 
       @connection.wait
-        retry: 3
+        $retry: 3
         interval: 10000
       @connection.assert
         $header: 'TCP'
@@ -40,7 +40,7 @@ Ensure the port is listening.
           host: 'localhost'
           silent: false
         @execute
-          retry: 3
+          $retry: 3
           command: "#{db.cmd props,'show slave status \\G ;'} | grep Slave_IO_State"
         , (err, data) ->
           throw err if err
