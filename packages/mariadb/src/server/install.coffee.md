@@ -240,9 +240,9 @@ The bug is fixed after version 5.7 of MariaDB.
               name: config.srv_name
             @execute
               command: "mysqld_safe --socket=/var/lib/mysql/mysql.sock > /dev/null 2>&1 &"
-            @wait.exist
+            @fs.wait
               target: config.my_cnf['mysqld_safe']['pid-file']
-            @wait.exist
+            @fs.wait
               target: '/var/lib/mysql/mysql.sock'
           @call
             $header: 'Change Password'
