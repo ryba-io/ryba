@@ -316,7 +316,7 @@ The bug is fixed after version 5.7 of MariaDB.
           $unless: config.disallow_remote_root_login
         , ->
           # Note, "WITH GRANT OPTION" is required for root
-          query = (query) -> "mysql -uroot -p#{config.admin_password} -s -e \"#{query}\""
+          query = (query) -> "mysql -uroot -p\'#{config.admin_password}\' -s -e \"#{query}\""
           await @service.start
             name: config.srv_name
           await @execute
