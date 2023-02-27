@@ -3,7 +3,7 @@
 
     module.exports = $header: 'MariaDB Server Check', handler: ({config}) ->
 
-## Runing Sevrice
+## Runing Service
 
 Ensure the "ntpd" service is up and running.
 
@@ -18,10 +18,12 @@ Ensure the "ntpd" service is up and running.
 
 Ensure the port is listening.
 
-      await @connection.wait
+      await @network.tcp.wait
         $retry: 3
         interval: 10000
-      await @connection.assert
+        host: config.wait_tcp.fqdn
+        port: config.wait_tcp.port
+      {$status} = await @network.tcp.assert
         $header: 'TCP'
         host: config.wait_tcp.fqdn
         port: config.wait_tcp.port
