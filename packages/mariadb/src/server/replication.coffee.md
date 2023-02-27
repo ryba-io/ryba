@@ -53,7 +53,7 @@ Gather the target master informations, then start the slave replication.
 
         @call
           $header: 'Slave Setup'
-          unless_exec: "#{db.cmd props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{config.repl_master.fqdn}'"
+          $unless_execute: "#{db.cmd props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{config.repl_master.fqdn}'"
           handler: ->
             await @execute
               $header: 'Master Infos'

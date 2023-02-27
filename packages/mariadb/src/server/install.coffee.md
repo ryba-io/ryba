@@ -231,7 +231,7 @@ The bug is fixed after version 5.7 of MariaDB.
         #   # But I dont even know what the old code was trying to achieve
         #   safe_start = false
         await @call
-          unless_exec: "#{db.cmd database, 'show databases'}"
+          $unless_execute: "#{db.cmd database, 'show databases'}"
         , ->
           await @call
             $header: 'Configure Socket'
@@ -337,7 +337,7 @@ The bug is fixed after version 5.7 of MariaDB.
             GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '#{config.admin_password}' WITH GRANT OPTION;
             FLUSH PRIVILEGES;
             """
-            unless_exec: """
+            $unless_execute: """
             password=`#{query "SELECT PASSWORD('#{config.admin_password}');"}`
             #{query "SHOW GRANTS FOR root;"} | grep $password
             """
