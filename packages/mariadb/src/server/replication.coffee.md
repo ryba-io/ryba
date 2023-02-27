@@ -36,7 +36,7 @@ Wait for master remote login.
 
 Grant privileges on the remote master server to the user used for replication.
 
-      @call $header: 'Replication Activation', handler: ->
+      @call $header: 'Replication Activation', ->
         master_pos = null
         master_file = null
         await @execute

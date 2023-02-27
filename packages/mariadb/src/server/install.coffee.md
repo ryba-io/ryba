@@ -32,7 +32,7 @@ Actions present to be able to change uid/gid:
 Note: Be careful if using different name thans 'mysql:mysql'
 User/group are hard coded in some of mariadb/mysql package scripts.
 
-      @call $header: 'Users & Groups', handler: ->
+      @call $header: 'Users & Groups', ->
         await @system.group config.group
         await @system.user config.user
 
@@ -133,7 +133,7 @@ Create the directories, needed by the database.
 Generates the `my.cnf` file, read be MariaDB, and restart the service if it 
 is running.
 
-      @call $header: 'Configuration', handler: ->
+      @call $header: 'Configuration', ->
         await @file.types.my_cnf
           content: config.my_cnf
           merge: false
@@ -148,7 +148,7 @@ is running.
       # TODO: wait for error in nikita
       # @call 
       #   $if: -> @error -1
-      #   handler: ->
+      #   ->
       #     await @system.remove
       #       target: "/var/lib/mysql/config.sock"
       #     , (err, removed) ->
@@ -164,7 +164,7 @@ is running.
 
 ## TLS
 
-      @call $header: 'TLS', $if: config.ssl.enabled, handler: ->
+      @call $header: 'TLS', $if: config.ssl.enabled, ->
         await (if config.ssl.cacert.local then @file.download else @system.copy)
           source: config.ssl.cacert.source
           target: "#{config.my_cnf['mysqld']['ssl-ca']}"
@@ -181,7 +181,7 @@ is running.
           uid: config.user.name
           gid: config.group.name
 
-      @call $header: 'Init data directory', handler: ->
+      @call $header: 'Init data directory', ->
         await @execute
           $unless_exists: "#{config.my_cnf['mysqld']['datadir']}/mysql/db.frm"
           command: "mysql_install_db --user=#{config.my_cnf['mysqld']['user']}  --datadir=#{config.my_cnf['mysqld']['datadir']}"
