@@ -334,7 +334,6 @@ The bug is fixed after version 5.7 of MariaDB.
 
 ## Dependencies
 
-    misc = require '@nikitajs/core/lib/misc'
     path = require 'path'
     exec = require 'ssh2-exec'
     connect = require 'ssh2-connect'
