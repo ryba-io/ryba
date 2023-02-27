@@ -13,7 +13,7 @@
 IPTables rules are only inserted if the parameter "iptables.action" is set to
 "start" (default value).
 
-      @tools.iptables
+      await @tools.iptables
         $header: 'IPTables'
         rules: [
           { chain: 'INPUT', jump: 'ACCEPT', dport: config.my_cnf['mysqld']['port'], protocol: 'tcp', state: 'NEW', comment: "MariaDB" }
@@ -33,8 +33,8 @@ Note: Be careful if using different name thans 'mysql:mysql'
 User/group are hard coded in some of mariadb/mysql package scripts.
 
       @call $header: 'Users & Groups', handler: ->
-        @system.group config.group
-        @system.user config.user
+        await @system.group config.group
+        await @system.user config.user
 
 ## Package
 
@@ -42,27 +42,27 @@ Install the MariaDB database server. Secure the temporary directory. Install Mar
 Package on Centos/Redhat 7 OS.
 
       @call $header: 'Package', ->
-        @tools.repo
+        await @tools.repo
           $if: config.repo?.source?
           $header: 'Repository'
           source: config.repo.source
           target: config.repo.target
           replace: config.repo.replace
           update: true
-        @call
+        await @call
           $if_os: distribution: ['redhat','centos'], version: '7'
         , ->
-          @service
+          await @service
             name: config.name
             chk_name: config.chk_name
             startup: true
-          @system.tmpfs
+          await @system.tmpfs
             mount: "#{path.dirname config.my_cnf['mysqld']['pid-file']}"
             name: 'mariadb'
             perm: '0750'
             uid: config.user.name
             gid: config.group.name
-        @service
+        await @service
           $if_os: distribution: ['redhat','centos'], version: '6'
           name: 'mysql-server'
           chk_name: 'mariadb'
@@ -73,54 +73,54 @@ Package on Centos/Redhat 7 OS.
 Create the directories, needed by the database.
 
       @call $header: 'Layout', ->
-        @system.mkdir
+        await @system.mkdir
           target: '/tmp/mysql'
           uid: config.user.name
           gid: config.group.name
           mode: 0o0774
-        @system.mkdir
+        await @system.mkdir
           $header: 'Journal log dir'
           target: config.journal_log_dir
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        @system.mkdir
+        await @system.mkdir
           $header: 'Bin log dir'
           target: config.my_cnf['mysqld']['log-bin']
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        @system.mkdir
+        await @system.mkdir
           $header: 'Data dir'
           target: config.my_cnf['mysqld']['datadir']
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        @system.mkdir
+        await @system.mkdir
           $header: 'Priv file'
           target: config.my_cnf['mysqld']['secure-file-priv']
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        @system.mkdir
+        await @system.mkdir
           $header: 'Log dir'
           target: "#{path.dirname config.my_cnf['mysqld']['log-error']}"
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        @system.mkdir
+        await @system.mkdir
           $header: 'Run dir'
           target: "#{path.dirname config.my_cnf['mysqld']['pid-file']}"
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        @system.mkdir
+        await @system.mkdir
           $header: 'Socket Dir'
           target: "#{path.dirname config.my_cnf['mysqld']['socket']}"
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        @system.mkdir
+        await @system.mkdir
           $if: config.ha_enabled
           $header: 'Replication dir'
           target: config.replication_dir
@@ -134,14 +134,14 @@ Generates the `my.cnf` file, read be MariaDB, and restart the service if it
 is running.
 
       @call $header: 'Configuration', handler: ->
-        @file.types.my_cnf
+        await @file.types.my_cnf
           content: config.my_cnf
           merge: false
           backup: true
-        @service.status
+        await @service.status
           name: config.srv_name
           unless: -> @status -1
-        @service.restart
+        await @service.restart
           $header: 'Restart'
           name: config.srv_name
           $if: -> @status(-2) and @status(-1)
@@ -149,15 +149,15 @@ is running.
       # @call 
       #   $if: -> @error -1
       #   handler: ->
-      #     @system.remove
+      #     await @system.remove
       #       target: "/var/lib/mysql/config.sock"
       #     , (err, removed) ->
       #       throw err if err
       #       throw Error 'Failed to install mysqld' unless removed
-      #     @service.start
+      #     await @service.start
       #       name: 'mysqld'
       for sql, i in config.sql_on_install
-        @execute
+        await @execute
           $header: "Populate #{i}"
           command: "mysql -uroot -e \"#{escape sql}\""
           code_skipped: 1
@@ -165,24 +165,24 @@ is running.
 ## TLS
 
       @call $header: 'TLS', $if: config.ssl.enabled, handler: ->
-        (if config.ssl.cacert.local then @file.download else @system.copy)
+        await (if config.ssl.cacert.local then @file.download else @system.copy)
           source: config.ssl.cacert.source
           target: "#{config.my_cnf['mysqld']['ssl-ca']}"
           uid: config.user.name
           gid: config.group.name
-        (if config.ssl.cert.local then @file.download else @system.copy)
+        await (if config.ssl.cert.local then @file.download else @system.copy)
           source: config.ssl.cert.source
           target: "#{config.my_cnf['mysqld']['ssl-cert']}"
           uid: config.user.name
           gid: config.group.name
-        (if config.ssl.key.local then @file.download else @system.copy)
+        await (if config.ssl.key.local then @file.download else @system.copy)
           source: config.ssl.key.source
           target: "#{config.my_cnf['mysqld']['ssl-key']}"
           uid: config.user.name
           gid: config.group.name
 
       @call $header: 'Init data directory', handler: ->
-        @execute
+        await @execute
           command: "mysql_install_db --user=#{config.my_cnf['mysqld']['user']}  --datadir=#{config.my_cnf['mysqld']['datadir']}"
           unless_exists: "#{config.my_cnf['mysqld']['datadir']}/mysql/db.frm"
 
@@ -215,7 +215,7 @@ The bug is fixed after version 5.7 of MariaDB.
           admin_password: config.admin_password
           engine: 'mysql'
           host: 'localhost'
-        # @execute
+        # await @execute
         #   command: 'mysql -V'
         #   shy: true
         #   trim: true
@@ -230,22 +230,22 @@ The bug is fixed after version 5.7 of MariaDB.
         #   # [major, minor] = match[1].split('.') if match
         #   # But I dont even know what the old code was trying to achieve
         #   safe_start = false
-        @call
+        await @call
           unless_exec: "#{db.cmd database, 'show databases'}"
         , ->
-          @call
+          await @call
             $header: 'Configure Socket'
             $if: -> safe_start
           , ->
-            @service.stop
+            await @service.stop
               name: config.srv_name
-            @execute
+            await @execute
               command: "mysqld_safe --socket=/var/lib/mysql/mysql.sock > /dev/null 2>&1 &"
-            @fs.wait
+            await @fs.wait
               target: config.my_cnf['mysqld_safe']['pid-file']
-            @fs.wait
+            await @fs.wait
               target: '/var/lib/mysql/mysql.sock'
-          @call
+          await @call
             $header: 'Change Password'
           , (_, callback) ->
             ssh = @ssh config.ssh
@@ -311,27 +311,27 @@ The bug is fixed after version 5.7 of MariaDB.
                     exit = true
               stream.on 'close', ->
                 callback error
-          @call
+          await @call
             $if: -> safe_start
           , ->
-            @execute
+            await @execute
               command: """
               pid=$(cat #{config.my_cnf['mysqld']['pid-file']})
               kill $pid
               """
-            @execute.wait
+            await @execute.wait
               command: "if [ -f \"#{config.my_cnf['mysqld']['pid-file']}\" ]; then exit 1; else exit 0 ; fi"
-            @service.start
+            await @service.start
               name: config.srv_name
-        @call
+        await @call
           $header: 'Allow Root Remote Login'
           unless: config.disallow_remote_root_login
         , ->
           # Note, "WITH GRANT OPTION" is required for root
           query = (query) -> "mysql -uroot -p#{config.admin_password} -s -e \"#{query}\""
-          @service.start
+          await @service.start
             name: config.srv_name
-          @execute
+          await @execute
             command: query """
             USE mysql;
             GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '#{config.admin_password}' WITH GRANT OPTION;

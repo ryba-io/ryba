@@ -7,7 +7,7 @@
 
 ## Wait TCP
 
-      @connection.wait
+      await @connection.wait
         $header: 'TCP'
         host: config.fqdn
         port: config.port

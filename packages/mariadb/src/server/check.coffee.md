@@ -7,7 +7,7 @@
 
 Ensure the "ntpd" service is up and running.
 
-      @service.assert
+      await @service.assert
         $header: 'Service'
         name: config.name
         srv_name: config.srv_name
@@ -18,10 +18,10 @@ Ensure the "ntpd" service is up and running.
 
 Ensure the port is listening.
 
-      @connection.wait
+      await @connection.wait
         $retry: 3
         interval: 10000
-      @connection.assert
+      await @connection.assert
         $header: 'TCP'
         host: config.wait_tcp.fqdn
         port: config.wait_tcp.port
@@ -39,7 +39,7 @@ Ensure the port is listening.
           engine: 'mysql'
           host: 'localhost'
           silent: false
-        @execute
+        await @execute
           $retry: 3
           command: "#{db.cmd props,'show slave status \\G ;'} | grep Slave_IO_State"
         , (err, data) ->
