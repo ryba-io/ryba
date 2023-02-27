@@ -67,7 +67,7 @@ registered in "/etc/pki/java/cacerts" under the name "<IPA_DOMAIN>ipaca".
       options.ipa_java_cacerts.enabled ?= true
       options.ipa_java_cacerts.caname ?= 'ipa_cacert'
       options.ipa_java_cacerts.target ?= ' /usr/java/default/jre/lib/security/cacerts'
-      options.ipa_java_cacerts.source ?= deps.freeipa.options.ssl.cacert
+      options.ipa_java_cacerts.source ?= deps.freeipa.options.ssl.cacert if deps.freeipa
       options.ipa_java_cacerts.local ?= false
       options.ipa_java_cacerts.password ?= 'changeit'
 
