@@ -330,8 +330,6 @@ The bug is fixed after version 5.7 of MariaDB.
             FLUSH PRIVILEGES;
             """
       
-    escape = (text) -> text.replace(/[\\"]/g, "\\$&")
-
 ## Dependencies
 
     path = require 'path'
