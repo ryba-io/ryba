@@ -159,7 +159,7 @@ is running.
       for sql, i in config.sql_on_install
         await @execute
           $header: "Populate #{i}"
-          command: "mysql -uroot -e \"#{escape sql}\""
+          command: "mysql -uroot -e \"#{db.escape sql}\""
           code: [0, 1]
 
 ## TLS
@@ -232,7 +232,7 @@ The bug is fixed after version 5.7 of MariaDB.
         #   # But I dont even know what the old code was trying to achieve
         #   safe_start = false
         await @call
-          $unless_execute: "#{db.cmd database, 'show databases'}"
+          $unless_execute: "#{db.command database, 'show databases'}"
         , ->
           await @call
             $header: 'Configure Socket'
@@ -348,5 +348,5 @@ The bug is fixed after version 5.7 of MariaDB.
 ## Dependencies
 
     misc = require '@nikitajs/core/lib/misc'
-    db = require '@nikitajs/core/lib/misc/db'
     path = require 'path'
+    {db} = require '@nikitajs/db/lib/utils'
