@@ -144,7 +144,7 @@ is running.
         await @service.restart
           $header: 'Restart'
           name: config.srv_name
-          $if: -> @status(-2) and @status(-1)
+          if: -> @status(-2) and @status(-1)
       # TODO: wait for error in nikita
       # @call 
       #   $if: -> @error -1
