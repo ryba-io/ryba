@@ -316,15 +316,14 @@ The bug is fixed after version 5.7 of MariaDB.
           $unless: config.disallow_remote_root_login
         , ->
           # Note, "WITH GRANT OPTION" is required for root
-          query = (query) -> "mysql -uroot -p\'#{config.admin_password}\' -s -e \"#{query}\""
           await @service.start
             name: config.srv_name
           await @execute
             $unless_execute: """
-            password=`#{query "SELECT PASSWORD('#{config.admin_password}');"}`
-            #{query "SHOW GRANTS FOR root;"} | grep $password
+            password=`#{db.command database, silent:true, "SELECT PASSWORD('#{config.admin_password}');"}`
+            #{db.command database, silent:true , "SHOW GRANTS FOR root;"} | grep $password
             """
-            command: query """
+            command: db.command database, silent:true, """
             USE mysql;
             GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '#{config.admin_password}' WITH GRANT OPTION;
             FLUSH PRIVILEGES;
