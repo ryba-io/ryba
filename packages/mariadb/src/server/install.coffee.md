@@ -15,10 +15,10 @@ IPTables rules are only inserted if the parameter "iptables.action" is set to
 
       await @tools.iptables
         $header: 'IPTables'
+        $if: config.iptables
         rules: [
           { chain: 'INPUT', jump: 'ACCEPT', dport: config.my_cnf['mysqld']['port'], protocol: 'tcp', state: 'NEW', comment: "MariaDB" }
         ]
-        $if: config.iptables
 
 ## User & groups
 
@@ -320,14 +320,14 @@ The bug is fixed after version 5.7 of MariaDB.
           await @service.start
             name: config.srv_name
           await @execute
+            $unless_execute: """
+            password=`#{query "SELECT PASSWORD('#{config.admin_password}');"}`
+            #{query "SHOW GRANTS FOR root;"} | grep $password
+            """
             command: query """
             USE mysql;
             GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '#{config.admin_password}' WITH GRANT OPTION;
             FLUSH PRIVILEGES;
-            """
-            $unless_execute: """
-            password=`#{query "SELECT PASSWORD('#{config.admin_password}');"}`
-            #{query "SHOW GRANTS FOR root;"} | grep $password
             """
       
     escape = (text) -> text.replace(/[\\"]/g, "\\$&")
