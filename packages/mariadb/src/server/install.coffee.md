@@ -206,7 +206,7 @@ envrionment.
 The bug is fixed after version 5.7 of MariaDB.
 
       @call $header: 'Secure Install', ->
-        test_password = true
+        test_password = false
         modified = false
         safe_start = true
         database =
@@ -247,70 +247,57 @@ The bug is fixed after version 5.7 of MariaDB.
             await @fs.wait
               target: '/var/lib/mysql/mysql.sock'
           await @call
-            $header: 'Change Password'
-          , (_, callback) ->
-            ssh = @ssh config.ssh
-            ssh.shell (err, stream) =>
-              stream.write "if #{config.sudo and 'sudo'} /usr/bin/mysql_secure_installation ;then exit 0; else exit 1;fi\n"
+            $header: 'Change Password - SSH'
+            , ->
+              conn = await connect config.ssh
+              command = 'if sudo /usr/bin/mysql_secure_installation ;then exit 0; else exit 1;fi\n'
               data = ''
-              error = exit = null
-              stream.on 'data', (data, extended) =>
-                # todo: not working anymore after implementing log object in nikita
-                # @log message = data, type: ''
-                # @log[if extended is 'stderr' then 'err' else 'out']?.write data
-                # for now @log to see nonetheless what is executed
+              child = await exec
+                ssh: conn
+                command: command
+              child.stdout.on 'data', (data) ->
+                error = exit = null
                 data = data.toString()
                 switch
                   when /Enter current password for root/.test data
-                    @log data
-                    stream.write "#{if test_password then config.admin_password else config.current_password}\n"
+                    child.stream.write "#{if test_password then config.admin_password else config.current_password}\n"
                     data = ''
                   when /ERROR 1045/.test(data) and test_password
-                    @log data
                     test_password = false
                     modified = true
                     data = ''
                   when /Change the root password/.test data
-                    @log data
-                    stream.write "y\n"
+                    child.stream.write "y\n"
                     data = ''
                   when /Set root password/.test data
-                    @log data
-                    stream.write "y\n"
+                    child.stream.write "y\n"
                     data = ''
                   when /New password/.test(data) or /Re-enter new password/.test(data)
-                    @log data
-                    stream.write "#{config.admin_password}\n"
+                    child.stream.write "#{config.admin_password}\n"
                     data = ''
                   when /Remove anonymous users/.test data
-                    @log data
-                    stream.write "#{if config.remove_anonymous then 'y' else 'n'}\n"
+                    child.stream.write "#{if config.remove_anonymous then 'y' else 'n'}\n"
                     data = ''
                   when /Disallow root login remotely/.test data
-                    @log data
-                    stream.write "#{if config.disallow_remote_root_login then 'y' else 'n'}\n"
+                    child.stream.write "#{if config.disallow_remote_root_login then 'y' else 'n'}\n"
                     data = ''
                   when /Remove test database and access to it/.test data
-                    @log data
-                    stream.write "#{if config.remove_test_db then 'y' else 'n'}\n"
+                    child.stream.write "#{if config.remove_test_db then 'y' else 'n'}\n"
                     data = ''
                   when /Reload privilege tables now/.test data
-                    @log data
-                    stream.write "#{if config.reload_privileges then 'y' else 'n'}\n"
+                    child.stream.write "#{if config.reload_privileges then 'y' else 'n'}\n"
                     data = ''
                   when /All done/.test data
-                    @log data
-                    stream.end 'exit\n' unless exit
+                    child.end 'exit\n' unless exit
                     exit = true
                   when /ERROR/.test data
-                    @log data
                     return if data.toString().indexOf('ERROR 1008 (HY000) at line 1: Can\'t drop database \'test\'') isnt -1
                     error = new Error data.toString()
                     if data.toString().indexOf('ERROR 2002 (HY000)') isnt -1
                       error = new Error 'MariaDB Server Not started'
-                    stream.end 'exit\n' unless exit
+                    child.end 'exit\n' unless exit
                     exit = true
-              stream.on 'close', ->
+              child.on 'close', (error) ->
                 callback error
           await @call
             $if: -> safe_start
@@ -349,4 +336,6 @@ The bug is fixed after version 5.7 of MariaDB.
 
     misc = require '@nikitajs/core/lib/misc'
     path = require 'path'
+    exec = require 'ssh2-exec'
+    connect = require 'ssh2-connect'
     {db} = require '@nikitajs/db/lib/utils'
