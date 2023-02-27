@@ -160,7 +160,7 @@ is running.
         await @execute
           $header: "Populate #{i}"
           command: "mysql -uroot -e \"#{escape sql}\""
-          code_skipped: 1
+          code: [0, 1]
 
 ## TLS
 
