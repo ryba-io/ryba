@@ -34,7 +34,17 @@ User/group are hard coded in some of mariadb/mysql package scripts.
 
       @call $header: 'Users & Groups', ->
         await @system.group config.group
-        await @system.user config.user
+        ###
+        User creation is not working, I think it's due to
+        the gid property, since in nikita its restricted to
+        an integer value, and here we're using a string.
+        ###
+        # await @system.user config.user
+          # await @system.user
+          #   #config.user
+          #   name: 'mysql'
+          #   home: '/var/lib/mysql'
+          #   gid: '1000'
 
 ## Package
 
