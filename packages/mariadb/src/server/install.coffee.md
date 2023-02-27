@@ -213,6 +213,7 @@ The bug is fixed after version 5.7 of MariaDB.
           database: null
           admin_username: config.admin_username
           admin_password: config.admin_password
+          port: config.my_cnf['mysqld']['port']
           engine: 'mysql'
           host: 'localhost'
         # await @execute
