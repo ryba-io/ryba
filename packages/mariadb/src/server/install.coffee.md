@@ -183,8 +183,8 @@ is running.
 
       @call $header: 'Init data directory', handler: ->
         await @execute
+          $unless_exists: "#{config.my_cnf['mysqld']['datadir']}/mysql/db.frm"
           command: "mysql_install_db --user=#{config.my_cnf['mysqld']['user']}  --datadir=#{config.my_cnf['mysqld']['datadir']}"
-          unless_exists: "#{config.my_cnf['mysqld']['datadir']}/mysql/db.frm"
 
 ## Secure Installation
 
