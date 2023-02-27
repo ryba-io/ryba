@@ -30,7 +30,7 @@ Wait for master remote login.
       
       await @execute.wait
         $header: 'Wait Root remote login'
-        command: db.cmd remote_master, "show databases"
+        command: db.command remote_master, "show databases"
 
 ## Grant Privileges
 
@@ -41,11 +41,11 @@ Grant privileges on the remote master server to the user used for replication.
         master_file = null
         await @execute
           $header: 'Slave Privileges'
-          command: db.cmd remote_master, """
+          command: db.command remote_master, """
             GRANT REPLICATION SLAVE ON *.* TO '#{config.repl_master.username}'@'%' IDENTIFIED BY '#{config.repl_master.password}';
             FLUSH PRIVILEGES;
           """
-          unless_exec: "#{db.cmd remote_master, 'select User from mysql.user ;'} | grep '#{config.repl_master.username}'"
+          unless_exec: "#{db.command remote_master, 'select User from mysql.user ;'} | grep '#{config.repl_master.username}'"
 
 ## Setup Replication
 
@@ -53,11 +53,11 @@ Gather the target master informations, then start the slave replication.
 
         @call
           $header: 'Slave Setup'
-          $unless_execute: "#{db.cmd props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{config.repl_master.fqdn}'"
+          $unless_execute: "#{db.command props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{config.repl_master.fqdn}'"
           handler: ->
             await @execute
               $header: 'Master Infos'
-              command: db.cmd remote_master, "show master status \\G"
+              command: db.command remote_master, "show master status \\G"
             , (err, data) ->
               throw err if err
               lines = string.lines data.stdout
@@ -67,7 +67,7 @@ Gather the target master informations, then start the slave replication.
                 master_pos = parts[1].trim() if parts[0] is 'Position'
             @call ->
               await @execute
-                command: db.cmd props, """
+                command: db.command props, """
                   STOP SLAVE ;
                   RESET SLAVE ;
                   CHANGE MASTER TO \
@@ -81,5 +81,5 @@ Gather the target master informations, then start the slave replication.
       
 ## Dependencies
 
-    db = require '@nikitajs/core/lib/misc/db'
+    {db} = require '@nikitajs/db/lib/utils'
     string = require '@nikitajs/core/lib/misc/string'
