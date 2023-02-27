@@ -73,54 +73,54 @@ Package on Centos/Redhat 7 OS.
 Create the directories, needed by the database.
 
       @call $header: 'Layout', ->
-        await @system.mkdir
+        await @fs.mkdir
           target: '/tmp/mysql'
           uid: config.user.name
           gid: config.group.name
           mode: 0o0774
-        await @system.mkdir
+        await @fs.mkdir
           $header: 'Journal log dir'
           target: config.journal_log_dir
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        await @system.mkdir
+        await @fs.mkdir
           $header: 'Bin log dir'
           target: config.my_cnf['mysqld']['log-bin']
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        await @system.mkdir
+        await @fs.mkdir
           $header: 'Data dir'
           target: config.my_cnf['mysqld']['datadir']
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        await @system.mkdir
+        await @fs.mkdir
           $header: 'Priv file'
           target: config.my_cnf['mysqld']['secure-file-priv']
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        await @system.mkdir
+        await @fs.mkdir
           $header: 'Log dir'
           target: "#{path.dirname config.my_cnf['mysqld']['log-error']}"
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        await @system.mkdir
+        await @fs.mkdir
           $header: 'Run dir'
           target: "#{path.dirname config.my_cnf['mysqld']['pid-file']}"
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        await @system.mkdir
+        await @fs.mkdir
           $header: 'Socket Dir'
           target: "#{path.dirname config.my_cnf['mysqld']['socket']}"
           uid: config.user.name
           gid: config.group.name
           mode: 0o0750
-        await @system.mkdir
+        await @fs.mkdir
           $if: config.ha_enabled
           $header: 'Replication dir'
           target: config.replication_dir
