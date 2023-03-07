@@ -41,11 +41,11 @@ Grant privileges on the remote master server to the user used for replication.
         master_file = null
         await @execute
           $header: 'Slave Privileges'
+          $unless_execute: "#{db.command remote_master, 'select User from mysql.user ;'} | grep '#{config.repl_master.username}'"
           command: db.command remote_master, """
             GRANT REPLICATION SLAVE ON *.* TO '#{config.repl_master.username}'@'%' IDENTIFIED BY '#{config.repl_master.password}';
             FLUSH PRIVILEGES;
           """
-          unless_exec: "#{db.command remote_master, 'select User from mysql.user ;'} | grep '#{config.repl_master.username}'"
 
 ## Setup Replication
 
