@@ -82,4 +82,4 @@ Gather the target master informations, then start the slave replication.
 ## Dependencies
 
     {db} = require '@nikitajs/db/lib/utils'
-    string = require '@nikitajs/core/lib/misc/string'
+    string = require '@nikitajs/core/lib/utils/string'
