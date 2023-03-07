@@ -30,7 +30,7 @@ Wait for master remote login.
       
       await @execute.wait
         $header: 'Wait Root remote login'
-        command: db.command remote_master, "show databases"
+        command: db.command remote_master, 'show databases;'
 
 ## Grant Privileges
 
@@ -54,30 +54,27 @@ Gather the target master informations, then start the slave replication.
         @call
           $header: 'Slave Setup'
           $unless_execute: "#{db.command props, 'show slave status \\G'} | grep 'Master_Host' | grep '#{config.repl_master.fqdn}'"
-          handler: ->
-            await @execute
+          , ->
+            {stdout} = await @execute
               $header: 'Master Infos'
               command: db.command remote_master, "show master status \\G"
-            , (err, data) ->
-              throw err if err
-              lines = string.lines data.stdout
-              for line in lines
-                parts = line.trim().split(':')
-                master_file = parts[1].trim() if parts[0] is 'File'
-                master_pos = parts[1].trim() if parts[0] is 'Position'
-            @call ->
-              await @execute
-                command: db.command props, """
-                  STOP SLAVE ;
-                  RESET SLAVE ;
-                  CHANGE MASTER TO \
-                  MASTER_HOST = '#{config.repl_master.fqdn}', \
-                  MASTER_USER = '#{config.repl_master.username}', \
-                  MASTER_PASSWORD = '#{config.repl_master.password}',
-                  MASTER_LOG_FILE='#{master_file}', \
-                  MASTER_LOG_POS=#{master_pos} ;
-                  START SLAVE ;
-                """
+            lines = string.lines stdout
+            for line in lines
+              parts = line.trim().split(':')
+              master_file = parts[1].trim() if parts[0] is 'File'
+              master_pos = parts[1].trim() if parts[0] is 'Position'
+            await @execute
+              command: db.command props, """
+                STOP SLAVE ;
+                RESET SLAVE ;
+                CHANGE MASTER TO \
+                MASTER_HOST = '#{config.repl_master.fqdn}', \
+                MASTER_USER = '#{config.repl_master.username}', \
+                MASTER_PASSWORD = '#{config.repl_master.password}',
+                MASTER_LOG_FILE='#{master_file}', \
+                MASTER_LOG_POS=#{master_pos} ;
+                START SLAVE ;
+              """
       
 ## Dependencies
 
