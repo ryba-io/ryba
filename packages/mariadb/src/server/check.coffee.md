@@ -23,7 +23,8 @@ Ensure the port is listening.
         interval: 10000
         host: config.wait_tcp.fqdn
         port: config.wait_tcp.port
-      {$status} = await @network.tcp.assert
+      
+      await @network.tcp.assert
         $header: 'TCP'
         host: config.wait_tcp.fqdn
         port: config.wait_tcp.port
