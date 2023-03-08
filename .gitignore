@@ -4,5 +4,3 @@ package-lock.json
 .*
 !.gitignore
 !.husky
-/packages/*/test.coffee
-!/packages/*/test.coffee.sample
