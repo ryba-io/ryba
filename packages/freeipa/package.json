@@ -1,0 +1,46 @@
+{
+  "name": "@rybajs/freeipa",
+  "version": "0.0.2",
+  "description": "FreeIPA server and client deployment.",
+  "keywords": [
+    "identity",
+    "kerberos",
+    "ldap",
+    "openldap",
+    "dns",
+    "ntp",
+    "ssl",
+    "tls"
+  ],
+  "author": "David Worms <david@adaltas.com>",
+  "homepage": "http://www.ryba.io",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "mixme": "^0.5.9"
+  },
+  "mocha": {
+    "throw-deprecation": true,
+    "require": [
+      "should",
+      "coffeescript/register"
+    ],
+    "inline-diffs": true,
+    "timeout": 3000,
+    "reporter": "spec",
+    "recursive": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryba-io/ryba.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryba-io/ryba/issues"
+  }
+}
