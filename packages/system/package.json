@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "@nikitajs/core": "^0.9.7",
-    "each": "^1.2.2",
-    "mixme": "^0.5.4"
+    "each": "^2.4.0",
+    "mixme": "^0.5.9"
   },
   "publishConfig": {
     "access": "public"

@@ -52,6 +52,6 @@
   },
   "dependencies": {
     "@nikitajs/core": "^0.9.7",
-    "mixme": "^0.5.4"
+    "mixme": "^0.5.9"
   }
 }

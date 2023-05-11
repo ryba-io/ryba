@@ -1660,7 +1660,6 @@ from normzlized configuration.
 ## Dependencies
 
     fs = require 'fs'
-    glob = require 'glob'
     path = require 'path'
     normalize = require 'masson/lib/config/normalize'
     store = require 'masson/lib/config/store'
