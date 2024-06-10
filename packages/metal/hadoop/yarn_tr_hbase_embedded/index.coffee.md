@@ -5,7 +5,7 @@ The [Yarn Timeline Reader][tr] new component shipped with YARN 3.Its backend is 
 It can be embedded (local), or distributed etc.
 This module install hbase on one node. Administrators can still use it with hdfs backend.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         zookeeper_server: module: '@rybajs/metal/zookeeper/server'

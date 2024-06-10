@@ -1,7 +1,7 @@
 
 # Apache Spark Configure
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

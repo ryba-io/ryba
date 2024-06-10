@@ -1,7 +1,7 @@
 
 ## Hbase Thrift server check
 
-    module.exports = header: 'HBase Thrift Check', handler: ({options}) ->
+    export default header: 'HBase Thrift Check', handler: ({options}) ->
 
 ## Assert HTTP Port
 

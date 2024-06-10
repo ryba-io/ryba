@@ -1,7 +1,7 @@
 
 # Spark Thrift Server
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
       throw Error 'Spark SQL Thrift Server must be installed on the same host than hive-server2' unless service.deps.hive_server2.map((srv)-> srv.node.fqdn).indexOf(service.node.fqdn) > -1
       throw Error 'Spark SQL Thrift Server is useless without spark installed' unless service.deps.spark_client?

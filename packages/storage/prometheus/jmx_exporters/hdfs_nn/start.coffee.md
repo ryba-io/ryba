@@ -1,7 +1,7 @@
 
 # JMX Exporter HDFS Namenode
 
-    module.exports = header: 'JMX Exporter Namenode Start', handler: ({options}) ->
+    export default header: 'JMX Exporter Namenode Start', handler: ({options}) ->
 
 ## Start
 

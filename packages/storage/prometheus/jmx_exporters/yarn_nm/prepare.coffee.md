@@ -1,7 +1,7 @@
 
 # JMX Exporter Yarn NodeManager Prepare
 
-    module.exports =
+    export default
       header: 'JMX Exporter Prepare'
       ssh: false
       handler: ({options}) ->

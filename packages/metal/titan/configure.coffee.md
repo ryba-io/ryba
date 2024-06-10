@@ -1,7 +1,7 @@
 
 # Titan Configuration
 
-    module.exports = (service) ->
+    export default (service) ->
       {options} = service
 
 ## Kerberos

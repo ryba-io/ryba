@@ -3,7 +3,7 @@
 
 Apache Atlas Needs the following components to be started.
 
-    module.exports = header: 'Atlas Check', handler: (options) ->
+    export default header: 'Atlas Check', handler: (options) ->
 
       @call '@rybajs/metal/atlas/wait', options.wait
 

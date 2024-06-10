@@ -1,7 +1,7 @@
 
 # Rexster Check
 
-    module.exports = header: 'Rexster Check', handler: ->
+    export default header: 'Rexster Check', handler: ->
       {titan, rexster} = @config.ryba
 
 ## Check Status

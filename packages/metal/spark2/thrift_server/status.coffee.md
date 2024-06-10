@@ -8,6 +8,6 @@ following command:
 service spark-thrift-server status
 ```
 
-    module.exports = header: 'Spark SQL Thrift Server Status', handler: ({options}) ->
+    export default header: 'Spark SQL Thrift Server Status', handler: ({options}) ->
       @service.status
         name: 'spark-thrift-server'

@@ -1,5 +1,5 @@
 
 # Shinken Broker Start
 
-    module.exports = header: 'Shinken Broker Start', handler: (options) ->
+    export default header: 'Shinken Broker Start', handler: (options) ->
       @service.start name: 'shinken-broker'

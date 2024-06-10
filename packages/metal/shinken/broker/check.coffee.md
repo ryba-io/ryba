@@ -1,7 +1,7 @@
 
 # Shinken Broker Check
 
-    module.exports = header: 'Shinken Broker Check', handler: (options) ->
+    export default header: 'Shinken Broker Check', handler: (options) ->
 
 ## TCP
 

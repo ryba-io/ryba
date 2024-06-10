@@ -6,7 +6,7 @@ script or directly downloaded (from local computer only for now, no images avail
 
 Run `ryba prepare` to create the Docker container.
 
-    module.exports = header: 'Spark Livy Server', handler: ->
+    export default header: 'Spark Livy Server', handler: ->
       {spark} = @config.ryba
       {hadoop_group, hdfs, hive, hbase, hadoop_conf_dir, realm, ssl} = @config.ryba
       krb5 = @config.krb5_client.admin[realm]

@@ -1,7 +1,7 @@
 
 # JMX Exporter Journalnode Install
 
-    module.exports = header: 'JMX Exporter JournalNode Install', handler: ({options}) ->
+    export default header: 'JMX Exporter JournalNode Install', handler: ({options}) ->
 
 ## Registry
 
@@ -41,4 +41,3 @@
         port: options.port
         user: options.user
         group: options.group
-

@@ -1,7 +1,7 @@
 
 # Phoenix Configuration
 
-    module.exports = (service) ->
+    export default (service) ->
       {options, deps, nodes} = service
 
 A Phoenix Client must have one of instance HBase Master, HBase RegionServer or

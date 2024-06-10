@@ -1,7 +1,7 @@
 
 # Hadoop HDFS SecondaryNameNode 
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

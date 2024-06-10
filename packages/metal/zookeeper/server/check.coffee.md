@@ -1,7 +1,7 @@
 
 # Zookeeper Server Check
 
-    module.exports = header: 'ZooKeeper Server Check', handler: ({options}) ->
+    export default header: 'ZooKeeper Server Check', handler: ({options}) ->
 
 ## Wait
 

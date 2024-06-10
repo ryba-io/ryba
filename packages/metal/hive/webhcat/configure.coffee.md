@@ -1,7 +1,7 @@
 
 # Configure webhcat server
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Environment

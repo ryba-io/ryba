@@ -9,7 +9,7 @@ Thrift is both cross-platform and more lightweight than REST for many operations
 From 1.0 thrift can enable impersonation for other service 
 [like hue][hue-hbase-impersonation].
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

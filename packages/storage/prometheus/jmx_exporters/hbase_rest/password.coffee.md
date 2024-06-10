@@ -1,7 +1,7 @@
 
 # JMX Exporter RS Install
 
-    module.exports = header: 'JMX Exporter Rest Auth', handler: ({options}) ->
+    export default header: 'JMX Exporter Rest Auth', handler: ({options}) ->
 
 ## Registry
 

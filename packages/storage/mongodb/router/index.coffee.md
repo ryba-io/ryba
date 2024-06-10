@@ -5,7 +5,7 @@ Deploy the Query Router component of MongoDB. Query router care about Routing
 client connection to the different members of the replica set. They are mongos
 services
 
-    module.exports =
+    export default
       deps:
         locale: module: 'masson/core/locale', local: true, auto: true, implicit: true
         iptables: module: 'masson/core/iptables', local: true

@@ -1,7 +1,7 @@
 
 # Configure JMX Exporter Yarn ResourceManager
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

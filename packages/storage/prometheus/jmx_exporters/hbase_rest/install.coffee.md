@@ -1,7 +1,7 @@
 
 # JMX Exporter HBase Rest Install
 
-    module.exports = header: 'JMX Exporter Rest Install', handler: ({options}) ->
+    export default header: 'JMX Exporter Rest Install', handler: ({options}) ->
 
 ## Registry
 
@@ -52,4 +52,3 @@
         cacert: "#{options.ssl.cacert.source}"
         local: "#{options.ssl.cacert.local}"
         uid: options.hbase_user.name
-

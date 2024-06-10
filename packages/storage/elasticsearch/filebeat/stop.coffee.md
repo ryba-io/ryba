@@ -3,6 +3,6 @@
 
 This commands stops Filebeat using the default service command.
 
-    module.exports = header: 'Filebeat Stop', handler: ->
+    export default header: 'Filebeat Stop', handler: ->
       @service.stop
         name: 'filebeat'

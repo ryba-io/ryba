@@ -1,7 +1,7 @@
 
 # Configure Monitoring Objects
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Credentials

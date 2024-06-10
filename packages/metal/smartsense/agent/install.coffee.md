@@ -1,7 +1,7 @@
 
 # Hortonworks Smartsense Install
 
-    module.exports = header: 'HST Agent Install', handler: (options) ->
+    export default header: 'HST Agent Install', handler: (options) ->
 
 ## Wait Server
 

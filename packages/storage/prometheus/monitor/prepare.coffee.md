@@ -1,7 +1,7 @@
 
 # Prometheus Montior Prepare
 
-    module.exports =
+    export default
       header: 'Prometheus Monitor Prepare'
       ssh: false
       handler: ({options}) ->

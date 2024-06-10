@@ -1,6 +1,6 @@
 # HDFS Datanode Layout
 
-    module.exports = header: 'HDFS NN layout', handler: ({options}) ->
+    export default header: 'HDFS NN layout', handler: ({options}) ->
 
 ## Register
 

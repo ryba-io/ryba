@@ -4,7 +4,7 @@
 Run the command `./bin/ryba status -m @rybajs/metal/oozie/server` to stop the Oozie
 server using Ryba.
 
-    module.exports = header: 'Oozie Server Wait', handler: ({options}) ->
+    export default header: 'Oozie Server Wait', handler: ({options}) ->
 
 ## HTTP Port
 

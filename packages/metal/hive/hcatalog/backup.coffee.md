@@ -3,7 +3,7 @@
 
 The backup script dumps the content of the configuration.
 
-    module.exports =  header: 'Hive HCatalog Backup', handler: ({options}) ->
+    export default  header: 'Hive HCatalog Backup', handler: ({options}) ->
 
 ## Backup Configuration
 

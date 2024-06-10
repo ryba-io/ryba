@@ -4,7 +4,7 @@
 lucasbak 27012018: This module is deprecated and not supported.
 Users should user module inside `@rybajs/metal/ranger/solr`
 
-    module.exports = header: 'Ranger Audit Solr Boostrap', handler: (options) ->
+    export default header: 'Ranger Audit Solr Boostrap', handler: (options) ->
       return unless options.solr_type is 'embedded'
       {solr} = @config.ryba
       ranger =  @contexts('@rybajs/metal/ranger/admin')[0].config.ryba.ranger

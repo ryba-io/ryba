@@ -1,7 +1,7 @@
 
 # HDP Repository
 
-    module.exports =
+    export default
       deps: {}
       configure:
         '@rybajs/metal/hdp/configure'

@@ -7,7 +7,7 @@ with more information about the structure of both the data and the computation b
 It starts a custom instance of hive-sever2 and enabled user to register spark based table
 in order to make the data accessible to hive clients.
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         iptables: module: 'masson/core/iptables', local: true

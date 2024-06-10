@@ -22,7 +22,7 @@ Example:
     }
 ```
 
-    module.exports = (service) ->
+    export default (service) ->
       throw Error 'No HBase regionservers configured' unless service.deps.hbase_regionserver.length > 0
       {options} = service
 

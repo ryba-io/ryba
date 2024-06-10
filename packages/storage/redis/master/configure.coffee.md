@@ -4,7 +4,7 @@
 Redis replication adopts a slave-master architecture. This module configure the master
 that slave will link to. Redis does only user one master.
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

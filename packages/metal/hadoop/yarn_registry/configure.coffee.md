@@ -3,7 +3,7 @@
 configures the registry according following [YARN 3.1 documentation](https://hadoop.apache.org/docs/r3.1.0/hadoop-yarn/hadoop-yarn-site/registry/registry-configuration.html)
 
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

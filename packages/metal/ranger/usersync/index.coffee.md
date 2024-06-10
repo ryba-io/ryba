@@ -6,7 +6,7 @@ access control over Hadoop data access components like Apache Hive and Apache HB
 Ranger User sync is a process separated from ranger policy manager, which is in charg of
 importing user/groups from different sources (LDAP, AD, UNIX).
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

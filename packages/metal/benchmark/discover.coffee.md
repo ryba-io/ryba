@@ -3,7 +3,7 @@
 
 For each given datanode, discover count of CPUs, total RAM and count of disks.
 
-    module.exports = header: 'Benchmark - Discovery', handler: ->
+    export default header: 'Benchmark - Discovery', handler: ->
       {benchmark} = @config.ryba
 
       @each benchmark.datanodes, (options) ->

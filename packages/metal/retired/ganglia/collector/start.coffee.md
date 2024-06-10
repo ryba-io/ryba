@@ -11,7 +11,7 @@ You can also start the server manually with the following command:
 service hdp-gmetad start
 ```
 
-    module.exports = header: 'Ganglia Collector Start', handler: ->
+    export default header: 'Ganglia Collector Start', handler: ->
       @service.start
         name: 'hdp-gmetad'
         code_stopped: 1

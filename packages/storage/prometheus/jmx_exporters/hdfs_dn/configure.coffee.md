@@ -1,7 +1,7 @@
 
 # Configure JMX Exporter HDFS Datanode
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

@@ -3,7 +3,7 @@
 This modules configures every hadoop plugin needed to enable Ranger. It configures
 variables but also inject some function to be executed.
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

@@ -1,7 +1,7 @@
 
 # JMX Exporter HDFS Journalnode
 
-    module.exports = header: 'JMX Exporter Journalnode Start', handler: ({options}) ->
+    export default header: 'JMX Exporter Journalnode Start', handler: ({options}) ->
 
 ## Start
 

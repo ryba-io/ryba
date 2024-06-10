@@ -9,7 +9,7 @@ HCatalog’s table abstraction presents users with a relational view of data in 
 distributed file system (HDFS) and ensures that users need not worry about where or in what
 format their data is stored — RCFile format, text files, SequenceFiles, or ORC files.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

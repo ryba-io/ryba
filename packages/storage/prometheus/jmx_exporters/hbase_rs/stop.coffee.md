@@ -1,7 +1,7 @@
 
 # JMX Exporter HDFS Datanode
 
-    module.exports = header: 'JMX Exporter RegionServer Stop', handler: ({options}) ->
+    export default header: 'JMX Exporter RegionServer Stop', handler: ({options}) ->
 
 ## Start
 

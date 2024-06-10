@@ -4,7 +4,7 @@
 Run the command `./bin/ryba stop -m @rybajs/metal/druid/overlord` to stop the Druid 
 MiddleManager server using Ryba.
 
-    module.exports = header: 'Druid MiddleManager Stop', handler: (options) ->
+    export default header: 'Druid MiddleManager Stop', handler: (options) ->
 
 ## Options
 

@@ -1,7 +1,7 @@
 
 # Hadoop Core Install
 
-    module.exports = header: 'Hadoop Core Install', handler: ({options}) ->
+    export default header: 'Hadoop Core Install', handler: ({options}) ->
 
 ## Register
 

@@ -9,7 +9,7 @@ service hadoop-httpfs start
 su -l httpfs -c '/usr/hdp/current/hadoop-httpfs/sbin/httpfs.sh stop'
 ```
 
-    module.exports = header: 'HDFS HttpFS Stop', handler: ->
+    export default header: 'HDFS HttpFS Stop', handler: ->
       @service.stop
         header: 'Stop service'
         name: 'hadoop-httpfs'

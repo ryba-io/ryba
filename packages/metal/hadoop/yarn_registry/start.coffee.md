@@ -10,7 +10,7 @@ su -l yarn -c "/usr/hdp/current/hadoop-yarn-timelineserver/sbin/yarn--config /et
 ```
 
 
-    module.exports = header: 'YARN RegistryDNS Start', handler: ({options}) ->
+    export default header: 'YARN RegistryDNS Start', handler: ({options}) ->
 
 ## Wait
 

@@ -1,7 +1,7 @@
 
 # Hortonworks Smartsense Server Install
 
-    module.exports = header:'HST Server Install', handler: (options) ->
+    export default header:'HST Server Install', handler: (options) ->
 
 ## Identities
 

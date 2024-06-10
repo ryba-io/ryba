@@ -4,7 +4,7 @@
 Redis cluster replication adopts a slave-master architecture. This module configure the master
 that slave will link to.
 
-    module.exports = ({deps, node, options}) ->
+    export default ({deps, node, options}) ->
 
 ## Identities
 

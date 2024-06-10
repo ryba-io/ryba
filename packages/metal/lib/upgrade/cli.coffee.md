@@ -3,7 +3,7 @@
 
 ## Main Entry Point
 
-    module.exports = ->
+    export default ->
       # Parameters and Help
       params = shell exports.params
       if params.parse().help

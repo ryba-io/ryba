@@ -1,7 +1,7 @@
 
 # Elasticsearch Prepared
 
-    module.exports = header: 'ES Prepared', handler: ->
+    export default header: 'ES Prepared', handler: ->
       {elasticsearch, realm} = @config.ryba
       @file.cache
         ssh: false

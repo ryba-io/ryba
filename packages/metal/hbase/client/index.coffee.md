@@ -5,7 +5,7 @@ Install the [HBase client](https://hbase.apache.org/apidocs/org/apache/hadoop/hb
 you have to use it for administering HBase, create and drop tables, list and alter tables.
 Client code accessing a cluster finds the cluster by querying ZooKeeper.
 
-    module.exports =
+    export default
       deps:
         java: module: 'masson/commons/java', local: true
         test_user: module: '@rybajs/metal/commons/test_user', local: true, auto: true, implicit: true

@@ -14,7 +14,7 @@ Example:
 } }
 ```
 
-    module.exports = ->
+    export default ->
       benchmark = @config.ryba.benchmark ?= {}
       benchmark.iterations ?= 10
       benchmark.output ?= "benchmark_results"

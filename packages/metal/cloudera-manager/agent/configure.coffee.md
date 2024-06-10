@@ -15,7 +15,7 @@ Example:
 } } }
 ```
 
-    module.exports = ->
+    export default ->
       cdm_ctxs = @contexts '@rybajs/metal/cloudera-manager/server'
       return Error 'Need at least one cloudera manager server' unless cdm_ctxs.length > 0
       cloudera_manager = @config.ryba.cloudera_manager ?= {}

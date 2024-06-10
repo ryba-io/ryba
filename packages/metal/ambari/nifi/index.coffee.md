@@ -1,7 +1,7 @@
 
 # Nifi with Ambari
 
-    module.exports =
+    export default
       use:
         ssl: module: 'masson/core/ssl'
         hdf: module: '@rybajs/metal/hdf', local: true

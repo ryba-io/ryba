@@ -18,7 +18,7 @@ Options include:
 
 ## Source Code
 
-    module.exports = ({options}) ->
+    export default ({options}) ->
 
       params = options.config
       throw Error "Required option 'url'" unless params.url
@@ -83,4 +83,3 @@ Options include:
 
     module.exports.register = ->
       @registry.register 'hue_adduser', module.exports unless @registry.registered 'hue_adduser'
-

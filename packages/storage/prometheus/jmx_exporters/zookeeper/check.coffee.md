@@ -1,7 +1,7 @@
 
 # Prometheus Montior Check
 
-    module.exports = header: 'JMX Exporter Zookeeper Check', handler: ({options}) ->
+    export default header: 'JMX Exporter Zookeeper Check', handler: ({options}) ->
 
 ## Check Port
 

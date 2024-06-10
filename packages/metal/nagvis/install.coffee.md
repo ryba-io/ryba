@@ -1,7 +1,7 @@
 
 # NagVis Install
 
-    module.exports = header: 'NagVis Install', handler: (options) ->
+    export default header: 'NagVis Install', handler: (options) ->
 
 ## IPTables
 

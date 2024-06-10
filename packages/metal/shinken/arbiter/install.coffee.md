@@ -1,7 +1,7 @@
 
 # Shinken Arbiter Install
 
-    module.exports = header: 'Shinken Arbiter Install', handler: (options)->
+    export default header: 'Shinken Arbiter Install', handler: (options)->
 
 ## IPTables
 

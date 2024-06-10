@@ -1,7 +1,7 @@
 
 # Solr Install
 
-    module.exports = header: 'Solr Embedded Ambari Infra Install', handler: ({options}) ->
+    export default header: 'Solr Embedded Ambari Infra Install', handler: ({options}) ->
       return unless (options.solr_type is 'embedded')
 
 ## Dependencies

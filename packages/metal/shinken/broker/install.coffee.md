@@ -1,7 +1,7 @@
 
 # Shinken Broker Install
 
-    module.exports = header: 'Shinken Broker Install', handler: (options) ->
+    export default header: 'Shinken Broker Install', handler: (options) ->
 
 ## IPTables
 

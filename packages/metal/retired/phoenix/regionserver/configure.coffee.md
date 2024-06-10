@@ -1,6 +1,6 @@
 ## Configuration
 
-    module.exports = (service) ->
+    export default (service) ->
       
       service.deps.hbase_regionserver.options.hbase_site['hbase.defaults.for.version.skip'] = 'true'
       service.deps.hbase_regionserver.options.hbase_site['phoenix.functions.allowUserDefinedFunctions'] = 'true'

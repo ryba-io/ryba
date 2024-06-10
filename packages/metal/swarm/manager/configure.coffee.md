@@ -4,7 +4,7 @@
 Use the `ryba.swarm_primary` for setting which host should be the primary swarm manager.
 This host will be used when rendering default DOCKER_HOST ENV variable on swarm nodes.
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Docker Daemon options

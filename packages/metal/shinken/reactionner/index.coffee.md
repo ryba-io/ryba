@@ -4,7 +4,7 @@
 Gets notifications and eventhandlers from the scheduler, executes plugins/scripts
 and sends the results to the scheduler.
 
-    module.exports =
+    export default
       deps:
         ssl : module: 'masson/core/ssl', local: true
         iptables: module: 'masson/core/iptables', local: true

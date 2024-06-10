@@ -5,7 +5,7 @@ The Apache Knox Gateway is a REST API gateway for interacting with Apache Hadoop
 clusters. The gateway provides a single access point for all REST interactions
 with Hadoop clusters.
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         sssd: module: 'masson/core/sssd', local: true

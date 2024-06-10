@@ -8,7 +8,7 @@
 } } } }
 ```
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
       throw Error 'CAn not have more than one instance of @rybajs/metal/hadoop/yarn_tr_hbase_embedded' if service.deps.yarn_tr_hbase_embedded?.length > 1
 

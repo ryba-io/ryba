@@ -1,5 +1,5 @@
 
 # NiFi Stop
 
-    module.exports = header: 'NiFi Stop', handler: ->
+    export default header: 'NiFi Stop', handler: ->
       @service.stop name: 'nifi'

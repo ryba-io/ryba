@@ -1,7 +1,7 @@
 
 # Schema Registry Configure
 
-    module.exports = ->
+    export default ->
       {db_admin, realm} = @config.ryba
       options = @config.ryba.registry ?= {}
 

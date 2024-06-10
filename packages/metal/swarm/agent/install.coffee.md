@@ -1,7 +1,7 @@
 
 # Install Swarm Agent Node
 
-    module.exports = header: 'Swarm Agent Install', handler: (options) ->
+    export default header: 'Swarm Agent Install', handler: (options) ->
       tmp_dir  = options.tmp_dir ?= "/var/tmp/@rybajs/metal/swarm"
 
 ## Wait dependencies

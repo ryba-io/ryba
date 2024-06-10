@@ -15,7 +15,7 @@ format their data is stored — RCFile format, text files, SequenceFiles, or ORC
 }
 ```
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Configure Database

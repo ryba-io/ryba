@@ -7,7 +7,7 @@ Configure Hadoop metrics. Does not write anyfile.
     # this module is a helper to isolate hadoop_metrics configuration
     #other module does read only from it
     
-    module.exports =
+    export default
       deps: {}
       configure: (service) ->
         options = service.options

@@ -4,7 +4,7 @@
 Run the command `./bin/ryba start -m @rybajs/metal/smartsense/server` to start the 
 Hortonworks SmartSense server using Ryba.
 
-    module.exports = header: 'HST Server Start', handler: (options) ->
+    export default header: 'HST Server Start', handler: (options) ->
 
 ## Service
 

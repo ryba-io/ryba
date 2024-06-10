@@ -1,7 +1,7 @@
 
 # Ganglia Collector Install
 
-    module.exports = header: 'Ganglia Collector', handler: ->
+    export default header: 'Ganglia Collector', handler: ->
       {ganglia} = @config.ryba
 
 ## Identities

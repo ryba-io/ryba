@@ -1,7 +1,7 @@
 
 # Zookeeper Client Install
 
-    module.exports = header: 'ZooKeeper Client Install', handler: ({options}) ->
+    export default header: 'ZooKeeper Client Install', handler: ({options}) ->
 
 ## Register
 

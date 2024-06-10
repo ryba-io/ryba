@@ -1,7 +1,7 @@
 
 # Hadoop HDFS SecondaryNameNode Start
 
-    module.exports = header: 'HDFS SNN Start', handler: ->
+    export default header: 'HDFS SNN Start', handler: ->
 
 ## Start Service
 

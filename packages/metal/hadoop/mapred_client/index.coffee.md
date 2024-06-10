@@ -7,7 +7,7 @@ then the operation can be run in parallel on different keys and lists of data. O
 Rather than copy the data over the network to the program, you push out the program to the machines.
 The output list can then be saved to the distributed filesystem, and the reducers run to merge the results. Again, it may be possible to run these in parallel, each reducing different keys.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

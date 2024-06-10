@@ -9,7 +9,7 @@ managing segment replication, and balancing segment load.
 
 [coordinator]: http://druid.io/docs/latest/design/coordinator.html
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true
         java: module: 'masson/commons/java', local: true, recommanded: true

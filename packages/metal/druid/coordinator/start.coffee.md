@@ -1,7 +1,7 @@
 
 # Druid Coordinator Start
 
-    module.exports = header: 'Druid Coordinator Start', handler: (options) ->
+    export default header: 'Druid Coordinator Start', handler: (options) ->
 
 ## Wait
 

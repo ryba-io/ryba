@@ -1,7 +1,7 @@
 
 # Ranger HBase Plugin Install
 
-    module.exports = header: 'Ranger HBase Plugin', handler: ({options}) ->
+    export default header: 'Ranger HBase Plugin', handler: ({options}) ->
       version = null
 
 ## Wait

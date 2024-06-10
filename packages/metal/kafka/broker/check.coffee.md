@@ -1,7 +1,7 @@
 
 # Kafka Broker Check
 
-    module.exports = header: 'Kafka Broker Check', handler: ({options}) ->
+    export default header: 'Kafka Broker Check', handler: ({options}) ->
 
 ## Assert
       

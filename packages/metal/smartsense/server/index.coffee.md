@@ -3,7 +3,7 @@
 [The Hortonworks SmartSense Tool][hst] Collects cluster diagnostic information
 to help you troubleshoot support cases.
 
-    module.exports =
+    export default
       use:
         iptables: module: 'masson/core/iptables', local: true
         java: module: 'masson/commons/java', local: true

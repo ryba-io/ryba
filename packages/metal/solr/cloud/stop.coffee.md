@@ -7,7 +7,7 @@ service solr stop
 ```
 
 
-    module.exports = header: 'Solr Cloud Stop', handler: (options)->
+    export default header: 'Solr Cloud Stop', handler: (options)->
 
 ## Service
 

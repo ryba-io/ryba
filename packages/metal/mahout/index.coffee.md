@@ -1,6 +1,6 @@
 
 # Mahout
 
-    module.exports = ->
+    export default ->
       'install':
         '@rybajs/metal/mahout/install'

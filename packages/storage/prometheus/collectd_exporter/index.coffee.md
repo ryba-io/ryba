@@ -6,7 +6,7 @@ A [Collector](https://github.com/prometheus/collectd_exporter) which accepts col
  format via HTTP POST as sent by collectd's write_http plugin, and transforms and 
  exposes them for consumption by Prometheus.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         collectd: module: '@rybajs/metal/collectd', local: true, required: true

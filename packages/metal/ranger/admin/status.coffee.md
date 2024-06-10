@@ -3,5 +3,5 @@
 
 Check if Ranger Admin is started
 
-    module.exports = header: 'Ranger Admin Status', handler: ->
+    export default header: 'Ranger Admin Status', handler: ->
       @service.status 'ranger-admin'

@@ -1,7 +1,7 @@
 
 # Shinken Reactionner Check
 
-    module.exports = header: 'Shinken Reactionner Check', handler: (options) ->
+    export default header: 'Shinken Reactionner Check', handler: (options) ->
 
 ## TCP
 

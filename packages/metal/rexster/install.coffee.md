@@ -1,7 +1,7 @@
 
 # Rexster Install
 
-    module.exports = header: 'Rexster Install', handler: ->
+    export default header: 'Rexster Install', handler: ->
       {titan, rexster, hadoop_conf_dir, realm} = @config.ryba
       krb5 = @config.krb5_client.admin[realm]
 

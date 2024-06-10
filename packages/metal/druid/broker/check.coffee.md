@@ -4,7 +4,7 @@
 Todo: move to a druid client module. Here because the broker service is the latest
 service to be started.
 
-    module.exports = header: 'Druid Broker Check', handler: (options) ->
+    export default header: 'Druid Broker Check', handler: (options) ->
 
 ## Register
 

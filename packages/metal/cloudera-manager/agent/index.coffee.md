@@ -8,7 +8,7 @@ You must have configured yum to use the [cloudera manager repo][Cloudera-manager
 or the [cloudera cdh repo][Cloudera-cdh-repo].
 
 
-    module.exports =
+    export default
       use:
         java: implicit: true, module: 'masson/commons/java'
         cm_server: '@rybajs/metal/cloudera-manager/server'

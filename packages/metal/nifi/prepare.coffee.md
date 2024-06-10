@@ -3,7 +3,7 @@
 
 Download the additional jars
 
-    module.exports =
+    export default
       header: 'NiFi Prepare'
       if: -> @contexts('@rybajs/metal/nifi')[0]?.config.host is @config.host
       ssh: false

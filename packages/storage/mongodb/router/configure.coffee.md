@@ -1,7 +1,7 @@
 
 ## Configure
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
       options.version ?= '3.4'
 

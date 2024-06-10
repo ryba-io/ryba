@@ -6,7 +6,7 @@ The Master server is responsible for monitoring all RegionServer instances in th
 In a distributed cluster, the Master typically runs on the NameNode.
 J Mohamed Zahoor goes into some more detail on the Master Architecture in this blog posting, [HBase HMaster Architecture](http://blog.zahoor.in/2012/08/hbase-hmaster-architecture/)
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

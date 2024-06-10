@@ -1,7 +1,7 @@
 
 # Atlas Solr Collection Bootstrap
 
-    module.exports = headler: 'SolrCloud Ranger Layout', handler: ({options}) ->
+    export default headler: 'SolrCloud Ranger Layout', handler: ({options}) ->
       # migration: lucasbak 02112017
       # use this bootstrap scripts for every type
       return unless options.solr_type is 'external'

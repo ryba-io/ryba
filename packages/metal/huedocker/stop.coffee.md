@@ -1,7 +1,7 @@
 
 # Hue Stop
 
-    module.exports = header: 'Hue Docker Stop', handler: (options) ->
+    export default header: 'Hue Docker Stop', handler: (options) ->
 
 Stops the Hue 'hue_server' container. You can also stop the server manually with the following
 command:

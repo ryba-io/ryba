@@ -1,7 +1,7 @@
 
 # Ambari Repo Configuration
 
-    module.exports = ({options}) ->
+    export default ({options}) ->
       
       options.source ?= null
       options.target ?= 'ambari.repo'

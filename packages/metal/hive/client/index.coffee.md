@@ -4,7 +4,7 @@
 [Hive Client](https://cwiki.apache.org/confluence/display/Hive/HiveClient) is the application that you use in order to administer, use Hive.
 Once installed you can type hive in a prompt and the hive client shell wil launch directly.
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true
         java: module: 'masson/commons/java', local: true

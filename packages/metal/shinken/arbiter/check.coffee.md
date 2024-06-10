@@ -1,7 +1,7 @@
 
 # Shinken Arbiter Check
 
-    module.exports = header: 'Shinken Arbiter Check', handler: (options) ->
+    export default header: 'Shinken Arbiter Check', handler: (options) ->
 
 ## TCP
 

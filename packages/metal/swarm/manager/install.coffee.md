@@ -1,7 +1,7 @@
 
 # Install Swarm Manager Node
 
-    module.exports = header: 'Swarm Manager Install', handler: (options) ->
+    export default header: 'Swarm Manager Install', handler: (options) ->
       tmp_dir  = options.tmp_dir ?= "/var/tmp/@rybajs/metal/swarm"
 
 ## Wait dependencies

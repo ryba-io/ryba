@@ -1,7 +1,7 @@
 # 
 # # Ambari Server Wait
 # 
-#     module.exports = header: 'Ambari Standalone Wait', handler: ->
+#     export default header: 'Ambari Standalone Wait', handler: ->
 #       [ambari_ctx] = @contexts '@rybajs/metal/ambari/standalone'
 #       {ambari_standalone} = ambari_ctx.config.ryba
 # 

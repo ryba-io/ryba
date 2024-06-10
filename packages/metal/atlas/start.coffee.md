@@ -8,7 +8,7 @@ Apache Atlas Needs the following components to be started.
 - Ranger Admin
 - Solr Cloud
 
-    module.exports = header: 'Atlas Start', handler: (options) ->
+    export default header: 'Atlas Start', handler: (options) ->
 
 Wait for Kerberos, HBase, Hive, Kafka and Ranger.
 

@@ -1,7 +1,7 @@
 
 # Knox Client
 
-    module.exports =
+    export default
       deps:
         knox_server: module: '@rybajs/metal/knox/server'
         ranger_admin: module: '@rybajs/metal/ranger/admin', single: true

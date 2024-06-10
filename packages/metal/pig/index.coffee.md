@@ -7,7 +7,7 @@ infrastructure for evaluating these programs. The salient property of Pig
 programs is that their structure is amenable to substantial parallelization,
 which in turns enables them to handle very large data sets.
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true
         java: module: 'masson/commons/java', local: true

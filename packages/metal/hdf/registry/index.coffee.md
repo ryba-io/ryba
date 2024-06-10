@@ -8,7 +8,7 @@ end to end data governance and introduce operational efficiency by providing
 reusable schema,defining relationships between schemas and enabling data providers
 and consumers to evolve at different speed.
 
-      module.exports =
+      export default
         use:
           db_admin: implicit: true, module: '@rybajs/metal/commons/db_admin'
           hdf: '@rybajs/metal/hdf'

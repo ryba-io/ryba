@@ -6,7 +6,7 @@ multiple servers, then each Oozie server must be updated. The property
 "oozie.service.HadoopAccessorService.hadoop.configurations" shall define
 each HDFS cluster.
 
-    module.exports = header: 'Falcon Install', handler: ->
+    export default header: 'Falcon Install', handler: ->
       {falcon} = @config.ryba
       [falcon_ctx] = @contexts '@rybajs/metal/falcon/server', require('./configure').handler
 

@@ -8,7 +8,7 @@ sharded cluster.
 All config servers must be available to deploy a sharded cluster or to make any
 changes to cluster metadata.
 
-    module.exports =
+    export default
       deps:
         locale: module: 'masson/core/locale', local: true, auto: true, implicit: true
         iptables: module: 'masson/core/iptables', local: true

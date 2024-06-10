@@ -1,7 +1,7 @@
 
 # Hive Beeline (Server2 Client)
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true
         java: module: 'masson/commons/java', local: true

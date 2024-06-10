@@ -1,7 +1,7 @@
 
 # Druid Broker Wait
 
-    module.exports = header: 'Druid Broker Wait', handler: (options) ->
+    export default header: 'Druid Broker Wait', handler: (options) ->
 
 ## TCP Port
 

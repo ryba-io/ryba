@@ -36,7 +36,7 @@ set it hosts will be constructed on it.
 
 ## Source Code
 
-    module.exports =
+    export default
       deps:
         mariadb: module: 'masson/commons/mariadb/server'
         postres: module: 'masson/commons/postgres/server'

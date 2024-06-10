@@ -42,7 +42,7 @@ both “shells,” allow initial, exploratory development, local mode restricted
 the computing power of your laptop, client mode able to leverage the full power
 of your cluster.
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

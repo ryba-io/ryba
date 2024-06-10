@@ -4,7 +4,7 @@ Zeppelin is a web-based notebook that enables interactive data analytics. You
 can make beautiful data-driven, interactive and collaborative documents with 
 SQL, Scala and more. 
 
-    module.exports =
+    export default
       deps:
         'docker': module: 'masson/commons/docker', local: true, auto: true
         # 'hadoop_core': module: '@rybajs/metal/hadoop/core', local: true, auto: true

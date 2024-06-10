@@ -1,7 +1,7 @@
 
 # Kafka Client Install
 
-    module.exports = header: 'Kafka Client Install', handler: ({options}) ->
+    export default header: 'Kafka Client Install', handler: ({options}) ->
 
 ## Register
 

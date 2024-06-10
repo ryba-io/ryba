@@ -1,7 +1,7 @@
 
 # Solr Install
 
-    module.exports = header: 'Solr Cloud Check', handler: (options) ->
+    export default header: 'Solr Cloud Check', handler: (options) ->
       protocol = if options.ssl.enabled then 'https' else 'http'
 
 ## Wait

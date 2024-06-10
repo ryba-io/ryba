@@ -1,7 +1,7 @@
 
 # Spark History Server
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

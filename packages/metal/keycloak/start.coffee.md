@@ -8,5 +8,5 @@ command:
 service hue start
 ```
 
-    module.exports = header: 'Keycloak Start', handler: ->
+    export default header: 'Keycloak Start', handler: ->
       @service.start name: 'keycloak'

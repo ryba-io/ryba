@@ -1,7 +1,7 @@
 
 # Flume
 
-    module.exports = header: 'Flume Install', handler: (options) ->
+    export default header: 'Flume Install', handler: (options) ->
 
 ## Register
 

@@ -3,7 +3,7 @@
 Install Collectd using epel packages. Collectd comes out of the box just need to install
 and you are ready to run.
 
-    module.exports = header: 'Collectd Install', handler: ({options}) ->
+    export default header: 'Collectd Install', handler: ({options}) ->
 
 ## Packages
 

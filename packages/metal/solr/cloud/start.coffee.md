@@ -1,7 +1,7 @@
 
 # Solr Start
 
-    module.exports =  header: 'Solr Cloud Start', header: 'STARTED', handler: (options) ->
+    export default  header: 'Solr Cloud Start', header: 'STARTED', handler: (options) ->
 
 ## Dependencies
 

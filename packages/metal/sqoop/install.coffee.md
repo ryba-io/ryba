@@ -4,7 +4,7 @@
 The only declared dependency is MySQL Client which install the MySQL JDBC
 driver used by Sqoop.
 
-    module.exports = header: 'Sqoop Install', handler: (options) ->
+    export default header: 'Sqoop Install', handler: (options) ->
 
 ## Register
 

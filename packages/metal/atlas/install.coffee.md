@@ -1,7 +1,7 @@
 
 # Apache Atlas Install
 
-    module.exports = header: 'Atlas Install', handler: (options) ->
+    export default header: 'Atlas Install', handler: (options) ->
       protocol = if options.application.properties['atlas.enableTLS'] is 'true' then 'https' else 'http'
       credential_file = options.application.properties['cert.stores.credential.provider.path'].split('jceks://file')[1]
       credential_name = path.basename credential_file

@@ -11,7 +11,7 @@ separate processes and you can run each on a different server.
 
 [overlord]: http://druid.io/docs/latest/design/indexing-service.html
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true
         java: module: 'masson/commons/java', local: true, recommanded: true

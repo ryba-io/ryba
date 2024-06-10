@@ -3,7 +3,7 @@
 
 Download Elasticsearch Plugins.
 
-    module.exports =
+    export default
       header: 'Elasticsearch Plugins'
       handler: (options) ->
         return unless options.prepare

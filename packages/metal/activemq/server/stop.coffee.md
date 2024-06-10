@@ -4,7 +4,7 @@
 ActiveMQ Server is started through service command.Which is wrapper around
 the docker container.
 
-    module.exports = header: 'ActiveMQ Server Stop', handler: ->
+    export default header: 'ActiveMQ Server Stop', handler: ->
       {activemq} = @config.ryba
       @service.stop
         header: 'Stop service'

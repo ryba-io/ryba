@@ -1,7 +1,7 @@
 
 # Ranger HDFS Plugin Install
 
-    module.exports = header: 'Ranger HDFS Plugin', handler: ({options}) ->
+    export default header: 'Ranger HDFS Plugin', handler: ({options}) ->
       {hdfs_conf_dir} = options
 
 ## Wait

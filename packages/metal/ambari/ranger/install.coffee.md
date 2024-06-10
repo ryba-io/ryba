@@ -1,7 +1,7 @@
 
 # Ambari Nifi Install
 
-    module.exports = header: 'Ambari Ranger Install', handler: (options) ->
+    export default header: 'Ambari Ranger Install', handler: (options) ->
 
 ## Identities
 

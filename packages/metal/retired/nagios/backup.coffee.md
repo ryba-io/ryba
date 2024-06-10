@@ -3,7 +3,7 @@
 
 The backup script dump the content and the logs of Nagios
 
-    module.exports = header: 'Nagios Backup', handler: ->
+    export default header: 'Nagios Backup', handler: ->
       {nagios} = @config.ryba
 
 ## Database

@@ -1,7 +1,7 @@
 
 # JMX Exporter Yarn ResourceManager
 
-    module.exports = header: 'JMX Exporter Yarn ResourceManager Start', handler: ({options}) ->
+    export default header: 'JMX Exporter Yarn ResourceManager Start', handler: ({options}) ->
 
 ## Start
 

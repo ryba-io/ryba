@@ -3,7 +3,7 @@
 
 Execute these commands on the Ganglia server host machine.
 
-    module.exports = []
+    export default []
     module.exports.push 'masson/bootstrap/connection'
     module.exports.push 'masson/bootstrap/nikita'
 

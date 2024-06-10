@@ -3,7 +3,7 @@
 
 Deploy HBase replication to point slave cluster.
 
-    module.exports =  header: 'HBase Client Replication', handler: ({options}) ->
+    export default  header: 'HBase Client Replication', handler: ({options}) ->
 
 ## Wait
 

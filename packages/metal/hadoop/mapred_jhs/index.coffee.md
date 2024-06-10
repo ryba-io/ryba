@@ -7,7 +7,7 @@ replace master2.ryba by the address of the server where the server is installed,
 Now the jobHistory Server tends to be replace by the Yarn timeline server.
 
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

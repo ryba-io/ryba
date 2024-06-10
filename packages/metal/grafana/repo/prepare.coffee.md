@@ -3,7 +3,7 @@
 
 Download the grafana.repo file if available
 
-    module.exports =
+    export default
       header: 'Grafana Repo Prepare'
       if: (options) -> options.prepare
       ssh: false

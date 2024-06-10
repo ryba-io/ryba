@@ -3,7 +3,7 @@
 Ranger Atlas plugin runs inside Atlas Metadata server's JVM
 
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

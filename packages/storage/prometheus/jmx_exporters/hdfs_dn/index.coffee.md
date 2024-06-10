@@ -5,7 +5,7 @@ JMX to Prometheus exporter.
 A Collector that can configurably scrape and expose mBeans of a JMX target. 
 It meant to be run as a Java Agent, exposing an HTTP server and scraping the local JVM.
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         java: module: 'masson/commons/java', local: true, required: true

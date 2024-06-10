@@ -8,5 +8,5 @@ command:
 service hue start
 ```
 
-    module.exports = header: 'Hue Start', handler: ->
+    export default header: 'Hue Start', handler: ->
       @service.start name: 'hue'

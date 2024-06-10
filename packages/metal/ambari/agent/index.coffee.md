@@ -5,7 +5,7 @@
 aware of the  hosts where Hadoop will be deployed. The Ambari Server must be 
 installed before the agent registration.
 
-    module.exports =
+    export default
       deps:
         java: module: 'masson/commons/java', local: true, recommanded: true
         ambari_server: module: '@rybajs/metal/ambari/server', required: true

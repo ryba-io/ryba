@@ -1,5 +1,5 @@
 
 # Schema Registry Start
 
-    module.exports = header: 'Schema Registry Start', handler: ->
+    export default header: 'Schema Registry Start', handler: ->
       @service.start name: 'registry'

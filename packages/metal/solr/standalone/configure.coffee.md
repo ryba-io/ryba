@@ -23,7 +23,7 @@ ryba:
     source: 'http://mirrors.ircam.fr/pub/apache/lucene/solr/6.0.0/solr-6.0.0.tgz'
 ```
 
-    module.exports = ->
+    export default ->
       {java, ryba} = @config
       {solr, realm} = ryba ?= {}
 

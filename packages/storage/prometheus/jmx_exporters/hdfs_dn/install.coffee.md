@@ -1,7 +1,7 @@
 
 # JMX Exporter Datanode Install
 
-    module.exports = header: 'JMX Exporter Datanode Install', handler: ({options}) ->
+    export default header: 'JMX Exporter Datanode Install', handler: ({options}) ->
 
 ## Registry
 
@@ -52,4 +52,3 @@
         cacert: "#{options.ssl.cacert.source}"
         local: "#{options.ssl.cacert.local}"
         uid: options.user.name
-

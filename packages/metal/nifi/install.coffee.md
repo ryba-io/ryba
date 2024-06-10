@@ -1,7 +1,7 @@
 
 # NiFi Install
 
-    module.exports = header: 'NiFi Install', handler: (options) ->
+    export default header: 'NiFi Install', handler: (options) ->
       protocol = if options.properties['nifi.cluster.protocol.is.secure'] is 'true' then 'https' else 'http'
 
       @registry.register ['file', 'jaas'], '@rybajs/metal/lib/file_jaas'

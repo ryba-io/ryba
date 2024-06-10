@@ -30,6 +30,14 @@
     "lib": "lib",
     "test": "test"
   },
+  "exports": {
+    "./*": "./*.coffee",
+    "./agent": "./agent/index.coffee",
+    "./components/ranger_admin": "./components/ranger_admin/index.coffee",
+    "./components/ranger_usersync": "./components/ranger_usersync/index.coffee",
+    "./repo": "./repo/index.coffee",
+    "./server": "./server/index.coffee"
+  },
   "files": [
     "agent",
     "components",
@@ -52,6 +60,7 @@
   },
   "dependencies": {
     "@nikitajs/core": "^0.9.7",
-    "mixme": "^0.5.9"
-  }
+    "mixme": "^0.5.4"
+  },
+  "type": "module"
 }

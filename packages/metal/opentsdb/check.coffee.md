@@ -1,7 +1,7 @@
 
 # OpenTSDB Check
 
-    module.exports = header: 'OpenTSDB Check', handler: (options) ->
+    export default header: 'OpenTSDB Check', handler: (options) ->
 
 ## Wait
 

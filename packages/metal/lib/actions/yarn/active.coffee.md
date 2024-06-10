@@ -7,7 +7,7 @@
 * `krb5_user` (obj)   
   A principal which has suffisiant permission to request RM api.
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       return callback Error 'missing ResourceManager url' unless options.yarn_url
       return callback Error 'Missing krb5 user' unless options.yarn_user
       options.yarn_url = [options.yarn_url] unless Array.isArray options.yarn_url

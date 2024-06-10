@@ -1,7 +1,7 @@
 
 # Spark History Server Check
 
-    module.exports = header: 'Spark History Server Check', handler: (options) ->
+    export default header: 'Spark History Server Check', handler: (options) ->
 
       # TODO Juin 2016: get https protocol when available (from 2.0 version)
       @system.execute

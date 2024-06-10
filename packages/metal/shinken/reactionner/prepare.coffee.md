@@ -1,7 +1,7 @@
 
 # Shinken Reactionner Prepare
 
-    module.exports =
+    export default
       header: 'Shinken Reactionner Prepare'
       handler: (options) ->
 

@@ -1,7 +1,7 @@
 
 # SolrCloud Layout
 
-    module.exports = headler: 'SolrCloud Atlas Layout', handler: (options) ->
+    export default headler: 'SolrCloud Atlas Layout', handler: (options) ->
       atlas =  @contexts('@rybajs/metal/atlas')[0].config.ryba.atlas
       @file.download
         source: "#{__dirname}/resources/solr/lang/stopwords_en.txt"

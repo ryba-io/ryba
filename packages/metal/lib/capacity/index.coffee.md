@@ -11,7 +11,7 @@ default setting for Yarn and its client application such as MapReduce or Tez.
 
 ## Source Code
 
-    exports = module.exports = (params, config, callback) ->
+    exports = export default (params, config, callback) ->
       # construct the clusters' graph for capacity planning
       clusters = []
       for cluster, conf of config.clusters
@@ -825,7 +825,7 @@ opts settings (mapreduce.map.java.opts) will be used by default for map tasks.
         nodes = {}
         nodes = merge nodes, exports.capacity_to_ryba  params, config, cluster.nodes for cluster in clusters
         source = JSON.stringify nodes: nodes, null, 2
-        source = "module.exports = #{source};"
+        source = "export default #{source};"
         ws.write source
       do_end = (ws) ->
         ws.end() if params.output
@@ -844,7 +844,7 @@ opts settings (mapreduce.map.java.opts) will be used by default for map tasks.
         nodes = {}
         nodes = merge nodes, exports.capacity_to_ryba  params, config, cluster.nodes for cluster in clusters
         source = JSON.stringify nodes: nodes
-        source = "module.exports = #{source}"
+        source = "export default #{source}"
         argv = process.argv
         argv[1] = path.relative process.cwd(), argv[1]
         ws.write "# #{argv.join(' ')}\n"

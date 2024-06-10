@@ -6,7 +6,7 @@ RegionServer implementation.
 It is responsible for serving and managing regions. 
 In a distributed cluster, a RegionServer runs on a DataNode.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

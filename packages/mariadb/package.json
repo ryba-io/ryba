@@ -35,6 +35,11 @@
     "nikita": "1.0.0-alpha.3",
     "regexp-quote": "~0.0.0"
   },
+  "exports": {
+    "./*": "./*.coffee",
+    "./client": "./client/index.coffee",
+    "./server": "./server/index.coffee"
+  },
   "publishConfig": {
     "access": "public"
   },

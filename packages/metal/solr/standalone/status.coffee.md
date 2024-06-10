@@ -1,5 +1,5 @@
 
 # Solr Status
 
-    module.exports = header: 'Solr Status', handler: ->
+    export default header: 'Solr Status', handler: ->
       @service.status name: 'solr'

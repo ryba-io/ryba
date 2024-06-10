@@ -1,6 +1,6 @@
 
 # Solr Start
 
-    module.exports =  header: 'Solr Start', handler: ->
+    export default  header: 'Solr Start', handler: ->
       @service.start
         name: 'solr'

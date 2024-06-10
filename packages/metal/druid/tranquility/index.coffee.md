@@ -19,7 +19,7 @@ to colocate the Transquility servers with the Druid middleManagers and historica
 [Tranquility]: http://druid.io/docs/0.9.1.1/ingestion/stream-ingestion.html#server
 [readme]: https://github.com/druid-io/tranquility
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true
         java: module: 'masson/commons/java', local: true, recommanded: true

@@ -40,7 +40,7 @@ hdfs dfsadmin -rollingUpgrade finalize
 
 Follow official instruction from [Hortonworks HDP 2.2 Manual Upgrade][upgrade]
 
-    exports = module.exports = (params, config, callback) ->
+    exports = export default (params, config, callback) ->
       params.easy_download
       config.directory = '/var/@rybajs/metal/upgrade'
       exports.contexts params, config, (err, contexts) ->

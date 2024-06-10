@@ -1,7 +1,7 @@
 
 # Druid Historical Start
 
-    module.exports = header: 'Druid Historical Start', handler: (options) ->
+    export default header: 'Druid Historical Start', handler: (options) ->
 
 ## Wait
 

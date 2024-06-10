@@ -38,7 +38,7 @@ Example
 }
 ```
 
-    module.exports = handler: ->
+    export default handler: ->
       # require('masson/commons/java').configure ctx
       # require('../zookeeper/client').configure ctx
       # require('../hadoop/hdfs').configure ctx

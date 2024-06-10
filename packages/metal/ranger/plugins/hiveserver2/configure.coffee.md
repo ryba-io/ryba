@@ -3,7 +3,7 @@
 
 Ranger Hive plugin runs inside Hiveserver2's JVM
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

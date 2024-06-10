@@ -9,7 +9,7 @@ Raises Notifications and dispatches them to the reactionner(s)
 Updates the retention file (or other retention backends)
 Sends broks (internal events of any kind) to the broker(s)
 
-    module.exports =
+    export default
       deps:
         ssl : module: 'masson/core/ssl', local: true
         iptables: module: 'masson/core/iptables', local: true

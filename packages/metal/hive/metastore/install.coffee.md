@@ -1,7 +1,7 @@
 
 # Hive Metastore Install
 
-    module.exports =  header: 'Hive Metastore Install', handler: ({options}) ->
+    export default  header: 'Hive Metastore Install', handler: ({options}) ->
 
 ## Register
 

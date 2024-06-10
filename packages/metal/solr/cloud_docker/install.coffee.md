@@ -1,7 +1,7 @@
 
 # Solr Cloud Docker Install
 
-    module.exports = header: 'Solr Cloud Docker Install', handler: ({options}) ->
+    export default header: 'Solr Cloud Docker Install', handler: ({options}) ->
       tmp_dir  = options.tmp_dir ?= "/var/tmp/@rybajs/metal/solr"
       options.build.dir = '/tmp/solr/build'
 

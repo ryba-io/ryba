@@ -1,6 +1,6 @@
 # Ranger HDFS Plugin
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true
         hadoop_core: module: '@rybajs/metal/hadoop/core', local: true, auto: true, implicit: true

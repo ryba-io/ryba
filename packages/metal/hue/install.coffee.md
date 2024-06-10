@@ -5,7 +5,7 @@ Here's how to uninstall Hue: `rpm -qa | grep hue | xargs sudo rpm -e`. This
 article from december 2014 describe how to 
 [install the latest version of hue on HDP](http://gethue.com/how-to-deploy-hue-on-hdp/).
 
-    module.exports = header: 'Hue Install', handler: ->
+    export default header: 'Hue Install', handler: ->
       {realm, hue} = @config.ryba
       krb5 = @config.krb5_client.admin[realm]
 

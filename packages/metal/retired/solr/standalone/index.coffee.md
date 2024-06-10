@@ -4,7 +4,7 @@
 Solr powers the search and navigation features of many of the world's largest internet sites'. 
 Solr can be found [here](http://wwwftp.ciril.fr/pub/apache/lucene/solr/standalone/)
 
-    module.exports =
+    export default
       use:
         krb5_client: module: 'masson/core/krb5_client'
       configure:

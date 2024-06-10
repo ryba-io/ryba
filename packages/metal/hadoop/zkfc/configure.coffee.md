@@ -15,7 +15,7 @@ Optional, activate digest type access to zookeeper to manage the zkfc znode:
 }
 ```
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

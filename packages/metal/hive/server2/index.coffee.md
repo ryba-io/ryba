@@ -7,7 +7,7 @@ on Thrift RPC, is an improved version of HiveServer and supports multi-client
 concurrency and authentication. It is designed to provide better support for
 open API clients like JDBC and ODBC.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

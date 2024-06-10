@@ -8,7 +8,7 @@ replicated mode, all servers in the quorum have copies of the same configuration
 file. The file is similar to the one used in standalone mode, but with a few
 differences.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

@@ -4,7 +4,7 @@
 Run the command `./bin/ryba stop -m @rybajs/metal/hive/webhcat` to stop the WebHCat
 server using Ryba.
 
-    module.exports = header: 'WebHCat Stop', handler: ({options}) ->
+    export default header: 'WebHCat Stop', handler: ({options}) ->
 
 ## Service
 

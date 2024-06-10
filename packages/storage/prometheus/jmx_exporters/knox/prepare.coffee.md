@@ -1,7 +1,7 @@
 
 # JMX Exporter Knox Prepare
 
-    module.exports =
+    export default
       header: 'JMX Exporter Prepare'
       ssh: false
       handler: ({options}) ->

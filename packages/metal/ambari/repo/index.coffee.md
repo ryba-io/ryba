@@ -1,7 +1,7 @@
 
 # Ambari Repo
 
-    module.exports =
+    export default
       deps: {}
       configure:
         '@rybajs/metal/ambari/repo/configure'

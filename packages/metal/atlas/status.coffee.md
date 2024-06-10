@@ -3,5 +3,5 @@
 
 Check if Atlas Server is started
 
-    module.exports = header: 'Atlas Status', handler: ->
+    export default header: 'Atlas Status', handler: ->
       @service.status 'atlas-metadata-server'

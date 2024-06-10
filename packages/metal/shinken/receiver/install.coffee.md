@@ -1,7 +1,7 @@
 
 # Shinken Receiver Install
 
-    module.exports = header: 'Shinken Receiver Install', handler: (options) ->
+    export default header: 'Shinken Receiver Install', handler: (options) ->
 
 
 ## IPTables

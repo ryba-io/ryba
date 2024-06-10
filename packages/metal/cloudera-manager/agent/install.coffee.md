@@ -1,7 +1,7 @@
 
 # Cloudera Manager Agent install
 
-    module.exports = header: 'Cloudera Manager Agent Install', handler: ->
+    export default header: 'Cloudera Manager Agent Install', handler: ->
       {agent} = @config.ryba.cloudera_manager
       {java} = @config
 

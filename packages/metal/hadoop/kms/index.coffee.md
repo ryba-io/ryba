@@ -7,7 +7,7 @@ KeyProvider API.
 It provides a client and a server components which communicate over HTTP using a
 REST API.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         java: module: 'masson/commons/java', local: true

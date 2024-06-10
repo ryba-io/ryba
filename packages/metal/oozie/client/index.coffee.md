@@ -7,7 +7,7 @@ with actions that run Hadoop Map/Reduce and Pig jobs.
 The Oozie server installation includes the Oozie client. The Oozie client should
 be installed in remote machines only.
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         java: module: 'masson/commons/java', local: true

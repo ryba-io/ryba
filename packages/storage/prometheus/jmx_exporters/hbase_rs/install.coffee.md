@@ -1,7 +1,7 @@
 
 # JMX Exporter HBase Regionserver Install
 
-    module.exports = header: 'JMX Exporter RegionServer Install', handler: ({options}) ->
+    export default header: 'JMX Exporter RegionServer Install', handler: ({options}) ->
 
 ## Registry
 

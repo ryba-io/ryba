@@ -1,7 +1,7 @@
 
 # Druid Historical Install
 
-    module.exports = header: 'Druid Historical Install', handler: (options) ->
+    export default header: 'Druid Historical Install', handler: (options) ->
 
 ## IPTables
 

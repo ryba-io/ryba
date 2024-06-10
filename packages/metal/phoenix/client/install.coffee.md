@@ -3,7 +3,7 @@
 
 Please refer to the Hortonworks [documentation][phoenix-doc].
 
-    module.exports =  header: 'Phoenix Client Install', handler: ({options}) ->
+    export default  header: 'Phoenix Client Install', handler: ({options}) ->
 
 ## Register
 

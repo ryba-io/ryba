@@ -1,7 +1,7 @@
 
 # Kafka Check
 
-    module.exports = header: 'Kafka Client Check', handler: ({options}) ->
+    export default header: 'Kafka Client Check', handler: ({options}) ->
 
 ## Register
 

@@ -1,7 +1,7 @@
 
 # Atlas Solr Collection Bootstrap
 
-    module.exports = headler: 'SolrCloud Atlas Layout', handler: (options) ->
+    export default headler: 'SolrCloud Atlas Layout', handler: (options) ->
       protocol = if options.solr.ssl?.enabled or options.solr.cluster_config.ssl_enabled then 'https' else 'http'
 
 ## Wait

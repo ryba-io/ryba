@@ -3,7 +3,7 @@
 
 Start the HBase Master server.
 
-    module.exports = header: 'HBase Master Start', handler: ({options}) ->
+    export default header: 'HBase Master Start', handler: ({options}) ->
 
 ## Wait
 

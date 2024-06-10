@@ -1,7 +1,7 @@
 
 # Shinken Receiver Check
 
-    module.exports = header: 'Shinken Receiver Check', handler: (options) ->
+    export default header: 'Shinken Receiver Check', handler: (options) ->
 
 ## TCP
 

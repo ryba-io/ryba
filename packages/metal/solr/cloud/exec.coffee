@@ -7,7 +7,7 @@ config = require '../config'
 params = require '../params'
 nikita = require 'nikita'
 
-module.exports = ->
+export default ->
   params = params.parse()
   write = (msg) -> process.stdout.write msg
   config params.config, (err, config) ->

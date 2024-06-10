@@ -1,7 +1,7 @@
 
 # Hadoop KMS Install
 
-    module.exports = header: 'Hadoop KMS Install', handler: ({options}) ->
+    export default header: 'Hadoop KMS Install', handler: ({options}) ->
 
 ## Register
 

@@ -30,7 +30,7 @@ The version of the service you want to run. Required
 
 ## Source Code
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       return callback Error 'Missing yarn url' unless options.yarn_url?
       return callback Error 'Missing yarn_user' unless options.yarn_user?
       return callback Error 'Missing Service name' unless options.name?

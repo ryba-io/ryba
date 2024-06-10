@@ -1,7 +1,7 @@
 
 # Shinken Scheduler Check
 
-    module.exports = header: 'Shinken Scheduler Check', handler: (options) ->
+    export default header: 'Shinken Scheduler Check', handler: (options) ->
 
 ## TCP
 

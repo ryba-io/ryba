@@ -1,7 +1,7 @@
 
 # Shinken Poller Stop
 
-    module.exports = header: 'Shinken Poller Stop', handler: (options) ->
+    export default header: 'Shinken Poller Stop', handler: (options) ->
       @service.stop name: 'shinken-poller'
       
       @docker.stop

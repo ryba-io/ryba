@@ -3,7 +3,7 @@
 
 [Logstash](https://www.elastic.co/products/logstash) Logstash is an open source, server-side data processing pipeline that ingests data from a multitude of sources simultaneously, transforms it, and then sends it to your favorite “stash.”
 
-    module.exports =
+    export default
       deps:
         java: implicit: true, module: 'masson/commons/java'
         solr_client: module: '@rybajs/metal/solr/client', local: true

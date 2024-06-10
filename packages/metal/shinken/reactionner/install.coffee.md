@@ -1,7 +1,7 @@
 
 # Shinken Reactionner Install
 
-    module.exports = header: 'Shinken Reactionner Install', handler: (options) ->
+    export default header: 'Shinken Reactionner Install', handler: (options) ->
 
 ## SSH
 

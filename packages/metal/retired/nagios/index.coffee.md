@@ -8,7 +8,7 @@ operating system attributes like CPU and memory usage to the status of
 applications, files, and more. Nagios provides a flexible, customizable 
 framework for collecting data on the state of your Hadoop cluster.
 
-    module.exports =
+    export default
       use:
         krb5_client: module: 'masson/core/krb5_client'
       configure:

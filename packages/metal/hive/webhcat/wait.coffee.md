@@ -1,7 +1,7 @@
 
 # WebHCat Wait
 
-    module.exports = header: 'WebHCat Wait', handler: ({options}) ->
+    export default header: 'WebHCat Wait', handler: ({options}) ->
 
 ## HTTP Port
 

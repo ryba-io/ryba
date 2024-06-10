@@ -1,7 +1,7 @@
 
 # JMX Exporter Zookeeper
 
-    module.exports = header: 'JMX Exporter Zookeeper Stop', handler: ({options}) ->
+    export default header: 'JMX Exporter Zookeeper Stop', handler: ({options}) ->
 
 ## Start
 

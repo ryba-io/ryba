@@ -4,7 +4,7 @@
 Download Modules
 Prepare shinken-poller-executor docker image
 
-    module.exports = header: 'Shinken Poller Prepare', handler: (options) ->
+    export default header: 'Shinken Poller Prepare', handler: (options) ->
       return unless options.prepare
 
 ## Modules

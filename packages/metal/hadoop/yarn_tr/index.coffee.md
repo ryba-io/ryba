@@ -7,7 +7,7 @@ The TimeLineService v1 has become v2 and is now divided into two parts in order 
  - The Timeline Reader which can be high available.
  - The Timeline Writer which is embeeded in Yarn ResourceManagers and Yarn NodeManagers.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         zookeeper_server: module: '@rybajs/metal/zookeeper/server'

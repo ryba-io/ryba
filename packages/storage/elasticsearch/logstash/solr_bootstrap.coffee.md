@@ -1,7 +1,7 @@
 
 # Logtash Solr Collection Bootstrap
 
-    module.exports = headler: 'SolrCloud Logstash Layout', handler: (options) ->
+    export default headler: 'SolrCloud Logstash Layout', handler: (options) ->
       return unless options.solr.solr_type is 'external'
       protocol = if options.solr.cluster_config.ssl_enabled then 'https' else 'http'
 

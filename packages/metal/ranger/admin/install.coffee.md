@@ -1,7 +1,7 @@
 
 # Ranger Admin Install
 
-    module.exports =  header: 'Ranger Admin Install', handler: ({options}) ->
+    export default  header: 'Ranger Admin Install', handler: ({options}) ->
 
 ## Register
 

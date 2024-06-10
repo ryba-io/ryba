@@ -1,7 +1,7 @@
 
 # Filebeat Install
 
-    module.exports = header: 'Filebeat Install', handler: (options) ->
+    export default header: 'Filebeat Install', handler: (options) ->
 
 ## Install
 

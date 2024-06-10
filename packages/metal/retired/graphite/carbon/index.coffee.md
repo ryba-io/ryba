@@ -5,7 +5,7 @@ Graphite Carbon daemons make up the storage backend of a Graphite installation
 All of the carbon daemons listen for time-series data and can accept it over a common set of protocols.
 However, they differ in what they do with the data once they receive it.
 
-    module.exports = ->
+    export default ->
       # 'backup':
       #   '@rybajs/metal/graphite/carbon/backup'
       # 'check':

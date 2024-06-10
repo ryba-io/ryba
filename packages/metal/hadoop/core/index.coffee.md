@@ -16,7 +16,7 @@ Setting dfs.http.policy and yarn.http.policy to HTTPS_ONLY causes all HTTP
 traffic to be encrypted. This includes the web UI for Namenodes and Resource
 Managers, Web HDFS interactions, and others.
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

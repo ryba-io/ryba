@@ -4,7 +4,7 @@
 For now the check is only checking port state, and will succeed every by waiting
 the server to start...
 
-    module.exports = header: 'Hue Docker Check', handler: (options) ->
+    export default header: 'Hue Docker Check', handler: (options) ->
     
       @connection.assert
         header: 'http'

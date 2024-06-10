@@ -11,6 +11,9 @@
   "author": "David Worms <david@adaltas.com>",
   "homepage": "http://www.ryba.io",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryba-io/ryba/issues"
+  },
   "coffeelintConfig": {
     "indentation": {
       "level": "error",
@@ -41,13 +44,21 @@
     "each": "^2.4.0",
     "mixme": "^0.5.9"
   },
+  "exports": {
+    "./*": "./*.coffee",
+    "./apt": "./apt/index.coffee",
+    "./authconfig": "./authconfig/index.coffee",
+    "./cron": "./cron/index.coffee",
+    "./java": "./java/index.coffee",
+    "./nodejs": "./nodejs/index.coffee",
+    "./nscd": "./nscd/index.coffee",
+    "./pip": "./pip/index.coffee"
+  },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "bugs": {
-    "url": "https://github.com/ryba-io/ryba/issues"
-  }
+  "type": "module"
 }

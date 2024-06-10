@@ -8,7 +8,7 @@
   
 ## Install
 
-    module.exports = header: metadata.header, handler: ({options}) ->
+    export default header: metadata.header, handler: ({options}) ->
 
       @system.execute
         header: 'Install OpenJDK'

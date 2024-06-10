@@ -4,7 +4,7 @@ Mongodb Config servers have physically no dependances on other mongodb services.
 They can be installed and configured on their own.
 
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

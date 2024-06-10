@@ -3,7 +3,7 @@
 
 Wait for master and region server to be up.
 
-    module.exports = header: 'YARN TR HBase Embedded Wait', handler: ({options}) ->
+    export default header: 'YARN TR HBase Embedded Wait', handler: ({options}) ->
 
 ## Master Port
 

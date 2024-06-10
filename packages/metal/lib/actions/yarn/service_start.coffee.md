@@ -15,7 +15,7 @@ Start a YARN 3 service using [YARN Service API](http://hadoop.apache.org/docs/r3
 
 ## Source Code
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       return callback Error 'Missing yarn url' unless options.yarn_url?
       return callback Error 'Missing yarn_user' unless options.yarn_user?
       return callback Error 'Missing Service name' unless options.name?

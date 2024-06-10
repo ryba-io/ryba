@@ -3,7 +3,7 @@
 
 Start the HDFS HttpFS Server.
 
-    module.exports = header: 'HDFS HttpFS Start', handler: ({options}) ->
+    export default header: 'HDFS HttpFS Start', handler: ({options}) ->
 
 ## Wait
 

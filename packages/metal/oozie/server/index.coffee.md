@@ -6,7 +6,7 @@ Workflows are basically collections of actions.
 These actions can be  Hadoop Map/Reduce jobs, Pig jobs arranged in a control dependency DAG (Direct Acyclic Graph).
 Please check Oozie page
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         iptables: module: 'masson/core/iptables', local: true

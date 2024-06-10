@@ -4,7 +4,7 @@
 Grafan is a great WEB Ui to visualize metrics, and cluster operations data. it allow Users
 to create dashboard and organize collected metrics.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         ssl: module: 'masson/core/ssl', local: true

@@ -1,7 +1,7 @@
 
 # JMX Exporter Knox Install
 
-    module.exports = header: 'JMX Exporter Knox Install', handler: ({options}) ->
+    export default header: 'JMX Exporter Knox Install', handler: ({options}) ->
 
 ## Registry
 
@@ -52,4 +52,3 @@
         cacert: "#{options.ssl.cacert.source}"
         local: "#{options.ssl.cacert.local}"
         uid: options.user.name
-

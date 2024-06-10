@@ -18,7 +18,7 @@ Some of the modules are:
 To automatically download and install a module, please at least provide a version number,
 and a type if different from the name.
 
-    module.exports =
+    export default
       deps:
         nginx: module: 'masson/commons/nginx', auto: true, required: true, local: true
         ssl : module: 'masson/core/ssl', local: true

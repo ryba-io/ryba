@@ -1,7 +1,7 @@
 
 # Check Graphite Carbon
 
-    module.exports = []
+    export default []
     module.exports.push 'masson/bootstrap/'
 
 ## Check Services

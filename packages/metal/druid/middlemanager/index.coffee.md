@@ -8,7 +8,7 @@ The [middle manager] node is a worker node that executes submitted tasks. Middle
 [middle manager]: http://druid.io/docs/latest/design/middlemanager.html
 [peons]: http://druid.io/docs/latest/design/peons.html
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true
         java: module: 'masson/commons/java', local: true, recommanded: true

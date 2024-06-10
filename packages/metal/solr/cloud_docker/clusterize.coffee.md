@@ -38,7 +38,7 @@ Note: October 2017
 Make configuration options more restrictive
   - hosts are required
 
-      module.exports = (options, name, config={}) ->
+      export default (options, name, config={}) ->
         config.hosts ?= options.hosts
         throw Error "Malformed Master for cluster: #{name}" unless config.hosts.indexOf config['master'] > -1
         throw Error "Missing port for cluster: #{name}"  unless config.port?

@@ -6,7 +6,7 @@ scheduler(s). Watchdog for all other processes and responsible for initiating
 failovers if an error is detected. Can route check result events from a Receiver
 to its associated Scheduler.
 
-    module.exports =
+    export default
       deps:
         ssl : module: 'masson/core/ssl', local: true
         iptables: module: 'masson/core/iptables', local: true

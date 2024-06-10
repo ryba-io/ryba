@@ -9,7 +9,7 @@ resource usage (memory, CPU) of individual containers, tracking node-health,
 log’s management and auxiliary services which may be exploited by different YARN
 applications.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

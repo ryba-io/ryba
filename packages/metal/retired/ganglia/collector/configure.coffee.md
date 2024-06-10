@@ -21,7 +21,7 @@ Example:
 }}}
 ```
 
-    module.exports = ->
+    export default ->
       @config.ryba ?= {}
       ganglia = @config.ryba.ganglia ?= {}
       ganglia.rrdcached_user = name: @config.ryba.rrdcached_user if typeof @config.ryba.rrdcached_user is 'string'

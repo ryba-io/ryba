@@ -3,7 +3,7 @@
 
 Start the Shinken Poller service.
 
-    module.exports = header: 'Shinken Poller Start', handler: (options) ->
+    export default header: 'Shinken Poller Start', handler: (options) ->
 
 ## Start Executor
 
@@ -20,4 +20,3 @@ Start the docker executors (normal and admin)
 ## Start the service
 
       @service.start name: 'shinken-poller'
-

@@ -1,7 +1,7 @@
 
 # Shinken Arbiter Configure
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
       # Auto-discovery of Modules
       options.modules ?= {}
@@ -173,4 +173,3 @@ Gather all shinken's arbiter, scheduler, poller, broker daemons config to render
 ## Dependencies
 
     {merge} = require 'mixme'
-

@@ -1,7 +1,7 @@
 
 # Schema Registry Check
 
-    module.exports = header: 'Schema Registry Check', handler: ->
+    export default header: 'Schema Registry Check', handler: ->
       {registry} = @config.ryba
 
 ## Check App Port

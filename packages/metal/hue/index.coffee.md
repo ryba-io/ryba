@@ -8,7 +8,7 @@ a Zookeeper Browser and a SDK.
 
 Link to configure [hive hue configuration][hive-hue-ssl] over ssl.
 
-    module.exports =
+    export default
       use:
         iptables: implicit: true, module: 'masson/core/iptables'
         krb5_client: module: 'masson/core/krb5_client'

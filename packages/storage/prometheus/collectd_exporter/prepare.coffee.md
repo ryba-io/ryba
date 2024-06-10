@@ -1,7 +1,7 @@
 
 # Collectd Exporter Prepare
 
-    module.exports =
+    export default
       header: 'Collectd Exporter Prepare',
       ssh: false
       handler: ({options}) ->

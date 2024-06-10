@@ -1,7 +1,7 @@
 
 # Knox Install
 
-    module.exports = header: 'Knox Install', handler: ({options}) ->
+    export default header: 'Knox Install', handler: ({options}) ->
 
 ## Register
 

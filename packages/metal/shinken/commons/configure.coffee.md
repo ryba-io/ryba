@@ -20,7 +20,7 @@ Example
     }
 ```
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
       # throw Error 'Cannot install Shinken: no scheduler provided' unless @contexts('@rybajs/metal/shinken/scheduler').length
       # throw Error 'Cannot install Shinken: no poller provided' unless @contexts('@rybajs/metal/shinken/poller').length

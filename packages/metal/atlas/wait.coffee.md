@@ -3,7 +3,7 @@
 
 Wait for Atlas Metadata Server to start.
 
-    module.exports = header: 'Atlas Wait', handler: (options) ->
+    export default header: 'Atlas Wait', handler: (options) ->
 
 ## HTTP Port
 

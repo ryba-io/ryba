@@ -6,7 +6,7 @@ See [REST Gateway Impersonation Configuration][impersonation].
 
 [impersonation]: http://hbase.apache.org/book.html#security.rest.gateway
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

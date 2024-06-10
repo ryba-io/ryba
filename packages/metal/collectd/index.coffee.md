@@ -5,7 +5,7 @@
  logfiles and external devices, and stores this information or makes it available
  over the network.
  
-    module.exports =
+    export default
       deps:
         yum: module: 'masson/core/yum'
       configure:

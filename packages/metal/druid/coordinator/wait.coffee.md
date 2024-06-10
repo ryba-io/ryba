@@ -1,7 +1,7 @@
 
 # Druid Coordinator Wait
 
-    module.exports = header: 'Druid Coordinator Wait', handler: (options) ->
+    export default header: 'Druid Coordinator Wait', handler: (options) ->
 
 ## TCP Port
 

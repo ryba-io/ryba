@@ -1,7 +1,7 @@
 
 # Ambari Repo
 
-    module.exports =
+    export default
       use: {}
       configure:
         '@rybajs/metal/ambari/hdfrepo/configure'

@@ -7,7 +7,7 @@ It supports:
 * shinken   
 * alignak   
 
-    module.exports =
+    export default
       deps:
         db_admin: module: implicit: module: true, module: '@rybajs/metal/commons/db_admin'
         # List of monitored services

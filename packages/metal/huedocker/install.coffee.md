@@ -7,7 +7,7 @@ no images available on dockerhub).
 
 Run `ryba prepare` to create the Docker container.
 
-    module.exports = header: 'Hue Docker Install', handler: (options) ->
+    export default header: 'Hue Docker Install', handler: (options) ->
 
 ## Wait
 

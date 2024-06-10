@@ -1,5 +1,5 @@
 
 # Phoenix QueryServer Start
 
-    module.exports = header: 'Phoenix QueryServer Start', handler: ->
+    export default header: 'Phoenix QueryServer Start', handler: ->
       @service.start name: 'phoenix-queryserver'

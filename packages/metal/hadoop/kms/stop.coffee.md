@@ -1,5 +1,5 @@
 
 # Hadoop KMS Stop
 
-    module.exports = header: 'Hadoop KMS Stop', handler: ->
+    export default header: 'Hadoop KMS Stop', handler: ->
       console.log 'TODO: KMS Stop'

@@ -3,7 +3,7 @@
 
 This modules install the redis package and configure it as a master.
 
-    module.exports = header: 'Redis Master Install', handler: (options) ->
+    export default header: 'Redis Master Install', handler: (options) ->
 
 ## Package
 Install Redis from Epel Repositories

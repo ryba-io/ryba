@@ -66,7 +66,7 @@ Default configuration:
 }
 ```
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
       options.yarn ?= {}
       options.mapred ?= {}

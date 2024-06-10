@@ -1,7 +1,7 @@
 
 # Shinken Commons Install
 
-    module.exports = header: 'Shinken Commons Install', handler: (options) ->
+    export default header: 'Shinken Commons Install', handler: (options) ->
 
 ## Identities
 

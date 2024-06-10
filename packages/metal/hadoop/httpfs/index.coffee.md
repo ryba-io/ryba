@@ -5,7 +5,7 @@ HttpFS is a server that provides a REST HTTP gateway supporting all HDFS File
 System operations (read and write). And it is inteoperable with the webhdfs REST
 HTTP API.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

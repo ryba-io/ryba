@@ -1,7 +1,7 @@
 
 # NiFi Wait
 
-    module.exports = header: 'NiFi Wait', handler: (options) ->
+    export default header: 'NiFi Wait', handler: (options) ->
 
 ## Web UI Port
 

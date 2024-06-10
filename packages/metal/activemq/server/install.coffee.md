@@ -1,7 +1,7 @@
 
 # ActiveMQ Server Install
 
-    module.exports = header: 'ActiveMQ Server Install', handler: ->
+    export default header: 'ActiveMQ Server Install', handler: ->
       {iptables} = @config
       {activemq} = @config.ryba
       tmp = "/tmp_#{Date.now()}"

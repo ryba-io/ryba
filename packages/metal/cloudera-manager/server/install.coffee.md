@@ -1,7 +1,7 @@
 
 # Cloudera Manager Server install
 
-    module.exports = header: 'Cloudera Manager Server Install', handler: ->
+    export default header: 'Cloudera Manager Server Install', handler: ->
       {db} = @config.ryba.cloudera_manager.server
       {java} = @config
 

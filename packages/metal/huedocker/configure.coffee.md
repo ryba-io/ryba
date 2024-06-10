@@ -40,7 +40,7 @@ Example:
 
 [hbase-configuration]:(http://gethue.com/hbase-browsing-with-doas-impersonation-and-kerberos/)
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Environment

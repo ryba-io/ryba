@@ -3,7 +3,7 @@
 
 This commands checks if falcons works as required.
 
-    module.exports = header: 'Falcon Check', handler: ->
+    export default header: 'Falcon Check', handler: ->
       {user, falcon} = @config.ryba
 
 ## Register

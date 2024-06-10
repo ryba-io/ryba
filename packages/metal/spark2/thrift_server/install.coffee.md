@@ -1,7 +1,7 @@
 
 # Apache Spark SQL Thrift Server
 
-    module.exports =  header: 'Spark SQL Thrift Server Install', handler: ({options}) ->
+    export default  header: 'Spark SQL Thrift Server Install', handler: ({options}) ->
 
 ## Register
 

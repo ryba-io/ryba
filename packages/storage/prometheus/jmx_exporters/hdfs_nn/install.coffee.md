@@ -1,7 +1,7 @@
 
 # JMX Exporter NameNode Check
 
-    module.exports = header: 'JMX Exporter Namenode Install', handler: ({options}) ->
+    export default header: 'JMX Exporter Namenode Install', handler: ({options}) ->
 
 ## Registry
 

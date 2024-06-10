@@ -6,7 +6,7 @@ MapReduce tera tests ensure that MR is running correctly.
 Depending on the parameters and the numbers of time it is ran in a row, the test
 suite can be used to assess regularity, balance or workload on a cluster.
 
-    module.exports = header: 'Benchmark', handler: ->
+    export default header: 'Benchmark', handler: ->
       {benchmark} = @config.ryba
       node_output_header = "Number of maps,Number of rows,Bytes written, Bytes read, Blocks written, Blocks read, Blocks replicated, Blocks removed, Blocks replicated"
       username = /^(.*?)(@|$)/.exec(benchmark.kerberos.principal)[1]

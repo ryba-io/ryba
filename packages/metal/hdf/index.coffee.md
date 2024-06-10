@@ -1,7 +1,7 @@
 
 # HDF Repository
 
-    module.exports =
+    export default
       configure:
         '@rybajs/metal/hdf/configure'
       commands:

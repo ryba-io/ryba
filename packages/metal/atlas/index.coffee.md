@@ -12,7 +12,7 @@ Atlas enables Hadoop users to manage more efficiently their data:
 - Search & Lineage
 - Scurity & Policy Engine
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true
         ssl: module: 'masson/core/ssl', local: true

@@ -3,7 +3,7 @@
 
 Configure Spark Livy Server and integrates it with the other components deployed by Ryba.
 
-    module.exports = ->
+    export default ->
       {hadoop_conf_dir, core_site,realm} = @config.ryba
       {spark} = @config.ryba ?= {}
 

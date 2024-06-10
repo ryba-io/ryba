@@ -42,7 +42,7 @@ Example:
 }
 ```
 
-    module.exports = irreversible: true, handler: ->
+    export default irreversible: true, handler: ->
       ryba = @config.ryba
       hue = @config.ryba.hue ?= {}
 

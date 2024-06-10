@@ -1,7 +1,7 @@
 
 # Shinken Broker Stop
 
-    module.exports = header: 'Shinken Broker Stop', handler: (options) ->
+    export default header: 'Shinken Broker Stop', handler: (options) ->
       @service.stop name: 'shinken-broker'
 
 ## Clean Logs

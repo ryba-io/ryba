@@ -1,7 +1,7 @@
 
 # Hadoop HDFS SecondaryNameNode Stop
 
-    module.exports = header: 'HDFS SNN Stop', handler: ({options}) ->
+    export default header: 'HDFS SNN Stop', handler: ({options}) ->
 
 ## Stop Service
 

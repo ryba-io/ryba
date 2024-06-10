@@ -1,7 +1,7 @@
 
 # MongoDB Config Server Check
 
-    module.exports = header: 'MongoDB Config Server Check', handler: ({options}) ->
+    export default header: 'MongoDB Config Server Check', handler: ({options}) ->
 
 ## Check
 

@@ -10,7 +10,7 @@ Discover the server status.
 su -l falcon -c '/usr/hdp/current/falcon-server/bin/service-status.sh falcon'; [ $? -eq 254 ]
 ```
 
-    module.exports = header: 'Falcon Server Status', handler: ->
+    export default header: 'Falcon Server Status', handler: ->
       @service.status
         name: 'falcon'
         code_skipped: [1, 3]

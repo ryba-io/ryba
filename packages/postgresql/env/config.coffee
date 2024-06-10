@@ -1,6 +1,6 @@
 path = require 'path'
 
-module.exports =
+export default
   config:
     networks:
       rybapgtestpub:

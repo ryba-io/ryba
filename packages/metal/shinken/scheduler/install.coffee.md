@@ -1,7 +1,7 @@
 
 # Shinken Scheduler Install
 
-    module.exports = header: 'Shinken Scheduler Install', handler: (options) ->
+    export default header: 'Shinken Scheduler Install', handler: (options) ->
 
 
 ## IPTables

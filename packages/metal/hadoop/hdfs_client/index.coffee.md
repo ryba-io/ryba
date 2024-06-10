@@ -4,7 +4,7 @@
 [Clients][hdfs_client] contact NameNode for file metadata or file modifications
 and perform actual file I/O directly with the DataNodes.
 
-    module.exports =
+    export default
       deps:
         java: module: 'masson/commons/java', local: true, recommended: true
         test_user: module: '@rybajs/metal/commons/test_user', local: true, auto: true, implicit: true

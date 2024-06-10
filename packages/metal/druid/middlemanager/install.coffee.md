@@ -1,7 +1,7 @@
 
 # Druid MiddleManager Install
 
-    module.exports = header: 'Druid MiddleManager Install', handler: (options) ->
+    export default header: 'Druid MiddleManager Install', handler: (options) ->
 
 ## IPTables
 

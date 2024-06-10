@@ -1,7 +1,7 @@
 
 # Druid Historical Wait
 
-    module.exports = header: 'Druid Historical Wait', handler: (options) ->
+    export default header: 'Druid Historical Wait', handler: (options) ->
 
 ## TCP Port
 

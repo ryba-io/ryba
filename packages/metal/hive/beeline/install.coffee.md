@@ -1,7 +1,7 @@
 
 # Hive Beeline Install
 
-    module.exports = header: 'Hive Beeline Install', handler: ({options}) ->
+    export default header: 'Hive Beeline Install', handler: ({options}) ->
 
 ## Register
 

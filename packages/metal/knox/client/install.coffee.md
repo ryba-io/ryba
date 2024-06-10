@@ -1,4 +1,4 @@
 
 # Knox Install
 
-    module.exports = header: 'Knox Client Install', handler: ({options}) ->
+    export default header: 'Knox Client Install', handler: ({options}) ->

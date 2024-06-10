@@ -9,7 +9,7 @@ a solr cluster for storing indexes and an HBase cluster as the data storage.
 Atlas needs also kafka as a bus to broadcats message betwwen the different components
 (e.g. Hive, Ranger).
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

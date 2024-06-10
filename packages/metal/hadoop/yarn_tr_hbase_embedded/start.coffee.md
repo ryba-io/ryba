@@ -4,7 +4,7 @@
 Starts the Yarn Application HBase Embedded Backend.
 It is compose of and hbase-master and hbase-regionserver service
 
-    module.exports = header: 'YARN TR Start', handler: ({options}) ->
+    export default header: 'YARN TR Start', handler: ({options}) ->
 
 ## Wait
 

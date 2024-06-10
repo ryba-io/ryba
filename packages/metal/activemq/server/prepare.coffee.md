@@ -2,7 +2,7 @@
 
 Download the ActiveMQ Container
 
-    module.exports =
+    export default
       header: 'ActiveMQ'
       if: -> @contexts('@rybajs/metal/activemq/server')[0]?.config.host is @config.host
       handler: ->

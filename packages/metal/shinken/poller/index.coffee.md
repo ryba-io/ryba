@@ -14,7 +14,7 @@ will not process commands
 This module consumes proportionally to the cluster size. The limit for one poller
 is approximatively 1000 checks/s
 
-    module.exports =
+    export default
       deps:
         ssl : module: 'masson/core/ssl', local: true
         iptables: module: 'masson/core/iptables', local: true

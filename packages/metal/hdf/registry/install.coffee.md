@@ -1,7 +1,7 @@
 
 # Schema Registry Install
 
-    module.exports = header: 'Schema Registry Install', handler: ->
+    export default header: 'Schema Registry Install', handler: ->
       {registry} = @config.ryba
 
 ## Identities

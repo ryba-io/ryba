@@ -4,7 +4,7 @@
 The default configuration is located inside the source code in the location
 "hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/resources/httpfs-default.xml".
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Environment

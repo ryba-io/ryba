@@ -1,7 +1,7 @@
 
 # Ranger with Ambari
 
-    module.exports =
+    export default
       use:
         ssl: module: 'masson/core/ssl'
         krb5_client: module: 'masson/core/krb5_client', local: true

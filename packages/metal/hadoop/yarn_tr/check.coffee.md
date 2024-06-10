@@ -3,7 +3,7 @@
 
 Check the Timeline Server.
 
-    module.exports = header: 'YARN TR Check', handler: ({options}) ->
+    export default header: 'YARN TR Check', handler: ({options}) ->
       protocol = if options.yarn_site['yarn.http.policy'] is 'HTTP_ONLY' then '' else 'https.'
       [host, port] = options.yarn_site["yarn.timeline-service.webapp.#{protocol}address"].split ':'
 

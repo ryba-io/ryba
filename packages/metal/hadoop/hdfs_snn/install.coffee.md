@@ -1,7 +1,7 @@
 
 # Hadoop HDFS SecondaryNameNode Install
 
-    module.exports = header: 'HDFS SNN', handler: ({options}) ->
+    export default header: 'HDFS SNN', handler: ({options}) ->
 
 ## Register
 

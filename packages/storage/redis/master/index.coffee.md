@@ -6,7 +6,7 @@ used as a database, cache and message broker.
 
 [redis]:https://redis.io/
 
-    module.exports =
+    export default
       deps:
         yum: module: 'masson/core/yum', local: true
         iptables: module: 'masson/core/iptables', local: true

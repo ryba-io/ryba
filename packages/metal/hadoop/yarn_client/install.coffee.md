@@ -1,7 +1,7 @@
 
 # YARN Client Install
 
-    module.exports = header: 'YARN Client Install', handler: ({options}) ->
+    export default header: 'YARN Client Install', handler: ({options}) ->
 
 ## Identities
 

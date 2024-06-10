@@ -1,7 +1,7 @@
 
 # Logstash Install
 
-    module.exports = header: 'Logstash Install', handler: (options) ->
+    export default header: 'Logstash Install', handler: (options) ->
 
 ## IPTables
 

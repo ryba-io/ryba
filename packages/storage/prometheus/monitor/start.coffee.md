@@ -1,7 +1,7 @@
 
 # Prometheus Montior Start
 
-    module.exports = header: 'Prometheus Monitor Start', handler: ({options}) ->
+    export default header: 'Prometheus Monitor Start', handler: ({options}) ->
 
 ## Cache file
 

@@ -1,7 +1,7 @@
 
 # Solr Install
 
-    module.exports = header: 'Solr Client Install', handler: ({options}) ->
+    export default header: 'Solr Client Install', handler: ({options}) ->
       tmp_archive_location = "/var/tmp/@rybajs/metal/solr.tar.gz"
 
 ## Registry

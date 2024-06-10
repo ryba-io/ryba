@@ -1,7 +1,7 @@
 
 # Shinken Scheduler Stop
 
-    module.exports = header: 'Shinken Scheduler Stop', handler: (options) ->
+    export default header: 'Shinken Scheduler Stop', handler: (options) ->
       @service.stop name: 'shinken-scheduler'
 
 ## Clean Logs

@@ -4,7 +4,7 @@
 Syncronize Cloudera parcels locally and setup an HTTP server.
 
 
-    module.exports =
+    export default
       commands:
         'prepare': ->
           @call

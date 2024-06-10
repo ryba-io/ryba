@@ -29,7 +29,7 @@ Options include:
 
 ## Source Code
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       throw callback Error "Required option: 'target'" unless options.target
       options.mode ?= ''
       options.mode = mode.stringify options.mode

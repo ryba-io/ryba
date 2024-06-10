@@ -9,7 +9,7 @@ Apache ActiveMQ:
   and many advanced features while fully supporting JMS 1.1 and J2EE 1.4
 Apache ActiveMQ is released under the Apache 2.0 License.   
 
-    module.exports =
+    export default
       use:
         iptables: implicit: true, module: 'masson/core/iptables'
         docker: implicit: true, module: 'masson/commons/docker'

@@ -1,7 +1,7 @@
 
 # Phoenix QueryServer Wait
 
-    module.exports = header: 'Phoenix QueryServer Wait', handler: ({options}) ->
+    export default header: 'Phoenix QueryServer Wait', handler: ({options}) ->
       http =
         host: options.host
         port: options.queryserver.site['phoenix.queryserver.http.port']

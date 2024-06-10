@@ -3,7 +3,7 @@
 
 This modules install the redis package and configure it as a master.
 
-    module.exports = header: 'Redis Slave Install', handler: (options) ->
+    export default header: 'Redis Slave Install', handler: (options) ->
       
 
 ## Package

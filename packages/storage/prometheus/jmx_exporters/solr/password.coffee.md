@@ -1,7 +1,7 @@
 
 # JMX Exporter Solr Install
 
-    module.exports = header: 'JMX Exporter Solr Auth', handler: (options) ->
+    export default header: 'JMX Exporter Solr Auth', handler: (options) ->
 
 ## Registry
 

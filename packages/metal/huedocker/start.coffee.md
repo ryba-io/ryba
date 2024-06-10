@@ -1,7 +1,7 @@
 
 # Hue Start
 
-    module.exports = header: 'Hue Docker Start', handler: (options) ->
+    export default header: 'Hue Docker Start', handler: (options) ->
 
 ## Wait
 

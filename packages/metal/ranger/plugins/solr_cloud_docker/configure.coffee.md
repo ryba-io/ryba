@@ -9,7 +9,7 @@ This modules injects installation actions in the `@rybajs/metal/solr/cloud_docke
 As a consequence, `@rybajs/metal/ranger/admin` and `@rybajs/metal/solr/cloud_docker` must not be installed on
 the same machine.
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Kerberos

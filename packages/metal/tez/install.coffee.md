@@ -1,7 +1,7 @@
 
 # Tez Install
 
-    module.exports = header: 'Tez Install', handler: ({options}) ->
+    export default header: 'Tez Install', handler: ({options}) ->
       
 ## Register
 

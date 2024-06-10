@@ -6,7 +6,7 @@ It can be embedded (local), or distributed etc.
 This module install hbase as a system service on the YARN cluster. It is configured to use
 HDFS as the HBase storage.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         zookeeper_server: module: '@rybajs/metal/zookeeper/server'

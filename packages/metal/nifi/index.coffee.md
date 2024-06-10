@@ -10,7 +10,7 @@ and objectives of NiFi includes:
   * Designed for extension
   * SSL, SSH, HTTPS, encrypted content, etc...
 
-      module.exports =
+      export default
         deps:
           krb5_client: implicit: true, module: 'masson/core/krb5_client', local: true
           iptables: module: 'masson/core/iptables', local: true

@@ -29,7 +29,7 @@ dfsadmin -fetchImage
 
 ### Local Backup
 
-    module.exports = header: 'HDFS NN Backup', handler: ->
+    export default header: 'HDFS NN Backup', handler: ->
 
       @tools.backup
         header: 'HDFS LS output'

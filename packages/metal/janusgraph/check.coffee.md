@@ -1,7 +1,7 @@
 
 # JanusGraph Check
 
-    module.exports = header: 'JanusGraph Check', timeout: -1, handler: ->
+    export default header: 'JanusGraph Check', timeout: -1, handler: ->
       {force_check, hbase, janusgraph} = @config.ryba
       {shortname} = @config
 

@@ -1,7 +1,7 @@
 
 # JMX Exporter Knox
 
-    module.exports = header: 'JMX Exporter Knox Start', handler: ({options}) ->
+    export default header: 'JMX Exporter Knox Start', handler: ({options}) ->
 
 ## Start
 

@@ -1,7 +1,7 @@
 
 # Kafka Broker Install
 
-    module.exports = header: 'Kafka Broker Install', handler: ({options}) ->
+    export default header: 'Kafka Broker Install', handler: ({options}) ->
 
 ## Register
 

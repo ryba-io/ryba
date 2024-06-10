@@ -1,6 +1,6 @@
 
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Kerberos

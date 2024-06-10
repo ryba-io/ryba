@@ -6,7 +6,7 @@
 Open Source Identity and Access Management
 
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client'
         ipa_client: module: 'masson/core/freeipa/client', local: true

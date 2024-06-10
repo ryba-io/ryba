@@ -10,7 +10,7 @@ to check how to configure it
 Once a machine is added to the swarm cluster (manager or agent), it will be configured
 to communicate by default with the `@rybajs/metal/swarm/manager`.
 
-    module.exports =
+    export default
       deps:
         docker: module: 'masson/commons/docker', local: true, required: true, auto: true
         zookeeper_server: module: '@rybajs/metal/zookeeper/server'

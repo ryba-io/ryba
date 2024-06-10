@@ -1,7 +1,7 @@
 
 # Shinken Poller Check
 
-    module.exports = header: 'Shinken Poller Check', handler: (options) ->
+    export default header: 'Shinken Poller Check', handler: (options) ->
 
 ## TCP
 

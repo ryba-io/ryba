@@ -3,7 +3,7 @@
 
 Download modules
 
-    module.exports =
+    export default
       header: 'Shinken Arbiter Prepare'
       handler: (options) ->
         return unless options.prepare

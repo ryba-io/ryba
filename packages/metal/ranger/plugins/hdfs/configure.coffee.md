@@ -4,7 +4,7 @@
 For the HDFS plugin, the executed script already create the hdfs user to ranger admin
 as external.
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

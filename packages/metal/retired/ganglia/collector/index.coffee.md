@@ -4,7 +4,7 @@
 Ganglia Collector is the server which recieves data collected on each
 host by the Ganglia Monitor agents.
 
-    module.exports =
+    export default
       configure:
         '@rybajs/metal/retired/ganglia/collector/configure'
       commands: ->

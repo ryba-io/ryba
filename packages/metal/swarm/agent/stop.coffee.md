@@ -3,7 +3,7 @@
 
 Stop the docker container using docker stop commande.
 
-    module.exports = header: 'Swarm Agent Stop', handler: (options) ->
+    export default header: 'Swarm Agent Stop', handler: (options) ->
       @docker.stop
         docker: options.docker
         container: options.name

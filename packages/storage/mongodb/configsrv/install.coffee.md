@@ -1,7 +1,7 @@
 
 # MongoDB Config Server Install
 
-    module.exports =  header: 'MongoDB Config Server Install', handler: ({options}) ->
+    export default  header: 'MongoDB Config Server Install', handler: ({options}) ->
 
 ## IPTables
 

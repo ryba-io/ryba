@@ -20,7 +20,7 @@ Example
     }
 ```
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
       options.install_dir ?= '/usr/local/nagvis'
 

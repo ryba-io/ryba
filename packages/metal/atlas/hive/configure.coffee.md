@@ -1,7 +1,7 @@
 
 # Apache Atlas Hive Plugin Configuration
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Environment

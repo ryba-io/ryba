@@ -14,7 +14,7 @@ beloaded to the target server
 ./bin/prepare
 ```
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', implicit: true, local: true
         ssl: module: 'masson/core/ssl', local: true

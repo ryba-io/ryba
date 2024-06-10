@@ -5,7 +5,7 @@ Stop the RegionServer server.
 
 The file storing the PID is "/var/run/hbase/yarn/hbase-hbase-regionserver.pid".
 
-    module.exports = header: 'HBase RegionServer Stop', handler: ({options}) ->
+    export default header: 'HBase RegionServer Stop', handler: ({options}) ->
 
 ## Service
 

@@ -1,7 +1,7 @@
 
 # Ranger Kafka Plugin Install
 
-    module.exports = header: 'Ranger Kafka Plugin', handler: ({options}) ->
+    export default header: 'Ranger Kafka Plugin', handler: ({options}) ->
       version= null
 
 # Register

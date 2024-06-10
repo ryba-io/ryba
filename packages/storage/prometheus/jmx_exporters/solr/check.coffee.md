@@ -1,7 +1,7 @@
 
 # JMX Exporter Solr Check
 
-    module.exports = header: 'JMX Exporter Solr Check', handler: (options) ->
+    export default header: 'JMX Exporter Solr Check', handler: (options) ->
 
 ## Check Port
 

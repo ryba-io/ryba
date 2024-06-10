@@ -1,5 +1,5 @@
 
-    module.exports = header: 'Ranger YARN Plugin install', handler: ({options}) ->
+    export default header: 'Ranger YARN Plugin install', handler: ({options}) ->
       version = null
 
 ## Register

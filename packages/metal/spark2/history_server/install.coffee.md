@@ -9,7 +9,7 @@ Moreover it does make Yarn redirect the tracking URL to the WEBUI which prevents
 the user to see the log after the job has finished in the YARN Resource Manager 
 web interface.
 
-    module.exports =  header: 'Spark History Server Install', handler: ({options}) ->
+    export default  header: 'Spark History Server Install', handler: ({options}) ->
 
       @registry.register 'hdp_select', '@rybajs/metal/lib/hdp_select'
       @registry.register 'hdfs_mkdir', '@rybajs/metal/lib/hdfs_mkdir'

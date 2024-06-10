@@ -1,7 +1,7 @@
 
 # Oozie Client Check
 
-    module.exports = header: 'Oozie Client Check', handler: ({options}) ->
+    export default header: 'Oozie Client Check', handler: ({options}) ->
 
 ## Register
 

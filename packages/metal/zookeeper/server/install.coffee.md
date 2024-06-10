@@ -1,7 +1,7 @@
 
 # Zookeeper Server Install
 
-    module.exports = header: 'ZooKeeper Server Install', handler: ({options}) ->
+    export default header: 'ZooKeeper Server Install', handler: ({options}) ->
 
 ## Register
 

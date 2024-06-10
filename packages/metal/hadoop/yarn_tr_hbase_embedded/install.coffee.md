@@ -4,7 +4,7 @@
 The Timeline Reader is a stand-alone server daemon and doesn't need to be
 co-located with any other service.
 
-    module.exports = header: 'YARN TR HBase Embedded Install', handler: ({options}) ->
+    export default header: 'YARN TR HBase Embedded Install', handler: ({options}) ->
 
 ## Register
 

@@ -3,7 +3,7 @@
 
 Download the mongodb.repo file if available
 
-    module.exports =
+    export default
       header: 'MongoDB Repo Prepare'
       ssh: false
       handler: ({options}) ->

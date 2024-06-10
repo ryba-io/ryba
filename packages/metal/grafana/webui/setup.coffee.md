@@ -1,7 +1,7 @@
 
 # Prometheus Install
 
-    module.exports = header: 'Grafana WEBUi Setup', handler: ({options}) ->
+    export default header: 'Grafana WEBUi Setup', handler: ({options}) ->
       beans = null
       rows = []
       exp = []

@@ -9,7 +9,7 @@ You must have configured yum to use the [cloudera manager repo][Cloudera-manager
 or the [cloudera cdh repo][Cloudera-cdh-repo].
 
 
-    module.exports =
+    export default
       deps:
         java: implicit: true, module: 'masson/commons/java'
         db_admin: implicit: true, module: '@rybajs/metal/commons/db_admin'

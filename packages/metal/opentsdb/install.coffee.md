@@ -1,7 +1,7 @@
 
 # OpenTSDB Install
 
-    module.exports = header: 'OpenTSDB Install', handler: ({options}) ->
+    export default header: 'OpenTSDB Install', handler: ({options}) ->
 
 ## Register
 

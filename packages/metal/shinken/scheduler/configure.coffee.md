@@ -1,7 +1,7 @@
 
 # Shinken Scheduler Configure
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
       # Additionnal Modules to install
       options.modules ?= {}

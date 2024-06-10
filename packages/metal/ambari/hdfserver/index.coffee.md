@@ -5,7 +5,7 @@
 Once logged into the ambari server host, the administrator can  provision, 
 manage and monitor a Hadoop cluster.
 
-    module.exports =
+    export default
       use:
         iptables: module: 'masson/core/iptables', local: true
         ssl: module: 'masson/core/ssl', local: true

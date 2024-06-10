@@ -1,7 +1,7 @@
 
 # Grafana Repository
 
-    module.exports =
+    export default
       deps: {}
       configure:
         '@rybajs/metal/grafana/repo/configure'

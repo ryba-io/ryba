@@ -22,7 +22,7 @@ If owner and group are passed in options, it will also set ownerships.
 
 ## Source Code
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       return callback Error 'missing namenode url' unless options.nn_url
       return callback Error 'Missing krb5 user' unless options.krb5_user
       return callback Error 'Missing target directory' unless options.target

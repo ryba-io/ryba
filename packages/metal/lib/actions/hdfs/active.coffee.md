@@ -11,7 +11,7 @@
 
 ## Source Code
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       return callback Error 'missing namenode url' unless options.nn_url
       return callback Error 'Missing krb5 user' unless options.krb5_user
       options.nn_url = [options.nn_url] unless Array.isArray options.nn_url

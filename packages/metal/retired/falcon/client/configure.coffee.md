@@ -6,7 +6,7 @@ for data motion, coordination of data pipelines, lifecycle management, and data
 discovery. Falcon enables end consumers to quickly onboard their data and its
 associated processing and management tasks on Hadoop clusters.
 
-    module.exports = (service) ->
+    export default (service) ->
       {options, deps} = service
 
 ## Identities

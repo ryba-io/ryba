@@ -3,7 +3,7 @@
 
 [Filebeat](https://www.elastic.co/products/beats/filebeat) Filebeat helps you keep the simple things simple by offering a lightweight way to forward and centralize logs and files.
 
-    module.exports =
+    export default
       deps:
         java: implicit: true, module: 'masson/commons/java'
         logstash: module: '@rybajs/storage/elasticsearch/logstash', only: true

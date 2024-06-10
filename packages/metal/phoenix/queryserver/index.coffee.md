@@ -6,7 +6,7 @@ JDBC driver targeting low latency queries over HBase data. Apache Phoenix takes
 your SQL query, compiles it into a series of HBase scans, and orchestrates the
 running of those scans to produce regular JDBC result sets.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         java: module: 'masson/commons/java', local:true, implicit: true

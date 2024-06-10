@@ -4,7 +4,7 @@
 Prometheus implements a highly dimensional data model. Time series are identified 
 by a metric name and a set of key-value pairs.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         ssl: module: 'masson/core/ssl', local: true

@@ -3,7 +3,7 @@
 
 Setup hbase backend and set ACL for timeLineReader to read/write to ead
 
-    module.exports = header: 'YARN TR Setup', handler: ({options}) ->
+    export default header: 'YARN TR Setup', handler: ({options}) ->
 
 ## Registry
 

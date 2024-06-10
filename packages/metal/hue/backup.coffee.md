@@ -1,7 +1,7 @@
 
 # Hue backup
 
-    module.exports = header: 'Hue Backup', handler: ->
+    export default header: 'Hue Backup', handler: ->
       {hue} = @config.ryba
 
 ## Database

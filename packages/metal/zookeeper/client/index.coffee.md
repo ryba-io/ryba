@@ -1,7 +1,7 @@
 
 # Zookeeper Client
 
-    module.exports =
+    export default
       deps:
         java: module: 'masson/commons/java', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

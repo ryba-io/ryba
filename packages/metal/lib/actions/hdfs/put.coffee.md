@@ -19,7 +19,7 @@ Put a File in HDFS using [webhdfs api](https://hadoop.apache.org/docs/r1.0.4/web
 
 ## Source Code
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       return callback Error 'Missing krb5 user' unless options.krb5_user
       return callback Error 'missing source' unless options.source
       return callback Error 'Missing target' unless options.target

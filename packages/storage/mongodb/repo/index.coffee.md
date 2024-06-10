@@ -1,7 +1,7 @@
 
 # HDP Repository
 
-    module.exports =
+    export default
       configure:
         '@rybajs/storage/mongodb/repo/configure'
       commands:

@@ -7,7 +7,7 @@ IDs. It tracks where across the cluster the file data is kept on the DataNodes. 
 does not store the data of these files itself. It’s important that this metadata
 (and all changes to it) are safely persisted to stable storage for fault tolerance.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

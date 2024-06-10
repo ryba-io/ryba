@@ -4,7 +4,7 @@
 Run the command `./bin/ryba stop -m @rybajs/metal/druid/overlord` to stop the Druid 
 Overlord server using Ryba.
 
-    module.exports = header: 'Druid Overlord Stop', handler: (options) ->
+    export default header: 'Druid Overlord Stop', handler: (options) ->
 
 ## Service
 

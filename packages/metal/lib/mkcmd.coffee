@@ -33,7 +33,7 @@ nikita.execute mkcmd
 # - password, if security is "kerberos"
 # - principal, if security is "kerberos"
 # - name, if security isnt "kerberos"
-module.exports = (args...) ->
+export default (args...) ->
   options = {}
   for opts in args
     if typeof opts is 'string'

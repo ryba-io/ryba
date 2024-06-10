@@ -14,7 +14,7 @@ location of blocks in the cluster. In order to achieve this, the DataNodes are
 configured with the location of both NameNodes, and send block location
 information and heartbeats to both.
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

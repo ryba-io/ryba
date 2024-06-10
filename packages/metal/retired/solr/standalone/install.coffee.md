@@ -1,7 +1,7 @@
 
 # Solr Install
 
-    module.exports = header: 'Solr Standalone Install', handler: ->
+    export default header: 'Solr Standalone Install', handler: ->
       {solr, realm} = @config.ryba
       {ssl, ssl_server, ssl_client, hadoop_conf_dir, realm, hadoop_group} = @config.ryba
       krb5 = @config.krb5_client.admin[realm]

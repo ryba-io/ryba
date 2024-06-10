@@ -4,7 +4,7 @@
 Create the Unix user and group as well as the Kerberos principal used for 
 testing.
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true
       configure:

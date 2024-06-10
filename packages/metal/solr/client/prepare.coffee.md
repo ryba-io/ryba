@@ -1,5 +1,5 @@
 
-    module.exports =
+    export default
       header: 'Solr Client Prepare'
       ssh: false
       handler: ->

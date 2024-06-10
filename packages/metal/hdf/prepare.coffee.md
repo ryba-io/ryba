@@ -3,7 +3,7 @@
 
 Download the hdf.repo file if available
 
-    module.exports = 
+    export default 
       header: 'HDF Repo Prepare'
       if: @contexts('@rybajs/metal/hdf')[0].config.host is @config.host
       ssh: false

@@ -8,7 +8,7 @@ systems, applications) at a large scale, and make this data easily accessible
 and graphable.
 OpenTSDB does not seem to work without the hbase rights
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true, required: true

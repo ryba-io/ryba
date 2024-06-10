@@ -1,7 +1,7 @@
 
 # Shinken Receiver Prepare
 
-    module.exports = header: 'Shinken Receiver Prepare', handler: (options) ->
+    export default header: 'Shinken Receiver Prepare', handler: (options) ->
 
 ## Modules
 

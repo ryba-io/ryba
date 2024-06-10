@@ -26,7 +26,7 @@ Example:
 }
 ```
 
-    module.exports = handler: ->
+    export default handler: ->
       require('../titan/configure').handler.call @
       {realm} = @config.ryba
       titan_ctxs = @contexts '@rybajs/metal/titan'

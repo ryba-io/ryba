@@ -1,7 +1,7 @@
 
 # Hadoop ZKFC Check
 
-    module.exports = header: 'HDFS ZKFC Check', handler: ({options}) ->
+    export default header: 'HDFS ZKFC Check', handler: ({options}) ->
 
 ## Test SSH Fencing
 

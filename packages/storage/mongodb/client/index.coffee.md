@@ -1,7 +1,7 @@
 
 # MongoDB Client
 
-    module.exports =
+    export default
       deps:
         locale: module: 'masson/core/locale', local: true, auto: true, implicit: true
         repo: module: '@rybajs/storage/mongodb/repo'

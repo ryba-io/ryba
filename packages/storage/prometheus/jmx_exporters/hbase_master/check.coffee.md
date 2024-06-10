@@ -1,7 +1,7 @@
 
 # JMX Exporter HBase Master Check
 
-    module.exports = header: 'JMX Exporter HBase Master Check', handler: ({options}) ->
+    export default header: 'JMX Exporter HBase Master Check', handler: ({options}) ->
 
 ## Check Port
 

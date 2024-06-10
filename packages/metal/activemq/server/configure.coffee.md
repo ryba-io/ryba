@@ -2,7 +2,7 @@
 
 # ActiveMQ Configure
 
-    module.exports = ->
+    export default ->
       activemq = @config.ryba.activemq ?= {}
 
 ## Environment

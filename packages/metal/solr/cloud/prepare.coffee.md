@@ -1,5 +1,5 @@
 
-    module.exports =
+    export default
       header: 'Solr Cloud Download'
       if: -> @contexts('@rybajs/metal/solr/cloud')[0]?.config.host is @config.host
       ssh: false

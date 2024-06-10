@@ -1,7 +1,7 @@
 
 # MongoDB Shard Server Status
 
-    module.exports = header: 'MongoDB Shard Server Status', handler: ->
+    export default header: 'MongoDB Shard Server Status', handler: ->
 
 ## Status
 

@@ -1,7 +1,7 @@
 
 # NiFi Configure
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
       # Set it to true if both hdf and hdp are installed on the cluster

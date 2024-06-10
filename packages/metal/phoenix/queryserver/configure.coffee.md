@@ -1,7 +1,7 @@
 
 # Phoenix QueryServer Configuration
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Users and Groups

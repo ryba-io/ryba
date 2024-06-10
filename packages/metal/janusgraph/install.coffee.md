@@ -8,7 +8,7 @@ Install the JanusGraph archive. It contains scripts for:
 Note: the archive contains the rexster server but it is not configured here,
 please see @rybajs/metal/rexster
 
-    module.exports = header: 'JanusGraph Install', handler: ->
+    export default header: 'JanusGraph Install', handler: ->
       {janusgraph, hbase} = @config.ryba
 
       @registry.register ['file', 'jaas'], '@rybajs/metal/lib/file_jaas'

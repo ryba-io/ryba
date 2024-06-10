@@ -1,5 +1,5 @@
 
-module.exports =
+export default
   ssh:
     host: 'front1.ryba'
     username: 'root'

@@ -1,7 +1,7 @@
 
 # DB Admin Wait
 
-    module.exports =  header: 'DB admin Wait', handler: (options) ->
+    export default  header: 'DB admin Wait', handler: (options) ->
 
 ## TCP Port
 

@@ -1,7 +1,7 @@
 
 # Druid Broker Install
 
-    module.exports = header: 'Druid Broker Install', handler: (options) ->
+    export default header: 'Druid Broker Install', handler: (options) ->
 
 ## IPTables
 

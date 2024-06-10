@@ -3,7 +3,7 @@
 
 Download the package.
 
-    module.exports =
+    export default
       header: 'JanusGraph Prepare'
       if: -> @contexts('@rybajs/metal/janusgraph')[0]?.config.host is @config.host
       ssh: false

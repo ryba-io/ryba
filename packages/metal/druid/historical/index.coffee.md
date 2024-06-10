@@ -4,7 +4,7 @@
 [Druid](http://www.druid.io) is a high-performance, column-oriented, distributed 
 data store.
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true
         java: module: 'masson/commons/java', local: true, recommanded: true

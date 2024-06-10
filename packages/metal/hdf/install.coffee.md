@@ -1,7 +1,7 @@
 
 # HDF Repository Install
 
-    module.exports = header: 'HDF Install', handler: (options) ->
+    export default header: 'HDF Install', handler: (options) ->
 
 ## Repository
 

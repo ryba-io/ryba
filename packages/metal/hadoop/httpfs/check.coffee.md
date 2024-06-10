@@ -1,7 +1,7 @@
 
 # HDFS HttpFS Check
 
-    module.exports = header: 'HDFS HttpFS Check', handler: ({options}) ->
+    export default header: 'HDFS HttpFS Check', handler: ({options}) ->
 
 ## Assert Connection
 

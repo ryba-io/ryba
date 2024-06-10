@@ -1,7 +1,7 @@
 
 # Druid Coordinator Install
 
-    module.exports = header: 'Druid Coordinator Install', handler: (options) ->
+    export default header: 'Druid Coordinator Install', handler: (options) ->
 
 ## IPTables
 

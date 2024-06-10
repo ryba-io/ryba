@@ -1,7 +1,7 @@
 
 # Shinken Poller Install
 
-    module.exports = header: 'Shinken Poller Install', handler: (options) ->
+    export default header: 'Shinken Poller Install', handler: (options) ->
 
 ## IPTables
 

@@ -1,7 +1,7 @@
 
 # Falcon Server Check
 
-    module.exports = header: 'Falcon Server Check', handler: ->
+    export default header: 'Falcon Server Check', handler: ->
       {falcon} = @config.ryba
       {hostname, port} = url.parse falcon.runtime['prism.falcon.local.endpoint']
 

@@ -103,7 +103,7 @@ node node_modules/@rybajs/metal/bin/capacity \
 Taken from masson/lib/index.coffee
 
 
-    module.exports = ->
+    export default ->
       orgparams = shell(params, main: name: 'main').parse()
       load orgparams.config, (err, config) ->
         # Normalize coniguration

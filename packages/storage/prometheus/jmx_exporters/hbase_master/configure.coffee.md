@@ -1,7 +1,7 @@
 
 # Configure JMX Exporter HBase Master
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

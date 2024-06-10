@@ -3,7 +3,7 @@
 
 Check the Timeline Server.
 
-    module.exports = header: 'YARN TR HBase Embedded Check', handler: ({options}) ->
+    export default header: 'YARN TR HBase Embedded Check', handler: ({options}) ->
 
 ## Assert
 

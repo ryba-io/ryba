@@ -19,7 +19,7 @@ Set ownership on an HDFS File/Directory using [webhdfs api](https://hadoop.apach
   
 ## Source Code
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       return callback Error 'Missing krb5 user' unless options.krb5_user
       return callback Error 'Missing owner' unless options.owner
       return callback Error 'Missing group' unless options.group

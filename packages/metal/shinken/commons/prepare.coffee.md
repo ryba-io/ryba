@@ -3,7 +3,7 @@
 
 Download modules
 
-    module.exports = header: 'Shinken Commons Prepare',  handler: (options) ->
+    export default header: 'Shinken Commons Prepare',  handler: (options) ->
       return unless options.prepare
         
 ## Python Modules

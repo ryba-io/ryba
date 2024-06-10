@@ -3,7 +3,7 @@
 
 Download the hdp.repo file if available
 
-    module.exports =
+    export default
       header: 'HDP Repo Prepare'
       ssh: false
       handler: (options) ->

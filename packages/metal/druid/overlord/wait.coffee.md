@@ -1,7 +1,7 @@
 
 # Druid Overlord Wait
 
-    module.exports = header: 'Druid Overlord Wait', handler: (options) ->
+    export default header: 'Druid Overlord Wait', handler: (options) ->
 
 ## TCP Port
 

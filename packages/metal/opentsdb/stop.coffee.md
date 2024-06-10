@@ -3,7 +3,7 @@
 
 Stop the OpenTSDB service.
 
-    module.exports = header: 'OpenTSDB Stop', handler: (options) ->
+    export default header: 'OpenTSDB Stop', handler: (options) ->
       @service.stop
         name: 'opentsdb'
         if_exists: '/etc/init.d/opentsdb'

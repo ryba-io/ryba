@@ -10,7 +10,7 @@ loop on topologies to provide missing values
 
 ## Configure
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Environment

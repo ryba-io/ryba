@@ -1,5 +1,5 @@
 
 # OpenTSDB Status
 
-    module.exports = header: 'OpenTSDB Status', handler: ->
+    export default header: 'OpenTSDB Status', handler: ->
       @service.status name: 'opentsdb'

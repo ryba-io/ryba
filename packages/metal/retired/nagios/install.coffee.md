@@ -4,7 +4,7 @@
 
     # module.exports.push require('./index').configure
 
-    module.exports = header: 'Nagios Install', handler: ->
+    export default header: 'Nagios Install', handler: ->
       {nagios, realm, active_nn_host, core_site, hdfs} = @config.ryba
       {zookeeper, hbase, oozie, webhcat, ganglia, hue} = @config.ryba
       krb5 = @config.krb5_client.admin[realm]

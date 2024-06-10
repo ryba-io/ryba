@@ -12,7 +12,7 @@ Options include
 
 ###
 
-module.exports = ({options}, callback) ->
+export default ({options}, callback) ->
   options.name = options.argument if options.argument?
   options.version ?= 'latest'
   options.store ?= {}

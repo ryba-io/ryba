@@ -8,7 +8,7 @@ following command:
 service spark-thrift-server start
 ```
 
-    module.exports = header: 'Spark SQL Thrift Server Stop', handler: ({options}) ->
+    export default header: 'Spark SQL Thrift Server Stop', handler: ({options}) ->
       @service.stop
         name: 'spark-thrift-server'
 

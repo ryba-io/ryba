@@ -10,7 +10,7 @@ in Zookeeper.
 
 broker: http://druid.io/docs/latest/design/broker.html
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client', local: true
         java: module: 'masson/commons/java', local: true, recommanded: true

@@ -20,7 +20,7 @@ Example:
 } } }
 ```
 
-    module.exports = ->
+    export default ->
       @config.ryba ?= {}
       options = @config.ryba.graphite ?= {}
       #@config.ryba.graphite.carbon_user = name: @config.ryba.carbon_user if typeof @config.ryba.carbon_user is 'string'

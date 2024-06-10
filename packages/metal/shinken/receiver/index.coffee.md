@@ -14,7 +14,7 @@ Modules for receivers:
 
 This module is only needed when enabling passive checks
 
-    module.exports =
+    export default
       deps:
         ssl: module: 'masson/core/ssl', local: true
         iptables: module: 'masson/core/iptables', local: true

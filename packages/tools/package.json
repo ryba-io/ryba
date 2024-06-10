@@ -31,6 +31,12 @@
     "lib": "lib",
     "test": "test"
   },
+  "exports": {
+    "./*": "./*.coffee",
+    "./db_admin": "./db_admin/index.coffee",
+    "./hue": "./hue/index.coffee",
+    "./ssl": "./ssl/index.coffee"
+  },
   "files": [
     "db_admin",
     "ssl"
@@ -50,5 +56,6 @@
   },
   "bugs": {
     "url": "https://github.com/ryba-io/ryba/issues"
-  }
+  },
+  "type": "module"
 }

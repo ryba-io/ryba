@@ -9,7 +9,7 @@ service hadoop-yarn-timelinereader start
 su -l yarn -c "/usr/hdp/current/hadoop-yarn-timelinereader/sbin/yarn-daemon.sh --config /etc/hadoop/conf start timelinereader"
 ```
 
-    module.exports = header: 'YARN TR Start', handler: ({options}) ->
+    export default header: 'YARN TR Start', handler: ({options}) ->
 
 ## Wait
 

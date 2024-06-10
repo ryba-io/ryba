@@ -3,6 +3,6 @@
 
 This commands starts Filebeat using the default service command.
 
-    module.exports = header: 'Filebeat Start', handler: ->
+    export default header: 'Filebeat Start', handler: ->
       @service.start
         name: 'filebeat'

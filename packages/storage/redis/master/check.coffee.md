@@ -4,7 +4,7 @@
 The first check is done thourgh the redis-cli command line. Write 'ping' and redis
 should respond 'pong'
 
-    module.exports = header: 'Redis Master Check', handler: (options) ->
+    export default header: 'Redis Master Check', handler: (options) ->
       
 ## Wait
 

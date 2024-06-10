@@ -1,7 +1,7 @@
 
 # Titan Check
 
-    module.exports = header: 'Titan Check', handler: ->
+    export default header: 'Titan Check', handler: ->
       {hbase, titan} = @config.ryba
       {shortname} = @config
 

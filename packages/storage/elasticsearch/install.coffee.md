@@ -5,7 +5,7 @@ Installs ElasticSearch on the specified hosts. It's divided into four main steps
 The configuration of the Elastics Search Users and Group, the configuration of Kerberos, the installation
 of Elastics Search from rpm repositories and the configuration of Elastic Search environment
 
-    module.exports = header: 'ES Install', handler: ->
+    export default header: 'ES Install', handler: ->
       {elasticsearch ,realm} = @config.ryba
 
 ## Identities

@@ -3,7 +3,7 @@
 
 Download the rpm package.
 
-    module.exports =
+    export default
       header: 'OpenTSDB Prepare'
       ssh: false
       handler: (options) ->

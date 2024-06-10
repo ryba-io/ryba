@@ -1,7 +1,7 @@
 
 # HDP Repository Install
 
-    module.exports = header: 'HDP Install', handler: ({options}) ->
+    export default header: 'HDP Install', handler: ({options}) ->
 
 ## Repository
 

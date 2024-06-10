@@ -26,7 +26,7 @@ Example:
 } } }
 ```
 
-    module.exports = ->
+    export default ->
       cloudera_manager = @config.ryba.cloudera_manager ?= {}
       cloudera_manager.server ?= {}
       cloudera_manager.server.admin_port ?= '7182'

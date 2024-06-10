@@ -1,7 +1,7 @@
 
 # Druid Overlord Install
 
-    module.exports = header: 'Druid Overlord Install', handler: (options) ->
+    export default header: 'Druid Overlord Install', handler: (options) ->
 
 ## IPTables
 

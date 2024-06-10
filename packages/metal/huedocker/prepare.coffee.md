@@ -21,7 +21,7 @@ eval "$(docker-machine env dev)" && docker build -t "@rybajs/metal/hue-build" .
 Builds Hue from source
 
 
-    module.exports = header: 'Hue Docker Prepare', ssh: false, handler: (options) ->
+    export default header: 'Hue Docker Prepare', ssh: false, handler: (options) ->
 
 # Hue compiling build from Dockerfile
 

@@ -4,7 +4,7 @@
 Run the command `./bin/ryba stop -m @rybajs/metal/druid/overlord` to stop the Druid 
 Historical server using Ryba.
 
-    module.exports = header: 'Druid Historical Stop', handler: (options) ->
+    export default header: 'Druid Historical Stop', handler: (options) ->
 
 ## Service
 

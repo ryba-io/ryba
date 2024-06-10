@@ -4,7 +4,7 @@
 This service must be collocated with the Hive Server2. Also, it required an 
 Atlas server to be active.
 
-    module.exports =
+    export default
       deps:
         hadoop_core: module: '@rybajs/metal/hadoop/core', local: true, required: true
         kafka_broker: module: '@rybajs/metal/kafka/broker', reguired: true

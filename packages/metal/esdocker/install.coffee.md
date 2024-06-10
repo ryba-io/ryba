@@ -1,6 +1,6 @@
 # Elasticsearch (Docker) Install
 
-    module.exports =  header: 'Docker ES Install', handler: (options) ->
+    export default  header: 'Docker ES Install', handler: (options) ->
 
 ## Identities
 

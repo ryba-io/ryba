@@ -7,7 +7,7 @@ built atop Apache Hadoop YARN.
 
 ## Commands
 
-    module.exports =
+    export default
       deps:
         java: module: 'masson/commons/java', local: true
         httpd: module: 'masson/commons/httpd', local: true

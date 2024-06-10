@@ -8,7 +8,7 @@ This module enables adminstrator to manage severale solrcloud_docker instances r
 For now it writes docker-compose.yml file, download resource files, create layout direcoties
 but does not start the clusters.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         ssl: module: 'masson/core/ssl', local: true

@@ -1,6 +1,6 @@
 nikita = require 'nikita'
 
-module.exports = ({params}) ->
+export default ({params}) ->
   {config} = require params.clusterconf
   nikita
     $debug: params.debug

@@ -1,7 +1,7 @@
 
 # Keycloak
 
-    module.exports = ({deps, options, node})->
+    export default ({deps, options, node})->
 
 ## Installation
 

@@ -8,7 +8,7 @@ mail system or a network infrastructure.
 
 NagVis is also compliant with shinken.
 
-    module.exports =
+    export default
       deps:
         yum: module: 'masson/core/yum', local: true
         iptables: module: 'masson/core/iptables', local: true

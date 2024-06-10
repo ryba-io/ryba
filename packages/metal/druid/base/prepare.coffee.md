@@ -3,7 +3,7 @@
 
 Download the Druid package.
 
-    module.exports =
+    export default
       header: 'Druid Prepare'
       if: (options) -> options.prepare
       ssh: false

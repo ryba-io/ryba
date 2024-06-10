@@ -1,7 +1,7 @@
 
 # Test User Configuration
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
       options.force_check ?= false

@@ -4,7 +4,7 @@
 This module contains configuration, dependencies, and installation steps commons
 to all shinken submodules
 
-    module.exports =
+    export default
       deps:
         ssl:  module: 'masson/core/ssl', local: true
         commons: module: '@rybajs/metal/shinken/commons'

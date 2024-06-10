@@ -10,7 +10,7 @@ It can also be used with any other hue installation, or even any other applicati
 
 You should start with /bin/ryba prepare -m '@rybajs/metal/spark/livy_server' command first.
 
-    module.exports =
+    export default
       deps:
         krb5_client: module: 'masson/core/krb5_client'
         'java': implicit: true, module: 'masson/commons/java'

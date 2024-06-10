@@ -7,7 +7,7 @@ Configure Log4j. Does not write anyfile.
     # this module is a helper to isolate log4j configuration
     # other module does read only from it
     
-    module.exports =
+    export default
       deps: {}
       configure: (service) ->
         options = service.options

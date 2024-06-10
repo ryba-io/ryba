@@ -1,7 +1,7 @@
 
 # Pig Check
 
-    module.exports = header: 'Pig Check', handler: ({options}) ->
+    export default header: 'Pig Check', handler: ({options}) ->
 
 ## Wait
 

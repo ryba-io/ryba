@@ -15,7 +15,7 @@ Get a YARN 3 service configuration informations using [YARN Service API](http://
 
 ## Source Code
 
-    module.exports = ({options}, callback) ->
+    export default ({options}, callback) ->
       return callback Error 'Missing yarn url' unless options.yarn_url?
       return callback Error 'Missing yarn_user' unless options.yarn_user?
       return callback Error 'Missing Service name' unless options.name?

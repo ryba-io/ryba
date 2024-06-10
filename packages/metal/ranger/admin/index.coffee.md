@@ -4,7 +4,7 @@
 Apache Ranger offers a centralized security framework to manage fine-grained
 access control over Hadoop data access components like Apache Hive and Apache HBase.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

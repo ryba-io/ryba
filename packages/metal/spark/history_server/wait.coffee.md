@@ -1,7 +1,7 @@
 
 # Spark History Server Wait
 
-    module.exports = header: 'Spark History Server Wait', handler: (options) ->
+    export default header: 'Spark History Server Wait', handler: (options) ->
 
 ## UI Port
 

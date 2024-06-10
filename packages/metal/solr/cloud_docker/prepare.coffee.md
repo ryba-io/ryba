@@ -3,7 +3,7 @@
 
 Build container and save it.
 
-    module.exports =
+    export default
       header: 'Solr Cloud Docker Prepare'
       ssh: false
       handler: ({options}) ->

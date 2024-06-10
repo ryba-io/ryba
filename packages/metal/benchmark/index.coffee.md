@@ -11,7 +11,7 @@ DataNode's resources (disk, cpu, ram), running the following tests multiple time
 and extract reporting informations :
   * TeraSort suite
 
-    module.exports =
+    export default
       use:
         test_user: module: '@rybajs/metal/commons/test_user', local: true, implicit: true
       configure:

@@ -8,7 +8,7 @@ command:
 service hue stop
 ```
 
-    module.exports = header: 'Hue Stop', handler: ->
+    export default header: 'Hue Stop', handler: ->
       {hue} = @config.ryba
       @service.stop
         header: 'Stop service'

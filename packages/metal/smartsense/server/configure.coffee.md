@@ -1,7 +1,7 @@
 
 # Hortonworks Smartsense Server Configuration
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Identities

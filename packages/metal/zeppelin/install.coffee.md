@@ -5,7 +5,7 @@ Install Zeppelin with build dockerized image.
 Configured for a YARN  cluster, running with spark 1.2.1.
 Spark comes with 1.2.1 in HDP 2.2.4.
 
-    module.exports = header: 'Zeppelin Install', handler: (options) ->
+    export default header: 'Zeppelin Install', handler: (options) ->
 
 ## Identitites
 

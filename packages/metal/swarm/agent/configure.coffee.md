@@ -1,7 +1,7 @@
 
 # Configure Swarm Manager hosts
 
-    module.exports = (service) ->
+    export default (service) ->
       options = service.options
 
 ## Docker Daemon options

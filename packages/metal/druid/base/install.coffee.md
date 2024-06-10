@@ -1,7 +1,7 @@
 
 # Druid Install
 
-    module.exports = header: 'Druid Base Install', handler: (options) ->
+    export default header: 'Druid Base Install', handler: (options) ->
 
 ## Register and load
 

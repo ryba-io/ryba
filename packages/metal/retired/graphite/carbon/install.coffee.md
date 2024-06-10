@@ -1,7 +1,7 @@
 
 # Graphite Carbon Install
 
-    module.exports = []
+    export default []
     module.exports.push 'masson/bootstrap/'
     module.exports.push 'masson/core/yum'
     module.exports.push 'masson/core/iptables'

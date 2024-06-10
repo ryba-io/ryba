@@ -1,7 +1,7 @@
 
 # JMX Exporter Solr Install
 
-    module.exports = header: 'JMX Exporter Solr Install', handler: (options) ->
+    export default header: 'JMX Exporter Solr Install', handler: (options) ->
 
 ## Registry
 
@@ -52,4 +52,3 @@
         cacert: "#{options.ssl.cacert.source}"
         local: "#{options.ssl.cacert.local}"
         uid: options.user.name
-

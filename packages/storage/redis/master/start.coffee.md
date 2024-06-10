@@ -7,6 +7,6 @@ Simply start the Master service by running:
   service redis start
 ```
 
-    module.exports = header: 'Redis Master Start', handler: (options) ->
+    export default header: 'Redis Master Start', handler: (options) ->
       @service.start
         name: 'redis'

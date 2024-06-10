@@ -1,7 +1,7 @@
 
 # Atlas Hive Bridge Install
 
-    module.exports = header: 'Atlas Hive Bride Plugin', handler: (options) ->
+    export default header: 'Atlas Hive Bride Plugin', handler: (options) ->
 
 ## Registry
 

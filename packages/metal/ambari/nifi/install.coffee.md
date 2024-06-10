@@ -1,7 +1,7 @@
 
 # Ambari Nifi Install
 
-    module.exports = header: 'Ambari Nifi Install', handler: (options) ->
+    export default header: 'Ambari Nifi Install', handler: (options) ->
 
 ## Identities
 

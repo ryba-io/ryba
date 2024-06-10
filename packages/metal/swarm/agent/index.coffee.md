@@ -1,7 +1,7 @@
 
 # Docker Swarm Agent
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         ssl: 'masson/core/ssl'

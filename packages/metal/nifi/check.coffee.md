@@ -1,7 +1,7 @@
 
 # NiFi Check
 
-    module.exports = header: 'NiFi Check', handler: (options) ->
+    export default header: 'NiFi Check', handler: (options) ->
       protocol = if options.properties['nifi.cluster.protocol.is.secure'] is 'true' then 'https' else 'http'
       webui = options.properties["nifi.web.#{protocol}.port"]
 

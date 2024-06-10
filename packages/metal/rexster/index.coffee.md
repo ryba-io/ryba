@@ -14,7 +14,7 @@ Rexster Console makes it possible to do remote script evaluation against configu
 graphs inside of a Rexster Server.
 
 
-    module.exports =
+    export default
       use:
         krb5_client: module: 'masson/core/krb5_client'
       configure:

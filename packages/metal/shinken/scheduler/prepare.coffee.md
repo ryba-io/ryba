@@ -1,7 +1,7 @@
 
 # Shinken Scheduler Prepare
 
-    module.exports =  header: 'Shinken Scheduler Prepare', handler: (options) ->
+    export default  header: 'Shinken Scheduler Prepare', handler: (options) ->
 
 ## Modules
 

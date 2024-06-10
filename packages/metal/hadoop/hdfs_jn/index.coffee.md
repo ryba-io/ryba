@@ -12,7 +12,7 @@ node, it durably logs a record of the modification to a majority of these JNs.
 The Standby node is capable of reading the edits from the JNs, and is constantly 
 watching them for changes to the edit log.
 
-    module.exports =
+    export default
       deps:
         iptables: module: 'masson/core/iptables', local: true
         krb5_client: module: 'masson/core/krb5_client', local: true

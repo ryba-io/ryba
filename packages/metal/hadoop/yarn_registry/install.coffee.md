@@ -3,7 +3,7 @@
 Its not mqndqtory but adviced to install the yarn dns registry, if you attend to use yarn 3
 new service features, as it enable to keep track of long running application on the cluster.
 
-    module.exports = header: 'YARN DNS Registry', handler: ({options}) ->
+    export default header: 'YARN DNS Registry', handler: ({options}) ->
 
 ## Register
 

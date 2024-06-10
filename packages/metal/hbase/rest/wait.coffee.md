@@ -1,7 +1,7 @@
 
 # HBase Rest server Wait
 
-    module.exports = header: 'HBase Rest Wait', handler: ({options}) ->
+    export default header: 'HBase Rest Wait', handler: ({options}) ->
 
 ## HTTP Port
 

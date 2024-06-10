@@ -3,7 +3,7 @@
 
 Start the Kafka Broker.
 
-    module.exports = header: 'Kafka Broker Start', handler: ({options}) ->
+    export default header: 'Kafka Broker Start', handler: ({options}) ->
 
 ## Wait
 

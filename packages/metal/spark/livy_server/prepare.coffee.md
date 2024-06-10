@@ -11,7 +11,7 @@ throw an error.
 
 Waiting for docker to deliver an net=host option for docker build command ! 
 
-    module.exports = header: 'Spark Livy Prepare', handler: ->
+    export default header: 'Spark Livy Prepare', handler: ->
       {spark} = @config.ryba
 
 # Livy Spark Server Build dockerfile execution

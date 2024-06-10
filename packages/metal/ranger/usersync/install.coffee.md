@@ -1,7 +1,7 @@
 
 # Ranger Usersync Process
 
-    module.exports = header: 'Ranger UserSync Install', handler: ({options}) ->
+    export default header: 'Ranger UserSync Install', handler: ({options}) ->
 
 ## Registry
 

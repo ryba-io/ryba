@@ -8,7 +8,7 @@ support thousands of concurrent users executing complex graph traversals in real
 JanusGraph is a project under The Linux Foundation, and includes participants
 from Expero, Google, GRAKN.AI, Hortonworks, and IBM. 
 
-    module.exports =
+    export default
       deps:
         java: module: 'masson/commons/java', local: true, auto: true, implicit: true
         test_user: module: '@rybajs/metal/commons/test_user', local: true, auto: true
