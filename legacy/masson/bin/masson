@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cwd=$(dirname "${BASH_SOURCE}")
+
+node --loader $cwd/../test/loaders/coffee.js $cwd/masson.js $@
